@@ -1,0 +1,1348 @@
+[// Z3
+  {// Bow
+    "name": "Bow",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/bow.png",
+    "codes": "bow,d,thed"
+  },
+
+   // Arrows
+  {// Wooden Arrows
+    "type": "toggle",
+    "img": "images/zelda3/inventory/woods.png",
+    "codes": "wooden,woods"
+  },
+  {// Silver Arrows
+    "type": "toggle",
+    "img": "images/zelda3/inventory/silvers.png",
+    "codes": "silver,silvers"
+  },
+  {// Arrows: Wood, Silver
+    "name": "Arrows",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "arrows",
+    "item_left": "wooden",
+    "item_right": "silvers",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/ArrowsYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/ArrowsYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/ArrowsNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/ArrowsYY.png"
+      }
+    ]
+  },
+  {// Bombs: Normal, Super (not "bomb" which is M3)
+    "name": "Bombs",
+    "capturable": false,
+    "type": "progressive",
+    "loop": true,
+    "codes": "bombs",
+    "stages": [
+      {
+        "name": "Bombs",
+        "img": "images/zelda3/inventory/bomb1.png",
+        "codes": "bombs"
+      },
+      {
+        "name": "Super Bomb",
+        "img": "images/zelda3/inventory/bomb2.png",
+        "codes": "bigbomb,superbomb"
+      }
+    ]
+  },
+
+   // Boomerangs
+  {// Blue Boomerang
+    "type": "toggle",
+    "img": "images/zelda3/inventory/bluemerang.png",
+    "codes": "bluemerang"
+  },
+  {// Red Boomerang
+    "type": "toggle",
+    "img": "images/zelda3/inventory/redmerang.png",
+    "codes": "redmerang"
+  },
+  {// Boomerangs: Blue, Red
+    "name": "Boomerangs",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "boomerangs",
+    "item_left": "bluemerang",
+    "item_right": "redmerang",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/BoomerangsYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/BoomerangsYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/BoomerangsNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/BoomerangsYY.png"
+      }
+    ]
+  },
+  {// Hookshot
+    "name": "Hookshot",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/hookshot.png",
+    "codes": "hookshot,hs,boing"
+  },
+  
+   // Mushroom/Powder
+  {// Mushroom
+    "type": "toggle",
+    "img": "images/zelda3/inventory/mushroom.png",
+    "codes": "mushroom,mush"
+  },
+  {// Powder
+    "type": "toggle",
+    "img": "images/zelda3/inventory/powder.png",
+    "codes": "powder"
+  },
+  {// Mushder: Mushroom, Powder
+    "name": "Mushder",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "mushder",
+    "item_left": "mushroom",
+    "item_right": "powder",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/MushderYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/MushderYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/MushderNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/MushderYY.png"
+      }
+    ]
+  },
+  
+   // Rods
+  {// Fire Rod
+    "name": "Fire Rod",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/firerod.png",
+    "codes": "firerod,fire,firesource,melt"
+  },
+  {// Ice Rod
+    "name": "Ice Rod",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/icerod.png",
+    "codes": "icerod,nicerod"
+  },
+  {// Rods: Fire, Ice
+    "name": "Rods",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "rods",
+    "item_left": "firerod",
+    "item_right": "icerod",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/RodsYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/RodsYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/RodsNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/RodsYY.png"
+      }
+    ]
+  },
+  
+   // Medallions
+  {// Bombos: Medallion, MM/TR Indicator
+    "name": "Bombos Medallion",
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/inventory/bombos.png",
+        "codes": "bombos,melt",
+        "secondary_codes": "none"
+      },
+      {
+        "img": "images/zelda3/inventory/bombos_mm.png",
+        "codes": "bombos,mm_medallion,melt",
+        "secondary_codes": "mm"
+      },
+      {
+        "img": "images/zelda3/inventory/bombos_tr.png",
+        "codes": "bombos,tr_medallion,melt",
+        "secondary_codes": "tr"
+      },
+      {
+        "img": "images/zelda3/inventory/bombos_both.png",
+        "codes": "bombos,mm_medallion,tr_medallion,melt",
+        "secondary_codes": "both"
+      }
+    ]
+  },
+  {// Ether: Medallion, MM/TR Indicator
+    "name": "Ether",
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/inventory/ether.png",
+        "codes": "ether",
+        "secondary_codes": "none"
+      },
+      {
+        "img": "images/zelda3/inventory/ether_mm.png",
+        "codes": "ether,mm_medallion",
+        "secondary_codes": "mm"
+      },
+      {
+        "img": "images/zelda3/inventory/ether_tr.png",
+        "codes": "ether,tr_medallion",
+        "secondary_codes": "tr"
+      },
+      {
+        "img": "images/zelda3/inventory/ether_both.png",
+        "codes": "ether,mm_medallion,tr_medallion",
+        "secondary_codes": "both"
+      }
+    ]
+  },
+  {// Quake: Medallion, MM/TR Indicator
+    "name": "Quake",
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/inventory/quake.png",
+        "codes": "quake",
+        "secondary_codes": "none"
+      },
+      {
+        "img": "images/zelda3/inventory/quake_mm.png",
+        "codes": "quake,mm_medallion",
+        "secondary_codes": "mm"
+      },
+      {
+        "img": "images/zelda3/inventory/quake_tr.png",
+        "codes": "quake,tr_medallion",
+        "secondary_codes": "tr"
+      },
+      {
+        "img": "images/zelda3/inventory/quake_both.png",
+        "codes": "quake,mm_medallion,tr_medallion",
+        "secondary_codes": "both"
+      }
+    ]
+  },
+  
+   // Shovel/Flute
+  {// Shovel
+    "type": "toggle",
+    "img": "images/zelda3/inventory/shovel.png",
+    "codes": "shovel"
+  },
+  {// Flute
+    "type": "toggle",
+    "img": "images/zelda3/inventory/flute.png",
+    "codes": "flute,floot"
+  },
+  {// Shovlute: Shovel, Flute
+    "name": "Shovlute",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "shovlute",
+    "item_left": "shovel",
+    "item_right": "flute",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/ShovluteYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/ShovluteYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/ShovluteNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/ShovluteYY.png"
+      }
+    ]
+  },
+  {// Lantern
+    "name": "Lantern",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/lantern.png",
+    "codes": "lantern,lamp,firesource"
+  },
+  {// Hammer
+    "name": "Hammer",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/hammer.png",
+    "codes": "hammer,tenderizer,galvanize"
+  },
+  {// Net
+    "name": "Bug-Catching Net",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/net.png",
+    "codes": "net,bugnet,swagnet"
+  },
+  {// Book
+    "name": "Book of Mudora",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/book.png",
+    "codes": "book,mudora"
+  },
+  {// Pearl
+    "name": "Moon Pearl",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/moonpearl.png",
+    "codes": "moonpearl,pearl"
+  },
+  {// Bottle: 0-4
+    "name": "Bottle",
+    "type": "consumable",
+    "allow_disabled": true,
+    "img": "images/zelda3/inventory/bottle0.png",
+    "max_quantity": 4,
+    "codes": "bottle"
+  },
+  {// Bottle Contents 1
+    "name": "Bottle Contents 1",
+    "capturable": false,
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Bottle",
+        "img": "images/zelda3/inventory/bottle0.png",
+        "codes": "bottle1,bottle1empty"
+      },
+      {
+        "name": "Red Potion",
+        "img": "images/zelda3/inventory/bottleitem2.png",
+        "codes": "bottle1,bottle1red"
+      },
+      {
+        "name": "Green Potion",
+        "img": "images/zelda3/inventory/bottleitem3.png",
+        "codes": "bottle1,bottle1green"
+      },
+      {
+        "name": "Blue Potion",
+        "img": "images/zelda3/inventory/bottleitem4.png",
+        "codes": "bottle1,bottle1blue"
+      },
+      {
+        "name": "Bottled Fairy",
+        "img": "images/zelda3/inventory/bottleitem5.png",
+        "codes": "bottle1,bottle1fairy,bottle1faerie"
+      },
+      {
+        "name": "Bottled Bee",
+        "img": "images/zelda3/inventory/bottleitem6.png",
+        "codes": "bottle1,bottle1bee"
+      },
+      {
+        "name": "Bottled Golden Bee",
+        "img": "images/zelda3/inventory/bottleitem7.png",
+        "codes": "bottle1,bottle1goldenbee,bottle1goodbee"
+      }
+    ]
+  },
+  {// Bottle Contents 2
+    "name": "Bottle Contents 2",
+    "capturable": false,
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Bottle",
+        "img": "images/zelda3/inventory/bottle0.png",
+        "codes": "bottle2,bottle2empty"
+      },
+      {
+        "name": "Red Potion",
+        "img": "images/zelda3/inventory/bottleitem2.png",
+        "codes": "bottle2,bottle2red"
+      },
+      {
+        "name": "Green Potion",
+        "img": "images/zelda3/inventory/bottleitem3.png",
+        "codes": "bottle2,bottle2green"
+      },
+      {
+        "name": "Blue Potion",
+        "img": "images/zelda3/inventory/bottleitem4.png",
+        "codes": "bottle2,bottle2blue"
+      },
+      {
+        "name": "Bottled Fairy",
+        "img": "images/zelda3/inventory/bottleitem5.png",
+        "codes": "bottle2,bottle2fairy,bottle2faerie"
+      },
+      {
+        "name": "Bottled Bee",
+        "img": "images/zelda3/inventory/bottleitem6.png",
+        "codes": "bottle2,bottle2bee"
+      },
+      {
+        "name": "Bottled Golden Bee",
+        "img": "images/zelda3/inventory/bottleitem7.png",
+        "codes": "bottle2,bottle2goldenbee,bottle2goodbee"
+      }
+    ]
+  },
+  {// Bottle Contents 3
+    "name": "Bottle Contents 3",
+    "capturable": false,
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Bottle",
+        "img": "images/zelda3/inventory/bottle0.png",
+        "codes": "bottle3,bottle3empty"
+      },
+      {
+        "name": "Red Potion",
+        "img": "images/zelda3/inventory/bottleitem2.png",
+        "codes": "bottle3,bottle3red"
+      },
+      {
+        "name": "Green Potion",
+        "img": "images/zelda3/inventory/bottleitem3.png",
+        "codes": "bottle3,bottle3green"
+      },
+      {
+        "name": "Blue Potion",
+        "img": "images/zelda3/inventory/bottleitem4.png",
+        "codes": "bottle3,bottle3blue"
+      },
+      {
+        "name": "Bottled Fairy",
+        "img": "images/zelda3/inventory/bottleitem5.png",
+        "codes": "bottle3,bottle3fairy,bottle3faerie"
+      },
+      {
+        "name": "Bottled Bee",
+        "img": "images/zelda3/inventory/bottleitem6.png",
+        "codes": "bottle3,bottle3bee"
+      },
+      {
+        "name": "Bottled Golden Bee",
+        "img": "images/zelda3/inventory/bottleitem7.png",
+        "codes": "bottle3,bottle3goldenbee,bottle3goodbee"
+      }
+    ]
+  },
+  {// Bottle Contents 4
+    "name": "Bottle Contents 4",
+    "capturable": false,
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Bottle",
+        "img": "images/zelda3/inventory/bottle0.png",
+        "codes": "bottle4,bottle4empty"
+      },
+      {
+        "name": "Red Potion",
+        "img": "images/zelda3/inventory/bottleitem2.png",
+        "codes": "bottle4,bottle4red"
+      },
+      {
+        "name": "Green Potion",
+        "img": "images/zelda3/inventory/bottleitem3.png",
+        "codes": "bottle4,bottle4green"
+      },
+      {
+        "name": "Blue Potion",
+        "img": "images/zelda3/inventory/bottleitem4.png",
+        "codes": "bottle4,bottle4blue"
+      },
+      {
+        "name": "Bottled Fairy",
+        "img": "images/zelda3/inventory/bottleitem5.png",
+        "codes": "bottle4,bottle4fairy,bottle4faerie"
+      },
+      {
+        "name": "Bottled Bee",
+        "img": "images/zelda3/inventory/bottleitem6.png",
+        "codes": "bottle4,bottle4bee"
+      },
+      {
+        "name": "Bottled Golden Bee",
+        "img": "images/zelda3/inventory/bottleitem7.png",
+        "codes": "bottle4,bottle4goldenbee,bottle4goodbee"
+      }
+    ]
+  },
+  {// Somaria
+    "name": "Cane of Somaria",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/somaria.png",
+    "codes": "somaria,redcane,kane"
+  },
+   
+   // Byrna/Cape
+  {// Byrna
+    "type": "toggle",
+    "img": "images/zelda3/inventory/byrna.png",
+    "codes": "byrna,bluecane,sakucane,caneofsaku"
+  },
+  {// Cape
+    "type": "toggle",
+    "img": "images/zelda3/inventory/cape.png",
+    "codes": "cape,magiccape,cloak,cloakofinvisibility"
+  },
+  {// CapeofByrna: Byrna, Cape
+    "name": "CapeofByrna",
+    "capturable": false,
+    "type": "composite_toggle",
+    "codes": "capeofbyrna",
+    "item_left": "byrna",
+    "item_right": "cape",
+    "images": [
+      {// NN
+        "left": false,
+        "right": false,
+        "img": "images/zelda3/inventory/CapeofByrnaYY.png",
+        "img_mods": "@disabled"
+      },
+      {// YN
+        "left": true,
+        "right": false,
+        "img": "images/zelda3/inventory/CapeofByrnaYN.png"
+      },
+      {// NY
+        "left": false,
+        "right": true,
+        "img": "images/zelda3/inventory/CapeofByrnaNY.png"
+      },
+      {// YY
+        "left": true,
+        "right": true,
+        "img": "images/zelda3/inventory/CapeofByrnaYY.png"
+      }
+    ]
+  },
+  {// Mirror
+    "name": "Magic Mirror",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/mirror.png",
+    "codes": "mirror,magicmirror"
+  },
+  {// Aga1
+    "name": "Agahnim",
+    "capturable": false,
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/agahnim1.png",
+    "codes": "aga,agahnim,aga1"
+  },
+  {// Gloves: Power, Mitts
+    "name": "Gloves",
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Power Glove",
+        "img": "images/zelda3/inventory/glove1.png",
+        "codes": "gloves,glove,powerglove,pglove,glove1,lift,lift1"
+      },
+      {
+        "name": "Titan's Mitts",
+        "img": "images/zelda3/inventory/glove2.png",
+        "codes": "gloves,glove,titanmitt,titansmitt,titanmitts,titansmitts,mitt,mitts,glove2,lift,lift2"
+      }
+    ]
+  },
+  {// Boots
+    "name": "Pegasus Boots",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/boots.png",
+    "codes": "boots"
+  },
+  {// Flippers
+    "name": "Flippers",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/zelda3/inventory/flippers.png",
+    "codes": "flippers,flips"
+  },
+  {// Magic Upgrade: 1/1, 1/2, 1/4
+    "name": "Magic Upgrade",
+    "type": "progressive",
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "1/1 Magic",
+        "img": "images/zelda3/inventory/mpupgrade0.png",
+        "codes": "mpupgrade"
+      },
+      {
+        "name": "1/2 Magic",
+        "img": "images/zelda3/inventory/mpupgrade1.png",
+        "codes": "mpupgrade,half,halfmagic"
+      },
+      {
+        "name": "1/4 Magic",
+        "img": "images/zelda3/inventory/mpupgrade2.png",
+        "codes": "mpupgrade,quarter,quartermagic"
+      }
+    ]
+  },
+  {// Sword: Fighters', Master, Tempered, Golden
+    "name": "Sword",
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Fighters' Sword",
+        "img": "images/zelda3/inventory/sword1.png",
+        "codes": "sword,fs,sword1"
+      },
+      {
+        "name": "Master Sword",
+        "img": "images/zelda3/inventory/sword2.png",
+        "codes": "sword,ms,sword2"
+      },
+      {
+        "name": "Tempered Sword",
+        "img": "images/zelda3/inventory/sword3.png",
+        "codes": "sword,sword3"
+      },
+      {
+        "name": "Golden Sword",
+        "img": "images/zelda3/inventory/sword4.png",
+        "codes": "sword,butter,sword4"
+      },
+      {
+        "name": "Swordless",
+        "img": "images/misc/swordless.png",
+        "codes": "sword,nosword,swordless"
+      }
+    ]
+  },
+  {// Shield: Fighters', Fire, Mirror
+    "name": "Shield",
+    "type": "progressive",
+    "loop": true,
+    "stages": [
+      {
+        "name": "Fighters' Shield",
+        "img": "images/zelda3/inventory/shield1.png",
+        "codes": "shield,shield1"
+      },
+      {
+        "name": "Fire Shield",
+        "img": "images/zelda3/inventory/shield2.png",
+        "codes": "shield,fireshield,redshield,shield2"
+      },
+      {
+        "name": "Mirror Shield",
+        "img": "images/zelda3/inventory/shield3.png",
+        "codes": "shield,mirrorshield,riotshield,shield3"
+      }
+    ]
+  },
+  {// Tunic
+    "name": "Tunic",
+    "type": "progressive",
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "Green Mail",
+        "img": "images/zelda3/inventory/tunic1.png",
+        "codes": "tunic,tunic1,greentunic,greenmail,armor,armor1"
+      },
+      {
+        "name": "Blue Mail",
+        "img": "images/zelda3/inventory/tunic2.png",
+        "codes": "tunic,tunic2,bluetunic,bluemail,armor,armor2"
+      },
+      {
+        "name": "Red Mail",
+        "img": "images/zelda3/inventory/tunic3.png",
+        "codes": "tunic,tunic3,redtunic,redmail,armor,armor3"
+      }
+    ]
+  },
+  {// OHKO
+    "name": "OHKO",
+    "type": "progressive",
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "NOHKO",
+        "img": "images/zelda3/ohko/nohko.png",
+        "codes": "z3nokho",
+        "inherit_codes": "false"
+      },
+      {
+        "name": "OHKO",
+        "img": "images/zelda3/ohko/ohko.png",
+        "codes": "z3ohko",
+        "inherit_codes": "false"
+      }
+    ]
+  },
+  {// Life Containers: 1-20
+    "name": "Life Containers",
+    "type": "consumable",
+    "allow_disabled": false,
+    "img": "images/zelda3/inventory/heartcontainer.png",
+    "min_quantity": 3,
+    "max_quantity": 20,
+    "codes": "lifecontainer,lifecontainers,life"
+  },
+  {// Heart Containers: 0-11
+    "name": "Heart Containers",
+    "type": "consumable",
+    "img": "images/zelda3/inventory/heartcontainer.png",
+    "max_quantity": 11,
+    "codes": "heartcontainer,heartcontainers,hc,container,containers"
+  },
+  {// Heart Pieces: 0-24
+    "name": "Heart Pieces",
+    "type": "consumable",
+    "img": "images/zelda3/inventory/heartpiece.png",
+    "max_quantity": 24,
+    "codes": "heartpiece,heartpieces,hp,piece,pieces"
+  },
+  
+   // Dungeons
+  {// Eastern Palace
+    "name": "Eastern Palace",
+    "type": "progressive_toggle",
+    "capturable": false,
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/ep1.png",
+        "codes": "ep,easternpalace,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/ep2.png",
+        "codes": "ep,easternpalace,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/ep3.png",
+        "codes": "ep,easternpalace,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/ep4.png",
+        "codes": "ep,easternpalace,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Desert Palace
+    "name": "Desert Palace",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/dp1.png",
+        "codes": "dp,desertpalace,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/dp2.png",
+        "codes": "dp,desertpalace,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/dp3.png",
+        "codes": "dp,desertpalace,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/dp4.png",
+        "codes": "dp,desertpalace,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Tower of Hera
+    "name": "Tower of Hera",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/hera1.png",
+        "codes": "toh,towerofhera,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/hera2.png",
+        "codes": "toh,towerofhera,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/hera3.png",
+        "codes": "toh,towerofhera,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/hera4.png",
+        "codes": "toh,towerofhera,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Palace of Darkness
+    "name": "Palace of Darkness",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/pod1.png",
+        "codes": "pod,palaceofdarkness,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/pod2.png",
+        "codes": "pod,palaceofdarkness,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/pod3.png",
+        "codes": "pod,palaceofdarkness,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/pod4.png",
+        "codes": "pod,palaceofdarkness,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Swamp Palace
+    "name": "Swamp Palace",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/sp1.png",
+        "codes": "sp,swamppalace,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/sp2.png",
+        "codes": "sp,swamppalace,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/sp3.png",
+        "codes": "sp,swamppalace,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/sp4.png",
+        "codes": "sp,swamppalace,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Skull Woods
+    "name": "Skull Woods",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/sw1.png",
+        "codes": "sw,skullwoods,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/sw2.png",
+        "codes": "sw,skullwoods,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/sw3.png",
+        "codes": "sw,skullwoods,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/sw4.png",
+        "codes": "sw,skullwoods,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Thieves' Town
+    "name": "Thieves Town",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/tt1.png",
+        "codes": "tt,thievestown,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/tt2.png",
+        "codes": "tt,thievestown,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/tt3.png",
+        "codes": "tt,thievestown,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/tt4.png",
+        "codes": "tt,thievestown,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Ice Palace
+    "name": "Ice Palace",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/ip1.png",
+        "codes": "ip,icepalace,crystal,bluecrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/ip2.png",
+        "codes": "ip,icepalace,crystal,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/ip3.png",
+        "codes": "ip,icepalace,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/ip4.png",
+        "codes": "ip,icepalace,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Misery Mire
+    "name": "Misery Mire",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/mm1.png",
+        "codes": "mm,miserymire,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/mm2.png",
+        "codes": "mm,miserymire,crystal,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/mm3.png",
+        "codes": "mm,miserymire,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/mm4.png",
+        "codes": "mm,miserymire,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Turtle Rock
+    "name": "Turtle Rock",
+    "capturable": false,
+    "type": "progressive_toggle",
+    "stages": [
+      {
+        "img": "images/zelda3/dungeons/tr1.png",
+        "codes": "tr,turtlerock,crystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/tr2.png",
+        "codes": "tr,turtlerock,crystal,crystal56,redcrystal"
+      },
+      {
+        "img": "images/zelda3/dungeons/tr3.png",
+        "codes": "tr,turtlerock,pendant"
+      },
+      {
+        "img": "images/zelda3/dungeons/tr4.png",
+        "codes": "tr,turtlerock,pendant,greenpendant"
+      }
+    ]
+  },
+  {// Z3 Logic selector: No Glitches, Minor, OWG, Major
+    "name": "Z3 Logic",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "No Glitches",
+        "img": "images/zelda3/logics/noglitches.png",
+        "codes": "z3logic,z3noglitches"
+      },
+      {
+        "name": "Minor Glitches",
+        "img": "images/zelda3/logics/minorglitches.png",
+        "codes": "z3minorglitches"
+      }
+    ]
+  }, //      {
+//        "name": "Overworld Glitches",
+//        "img": "images/zelda3/logics/owglitches.png",
+//        "codes": "z3owglitches,z3owg,z3minorglitches,z3noglitches"
+//      },
+//      {
+//        "name": "Major Glitches",
+//        "img": "images/zelda3/logics/majorglitches.png",
+//        "codes": "z3majorglitches,z3owglitches,z3minorglitches,z3noglitches"
+//      },
+  {// Z3 State selector: Open, Standard
+    "name": "Z3 State",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "Open",
+        "img": "images/zelda3/states/open.png",
+        "codes": "z3state,z3open"
+      },
+      {
+        "name": "Standard",
+        "img": "images/zelda3/states/standard.png",
+        "codes": "z3standard,z3notopen"
+      }
+    ]
+  },
+  
+   // M3
+  {// M3 Logic: Tournament, Normal, Hard, Open, Full, Casual
+    "name": "Super Metroid Logic",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "name": "Tournament",
+        "img": "images/metroid3/logics/tournament.png",
+        "codes": "m3logic,m3tournament,m3notopen",
+        "inherit_codes": "false"
+      }, //      {
+//        "name": "Normal",
+//        "img": "images/metroid3/logics/normal.png",
+//        "codes": "m3normal,notopen",
+//        "inherit_codes": false
+//      },
+//      {
+//        "name": "Hard",
+//        "img": "images/metroid3/logics/hard.png",
+//        "codes": "m3hard,m3notopen",
+//        "inherit_codes": false
+//      },
+//      {
+//        "name": "Open",
+//        "img": "images/metroid3/logics/open.png",
+//        "codes": "m3open",
+//        "inherit_codes": false
+//      },
+//      {
+//        "name": "Full",
+//        "img": "images/metroid3/logics/full.png",
+//        "codes": "m3full,m3notopen",
+//        "inherit_codes": false
+//      },
+      {
+        "name": "Casual",
+        "img": "images/metroid3/logics/casual.png",
+        "codes": "m3casual,m3notopen",
+        "inherit_codes": "false"
+      }
+    ]
+  },
+  
+  // Inventory
+  //  Beams
+  {// Charge Beam
+    "name": "Charge Beam",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/charge.png",
+    "codes": "charge,beam,chargebeam"
+  },
+  {// Ice Beam
+    "name": "Ice Beam",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/ice.png",
+    "codes": "ice,beam,icebeam"
+  },
+  {// Wave Beam
+    "name": "Wave Beam",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/wave.png",
+    "codes": "wave"
+  },
+  {// Spazer
+    "name": "Spazer",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/spazer.png",
+    "codes": "spazer,beam,spazerbeam"
+  },
+  {// Plasma Beam
+    "name": "Plasma Beam",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/plasma.png",
+    "codes": "plasma,beam,plasmabeam"
+  },
+  
+   // Suits
+  {// Varia Suit
+    "name": "Varia Suit",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/varia.png",
+    "codes": "varia,suit"
+  },
+  {// Gravity Suit
+    "name": "Gravity Suit",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/gravity.png",
+    "codes": "gravity,suit"
+  },
+  
+   // Morph
+  {// Morph Ball
+    "name": "Morph Ball",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/morph.png",
+    "codes": "morph,morphball"
+  },
+  {// Bomb (not "bombs" which is Z3)
+    "name": "Bomb",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/bomb.png",
+    "codes": "bomb"
+  },
+  {// Spring Ball
+    "name": "Spring Ball",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/springball.png",
+    "codes": "spring,springball"
+  },
+  
+   // Jump/Shoes
+  {// Screw Attack
+    "name": "Screw Attack",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/screw.png",
+    "codes": "screw,screwattack"
+  },
+  {// Hi-Jump Boots
+    "name": "Hi-Jump Boots",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/hijump.png",
+    "codes": "hijump,highjump,hijumpboots,highjumpboots"
+  },
+  {// Space Jump
+    "name": "Space Jump",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/space.png",
+    "codes": "space,spacejump"
+  },
+  {// Speed Booster
+    "name": "Speed Booster",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/speed.png",
+    "codes": "speed,speedboost,speedbooster"
+  },
+  
+   // Utility
+  {// Grappling Beam
+    "name": "Grappling Beam",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/grapple.png",
+    "codes": "grapple,grapplebeam,grappling,grapplingbeam"
+  },
+  {// X-Ray
+    "name": "X-Ray Scope",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/metroid3/inventory/xray.png",
+    "codes": "xray,scope,xrayscope"
+  },
+  
+   // Bosses
+  {// Kraid
+    "name": "Kraid",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "img": "images/metroid3/bosses/kraid.png"
+      },
+      {
+        "img": "images/metroid3/bosses/kraid.png",
+        "img_mods": "@disabled",
+        "codes": "kraid,g4"
+      }
+    ]
+  },
+  {// Phantoon
+    "name": "Phantoon",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "img": "images/metroid3/bosses/phantoon.png"
+      },
+      {
+        "img": "images/metroid3/bosses/phantoon.png",
+        "img_mods": "@disabled",
+        "codes": "phantoon,g4"
+      }
+    ]
+  },
+  {// Draygon
+    "name": "Draygon",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "img": "images/metroid3/bosses/draygon.png"
+      },
+      {
+        "img": "images/metroid3/bosses/draygon.png",
+        "img_mods": "@disabled",
+        "codes": "draygon,g4"
+      }
+    ]
+  },
+  {// Ridley
+    "name": "Ridley",
+    "type": "progressive",
+    "capturable": false,
+    "allow_disabled": false,
+    "loop": true,
+    "stages": [
+      {
+        "img": "images/metroid3/bosses/ridley.png"
+      },
+      {
+        "img": "images/metroid3/bosses/ridley.png",
+        "img_mods": "@disabled",
+        "codes": "ridley,g4"
+      }
+    ]
+  },
+  
+   //  Health
+  {// Base Energy Tanks
+    "name": "Etanks",
+    "type": "consumable",
+    "img": "images/metroid3/inventory/etank.png",
+    "max_quantity": 14,
+    "codes": "etank,alltanks"
+  },
+  {// Reserve Tanks
+    "name": "Reserve Tanks",
+    "type": "consumable",
+    "img": "images/metroid3/inventory/reservetank.png",
+    "max_quantity": 4,
+    "codes": "reservetank,alltanks"
+  },
+  
+   // Ammo
+  {// Missile
+    "name": "Missile",
+    "type": "consumable",
+    "increment": 5,
+    "max_quantity": 200,
+    "codes": "missile",
+    "img": "images/metroid3/inventory/missile.png"
+  },
+  {// Super Missile
+    "name": "Super Missile",
+    "type": "consumable",
+    "increment": 5,
+    "max_quantity": 85,
+    "codes": "supermissile",
+    "img": "images/metroid3/inventory/supermissile.png"
+  },
+  {// Power Bombs
+    "name": "Power Bombs",
+    "type": "consumable",
+    "increment": 5,
+    "max_quantity": 50,
+    "codes": "powerbomb",
+    "img": "images/metroid3/inventory/powerbomb.png"
+  }
+]

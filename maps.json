@@ -1,0 +1,62 @@
+[
+  {// Z3 Maps
+    "name": "hyrulemap",
+    "location_size": 20,
+    "location_border_thickness": 3,
+    "img": "images/zelda3/maps/hyrule.png"
+  },
+  {
+    "name": "hyrulevmap",
+    "location_size": 20,
+    "location_border_thickness": 3,
+    "img": "images/zelda3/maps/hyrulev.png"
+  },
+  {
+    "name": "hyrulelight",
+    "location_size": 20,
+    "location_border_thickness": 3,
+    "img": "images/zelda3/maps/lw.png"
+  },
+  {
+    "name": "hyruledark",
+    "location_size": 20,
+    "location_border_thickness": 3,
+    "img": "images/zelda3/maps/dw.png"
+  },
+  {// M3 Maps
+    "name": "fullmapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/zebesMM1.png"
+  },
+  {
+    "name": "crateriamapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/crateriaMM1.png"
+  },
+  {
+    "name": "brinstarmapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/brinstarMM1.png"
+  },
+  {
+    "name": "norfairmapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/norfairMM1.png"
+  },
+  {
+    "name": "wreckedshipmapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/wsMM1.png"
+  },
+  {
+    "name": "maridiamapMM1",
+    "location_size": 20,
+    "location_border_thickness": 2,
+    "img": "images/metroid3/maps/maridiaMM1.png"
+  }
+]

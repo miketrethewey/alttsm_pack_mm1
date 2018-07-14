@@ -1,0 +1,333 @@
+{
+  "map_enabled": true,
+  "auto_pin_capturing_locations": false,
+  "auto_unpin_on_clear": true,
+  "layout_swap_left_right": false,
+  "disabled_image_filter": "grayscale, dim",
+  "layouts": {
+    "z3_item_grid": {// Z3 Tracker Inventory
+      "type": "itemgrid",
+      "margin": "0,0,0,0",
+      "item_margin": "1,1",
+      "rows": [
+        [ "tunic", "bow", "boomerangs", "hookshot", "bombs", "mushder" ],
+        [ "sword", "arrows", "rods", "bombos", "ether", "quake" ],
+        [ "shield", "lantern", "hammer", "shovlute", "net", "book" ],
+        [ "agahnim", "bottle", "somaria", "capeofbyrna", "mirror", "heartcontainers" ],
+        [ "mpupgrade", "boots", "gloves", "flippers", "pearl", "heartpieces" ]
+      ]
+    },
+    "z3_item_capture": {// Z3 Capture Items
+      "type": "itemgrid",
+      "margin": "0,0,0,0",
+      "item_margin": "1,1",
+      "rows": [
+        [ "tunic", "bow", "bluemerang", "redmerang", "hookshot", "bombs", "mushroom", "powder" ],
+        [ "sword", "wooden", "silvers", "firerod", "icerod", "bombos", "ether", "quake" ],
+        [ "shield", "lantern", "hammer", "shovel", "flute", "net", "book", "" ],
+        [ "agahnim", "bottle", "somaria", "byrna", "cape", "mirror", "heartcontainers", "" ],
+        [ "mpupgrade", "boots", "gloves", "flippers", "pearl", "", "heartpieces", "" ]
+      ]
+    },
+    "z3_dungeon_row_one": {// Z3 Dungeons
+      "type": "itemgrid",
+      "margin": "0,0,0,0",
+      "item_margin": "1,1",
+      "rows": [
+        [
+          "skullwoods",
+          "desertpalace",
+          "towerofhera",
+          "easternpalace",
+          "turtlerock"
+        ]
+      ]
+    },
+    "z3_dungeon_row_two": {// Z3 Dungeons
+      "type": "itemgrid",
+      "margin": "0,0,0,0",
+      "item_margin": "1,1",
+      "rows": [
+        [
+          "thievestown",
+          "miserymire",
+          "swamppalace",
+          "icepalace",
+          "palaceofdarkness"
+        ]
+      ]
+    },
+    "z3_inventory": {// Z3 Tracker Compiled
+      "type": "array",
+      "orientation": "vertical",
+      "margin": "0,0,0,0",
+      "content": [
+        {
+          "type": "layout",
+          "key": "z3_item_grid"
+        },
+        {
+          "type": "layout",
+          "key": "z3_dungeon_row_one"
+        },
+        {
+          "type": "layout",
+          "key": "z3_dungeon_row_two"
+        }
+      ]
+    },
+    "options": {// Shared options
+      "type": "array",
+      "v_alignment": "center",
+      "content": [
+        {
+          "type": "item",
+          "item": "z3state",
+          "h_alignment": "center",
+          "margin": "0,8,0,0"
+        },
+        {
+          "type": "item",
+          "item": "z3logic",
+          "h_alignment": "center",
+          "margin": "0,8,0,0"
+        },
+        {
+          "type": "item",
+          "item": "z3ohko",
+          "h_alignment": "center",
+          "margin": "0,8,0,0"
+        },
+        {
+          "type": "item",
+          "item": "m3logic",
+          "h_alignment": "center",
+          "margin": "0,8,0,0"
+        }
+      ]
+    },
+    "m3_item_grid": {// M3 Tracker Inventory
+      "type": "itemgrid",
+      "margin": "0,0,0,0",
+      "item_margin": "1,1",
+      "rows": [
+        [ "charge", "ice", "wave", "spazer", "plasma" ],
+        [ "varia", "morph", "bomb", "space", "hijump" ],
+        [ "gravity", "spring", "screw", "speed", "grapple" ],
+        [ "kraid", "phantoon", "draygon", "ridley", "xray" ]
+      ]
+    },
+    "m3_consumables_grid": {// M3 Consumables
+      "type": "array",
+      "content": [
+        {
+          "type": "itemgrid",
+          "margin": "0,0,0,0",
+          "item_margin": "1,1",
+          "h_alignment": "center",
+          "v_alignment": "center",
+          "rows": [
+            [ "missile", "supermissile", "powerbomb", "etank", "reservetank" ]
+          ]
+        }
+      ]
+    },
+    "m3_inventory": {// M3 Compiled Inventory
+      "type": "array",
+      "orientation": "horizontal",
+      "margin": "0,0,0,0",
+      "h_alignment": "center",
+      "content": [
+        {
+          "type": "array",
+          "orientation": "vertical",
+          "content": [
+            {
+              "type": "layout",
+              "key": "m3_item_grid"
+            },
+            {
+              "type": "layout",
+              "key": "m3_consumables_grid"
+            }
+          ]
+        }
+      ]
+    },
+    "shared_item_grid": {// Total Compiled Inventory
+      "type": "array",
+      "orientation": "horizontal",
+      "margin": "0,0,0,0",
+      "content": [
+        {
+          "type": "layout",
+          "key": "z3_inventory"
+        },
+        {
+          "type": "layout",
+          "key": "options"
+        },
+        {
+          "type": "layout",
+          "key": "m3_inventory"
+        }
+      ]
+    },
+    "tracker_capture_item": {// Capture Inventory
+      "type": "container",
+      "content": {
+        "type": "array",
+        "orientation": "horizontal",
+        "content": [
+          {
+            "type": "layout",
+            "key": "z3_item_capture"
+          },
+          {
+            "type": "layout",
+            "key": "m3_inventory"
+          }
+        ]
+      }
+    },
+    "tracker_default": {
+      "type": "container",
+      "orientation": "vertical",
+      "content": {
+        "type": "array",
+        "content": [
+          {
+            "type": "layout",
+            "key": "z3_item_grid"
+          },
+          {
+            "type": "layout",
+            "key": "m3_inventory"
+          }
+        ]
+      }
+    },
+    "tracker_horizontal": {// Main Layout
+      "type": "container",
+      "background": "#000000",
+      "content": {
+        "type": "dock",
+        "dropshadow": true,
+        "content": [
+          {
+            "type": "dock",
+            "dock": "bottom",
+            "content": [
+              {// Items
+                "type": "group",
+                "header": "Items",
+                "dock": "left",
+                "margin": "0,0,3,0",
+                "content": {
+                  "type": "layout",
+                  "h_alignment": "center",
+                  "v_alignment": "center",
+                  "key": "shared_item_grid"
+                }
+              },
+              {// Pinned Locations
+                "type": "group",
+                "header": "Pinned Locations",
+                "content": {
+                  "type": "recentpins",
+                  "style": "wrap",
+                  "h_alignment": "stretch",
+                  "v_alignment": "stretch",
+                  "orientation": "horizontal",
+                  "compact": true
+                }
+              }
+            ]
+          },
+          {// Z3 Map Tabs
+            "type": "tabbed",
+            "tabs": [
+              {
+                "title": "Hyrule",
+                "icon": "images/zelda3/icons/link.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "hyrulevmap" ]
+                }
+              },
+              {
+                "title": "Light World",
+                "icon": "images/zelda3/icons/lightforce.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "hyrulelight" ]
+                }
+              },
+              {
+                "title": "Dark World",
+                "icon": "images/zelda3/icons/darkforce.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "hyruledark" ]
+                }
+              }
+            ]
+          },
+          {// M3 Map Tabs
+            "type": "tabbed",
+            "tabs": [
+              {
+                "title": "Planet Zebes",
+                "icon": "images/metroid3/icons/zebes.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "fullmapMM1" ]
+                }
+              },
+              {
+                "title": "Crateria",
+                "icon": "images/metroid3/icons/samusship.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "crateriamapMM1" ]
+                }
+              },
+              {
+                "title": "Brinstar",
+                "icon": "images/metroid3/icons/etecoon.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "brinstarmapMM1" ]
+                }
+              },
+              {
+                "title": "Norfair",
+                "icon": "images/metroid3/icons/norfair_statue.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "norfairmapMM1" ]
+                }
+              },
+              {
+                "title": "Wrecked Ship",
+                "icon": "images/metroid3/icons/robot.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "wreckedshipmapMM1" ]
+                }
+              },
+              {
+                "title": "Maridia",
+                "icon": "images/metroid3/icons/minidraygon.png",
+                "content": {
+                  "type": "map",
+                  "maps": [ "maridiamapMM1" ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

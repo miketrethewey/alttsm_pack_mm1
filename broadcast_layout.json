@@ -1,0 +1,50 @@
+{// Horizontal set
+  "type": "array",
+  "orientation": "horizontal",
+  "margin": "0,0,0,0",
+  "content": [
+    {// Vertical set
+      "type": "array",
+      "orientation": "vertical",
+      "margin": "0,0,0,0",
+      "content": [
+        {// Z3 Tracker Inventory
+          "type": "layout",
+          "key": "z3_item_grid"
+        },
+        {// Z3 Dungeon Row
+          "type": "array",
+          "orientation": "horizontal",
+          "margin": "0,0,0,0",
+          "content": [
+            {
+              "type": "layout",
+              "key": "z3_dungeon_row_one"
+            },
+            {// Blank square
+              "type": "itemgrid",
+              "rows": [
+                [ "" ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {// Vertical set
+      "type": "array",
+      "orientation": "vertical",
+      "margin": "0,0,0,0",
+      "content": [
+        {// M3 Tracker Inventory
+          "type": "layout",
+          "key": "m3_inventory"
+        },
+        {// Z3 Dungeon Row
+          "type": "layout",
+          "key": "z3_dungeon_row_two"
+        }
+      ]
+    }
+  ]
+}
