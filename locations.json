@@ -423,16 +423,15 @@
         "access_rules": [ "varia " ],
         "item_count": 1
       },
-
        // Tech
       {// canAlcatraz : tourney && canMorph
-        "name": "canAlcratraz",
+        "name": "canAlcatraz",
         "access_rules": [ "m3tournament,@m3logicRules/canMorph" ],
         "item_count": 1
       },
-      {// canCrystalFlash : missile:10, supermissile:10, powerbombs:11
+      {// canCrystalFlash : missile:10 && supermissile:10 && powerbombs:11 && canMorph
         "name": "canCrystalFlash",
-        "access_rules": [ "missile:10,supermissile:10,powerbombs:11" ],
+        "access_rules": [ "missile:10,supermissile:10,powerbombs:11,@m3logicRules/canMorph" ],
         "item_count": 1
       },
       {// canDBoostBrinstarBlueCeiling : tourney
@@ -450,28 +449,36 @@
         "access_rules": [ "@m3logicRules/canUsePowerBombs" ],
         "item_count": 1
       },
-
        // Derived from Tech
       {// canFly : canIbj || space
         "name": "canFly",
         "access_rules": [ "@m3logicRules/canIbj", "space" ],
         "item_count": 1
       },
+      {// canFly || canHiJump || canDash
+        "name": "GauntletHelper1",
+        "access_rules": [
+          "@m3logicRules/canFly",
+          "@m3logicRules/canHiJump",
+          "@m3logicRules/canDash"
+        ],
+        "item_count": 1
+      },
+      {// canIbj || (canUsePowerBombs && powerbombs:10) || screw || (canDash && canUsePowerBombs && alltanks:2)
+        "name": "GauntletHelper2",
+        "access_rules": [
+          "@m3logicRules/canIbj",
+          "@m3logicRules/canUsePowerBombs,powerbombs:10",
+          "screw",
+          "@m3logicRules/canDash,@m3logicRules/canUsePowerBombs,alltanks:2"
+        ],
+        "item_count": 1
+      },
       {// canEnterAndLeaveGauntlet :
         "name": "canEnterAndLeaveGauntlet",
         "access_rules": [
-          "@m3logicRules/canFly,@m3logicRules/canIbj",
-          "@m3logicRules/canHiJump,@m3logicRules/canIbj",
-          "@m3logicRules/canDash,@m3logicRules/canIbj",
-          "@m3logicRules/canFly,@m3logicRules/canOpenYellowDoors,powerbombs:10",
-          "@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors,powerbombs:10",
-          "@m3logicRules/canDash,@m3logicRules/canOpenYellowDoors,powerbombs:10",
-          "@m3logicRules/canFly,screw",
-          "@m3logicRules/canHiJump,screw",
-          "@m3logicRules/canDash,screw",
-          "@m3logicRules/canFly,@m3logicRules/canDash,@m3logicRules/canOpenYellowDoors,alltanks:2",
-          "@m3logicRules/canHiJump,@m3logicRules/canDash,@m3logicRules/canOpenYellowDoors,alltanks:2",
-          "@m3logicRules/canDash,@m3logicRules/canDash,@m3logicRules/canOpenYellowDoors,alltanks:2"
+          "m3casual,@m3logicRules/GauntletHelper1,@m3logicRules/GauntletHelper2",
+          "m3tournament,@m3logicRules/GauntletHelper2"
         ],
         "item_count": 1
       }
@@ -494,37 +501,24 @@
         "access_rules": [ "@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks" ],
         "item_count": 1
       },
-      {
-        "name": "maridiaPortalHelper1",
-        "access_rules": [ "hammer,@z3logicRules/canLiftRocks,moonpearl" ],
+      {// canSpringBallJump || canHiJump
+        "name": "MaridiaPortalHelper1",
+        "access_rules": [ "@m3logicRules/canSpringBallJump", "@m3logicRules/canHiJump" ],
         "item_count": 1
       },
-      {
-        "name": "maridiaPortalHelper2",
-        "access_rules": [ "@z3logicRules/canLiftDarkRocks,@z3logicRules/canSwim,moonpearl" ],
-        "item_count": 1
-      },
-      {
-        "name": "maridiaPortalHelper3",
+      {// canBeatAga1 || (hammer && canLiftRocks) || canLiftDarkRocks
+        "name": "MaridiaPortalHelper2",
         "access_rules": [
-          "@z3logicRules/canGrapple,@z3logicRules/canSwim",
-          "@z3logicRules/canGrapple,@z3logicRules/canLiftRocks"
+          "[@z3logicRules/canBeatAga1]",
+          "hammer,@z3logicRules/canLiftRocks",
+          "@z3logicRules/canLiftDarkRocks"
         ],
-        "item_count": 1
-      },
-      {
-        "name": "maridiaPortalHelper4",
-        "access_rules": [ "hammer,@z3logicRules/canLiftRocks" ],
         "item_count": 1
       },
       {// Dark World Ice Cave -> Maridia Missile Refill
         "name": "canAccessMaridiaPortal",
         "access_rules": [
-          "moonpearl,@z3logicRules/canSwim,[@z3logicRules/canBeatAga1],@z3regionAccess/maridiaPortalHelper3",
-          "moonpearl,@z3logicRules/canSwim,@z3logicRules/maridiaPortalHelper1,@z3regionAccess/maridiaPortalHelper3",
-          "moonpearl,@z3logicRules/canSwim,@z3logicRules/maridiaPortalHelper2,@z3regionAccess/maridiaPortalHelper3",
-          "moonpearl,@z3logicRules/canSwim,@z3logicRules/maridiaPortalHelper4",
-          "moonpearl,@z3logicRules/canSwim,@z3logicRules/canLiftDarkRocks"
+          "moonpearl,@z3logicRules/canSwim,@m3logicRules/canMorph,@z3portalAccess/MaridiaPortalHelper1,@z3portalAccess/MaridiaPortalHelper2"
         ],
         "item_count": 1
       }
@@ -538,13 +532,29 @@
         "access_rules": [ "m3casual", "m3tournament" ],
         "item_count": 1
       },
+      {// charge || (super && missile)
+        "name": "DWHelper1",
+        "access_rules": [ "charge", "super,missile" ],
+        "item_count": 1
+      },
+      {// canSwim || (canHiJump && ice && canGrapple)
+        "name": "DWHelper2",
+        "access_rules": [
+          "@m3logicRules/canSwim",
+          "@m3logicRules/canHiJump,ice,@m3logicRules/canGrapple"
+        ],
+        "item_count": 1
+      },
+      {// ice || (canDash && canSwim)
+        "name": "DWHelper3",
+        "access_rules": [ "ice", "@m3logicRules/canDash,@m3logicRules/canSwim" ],
+        "item_count": 1
+      },
       {// Maridia Missile Refill -> Dark World Ice Cave
         "name": "canAccessDarkWorldPortal",
         "access_rules": [
-          "@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,ice",
-          "@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump,ice,@m3logicRules/canGrapple",
-          "@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canDash",
-          "@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump,ice,@m3logicRules/canGrapple,@m3logicRules/canDash,@m3logicRules/canSwim"
+          "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canDash",
+          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3portalAccess/DWHelper1,@m3portalAccess/DWHelper2,@m3portalAccess/DWHelper3"
         ],
         "item_count": 1
       },
@@ -671,11 +681,23 @@
         ],
         "item_count": 1
       },
+      {// ice || canSpringBallJump || canHiJump || canFly
+        "name": "CrateriaEastHelper1",
+        "access_rules": [
+          "ice",
+          "@m3logicRules/canSpringBallJump",
+          "@m3logicRules/canHiJump",
+          "@m3logicRules/canFly"
+        ],
+        "item_count": 1
+      },
       {// Crateria East
         "name": "CrateriaEast",
         "access_rules": [
           "m3casual,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors"
+          "m3tournament,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors",
+          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,@m3regionAccess/CrateriaEastHelper1",
+          "m3tournament,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canHiJump,@m3logicRules/canOpenGreenDoors"
         ],
         "item_count": 1
       },
@@ -705,19 +727,33 @@
         ],
         "item_count": 1
       },
-      {
+      {// canDestroyBomWalls || canDash
         "name": "BrinstarPinkHelper1",
         "access_rules": [ "@m3logicRules/canDestroyBombWalls", "@m3logicRules/canDash" ],
         "item_count": 1
       },
-      {
+      {// canAccessNorfairPortal && canMorph
         "name": "BrinstarPinkHelper2",
         "access_rules": [ "@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph" ],
         "item_count": 1
       },
-      {
+      {// ice || canHiJump || canFly
         "name": "BrinstarPinkHelper3",
         "access_rules": [ "ice", "@m3logicRules/canHiJump", "@m3logicRules/canFly" ],
+        "item_count": 1
+      },
+      {// (canOpenRedDoors || wave) && (ice || canHiJump || canSpringBallJump || canFly)
+        "name": "BrinstarPinkHelper4",
+        "access_rules": [
+          "@m3logicRules/canOpenRedDoors,ice",
+          "@m3logicRules/canOpenRedDoors,@m3logicRules/canHiJump",
+          "@m3logicRules/canOpenRedDoors,@m3logicRules/canSpringBallJump",
+          "@m3logicRules/canOpenRedDoors,@m3logicRules/canFly",
+          "wave,ice",
+          "wave,@m3logicRules/canHiJump",
+          "wave,@m3logicRules/canSpringBallJump",
+          "wave,@m3logicRules/canFly"
+        ],
         "item_count": 1
       },
       {// Brinstar Pink
@@ -728,26 +764,34 @@
           "m3casual,@m3regionAccess/BrinstarPinkHelper2,wave,@m3regionAccess/BrinstarPinkHelper3",
           "m3tournament,@m3logicRules/canOpenRedDoors,@m3regionAccess/BrinstarPinkHelper1",
           "m3tournament,@m3logicRules/canUsePowerBombs",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper2,@m3regionAccess/BrinstarPinkHelper3"
+          "m3tournament,@m3regionAccess/BrinstarPinkHelper2,@m3regionAccess/BrinstarPinkHelper4"
         ],
         "item_count": 1
       },
-      {
+      {// canUsePowerBombs && canOpenRedDoors
         "name": "TourneyXRayHelper1",
         "access_rules": [ "@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors" ],
         "item_count": 1
       },
-      {
+      {// heatProof && alltanks:3 && (canIbj || (canHiJump && canDash) || canSpringBallJump)
         "name": "TourneyXRayHelper2",
-        "access_rules": [ "@m3logicRules/heatProof,alltanks:3,@m3logicRules/canIbj" ],
+        "access_rules": [
+          "@m3logicRules/heatProof,alltanks:3,@m3logicRules/canIbj",
+          "@m3logicRules/heatProof,alltanks:3,@m3logicRules/canHiJump,@m3logicRules/canDash",
+          "@m3logicRules/heatProof,alltanks:3,@m3logicRules/canSpringBallJump"
+        ],
         "item_count": 1
       },
-      {
+      {// alltanks:5 && (canIbj || (canHiJump && canDash) || canSpringBallJump)
         "name": "TourneyXRayHelper3",
-        "access_rules": [ "alltanks:6,@m3logicRules/canIbj" ],
+        "access_rules": [
+          "alltanks:5,@m3logicRules/canIbj",
+          "alltanks:5,@m3logicRules/canHiJump,@m3logicRules/canDash",
+          "alltanks:5,@m3logicRules/canSpringBallJump"
+        ],
         "item_count": 1
       },
-      {
+      {// canGrapple || space || TourneyXRayHelper2 || TourneyXRayHelper3
         "name": "TourneyXRayHelper4",
         "access_rules": [
           "@m3logicRules/canGrapple",
@@ -757,13 +801,21 @@
         ],
         "item_count": 1
       },
+      {// BrinstarPinkHelper3 || canSpringBallJump
+        "name": "BrinstarRedHelper1",
+        "access_rules": [
+          "@m3regionAccess/BrinstarPinkHelper3",
+          "@m3logicRules/canSpringBallJump"
+        ],
+        "item_count": 1
+      },
       {// Brinstar Red
         "name": "BrinstarRed",
         "access_rules": [
           "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
           "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
           "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3regionAccess/BrinstarPinkHelper3",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3regionAccess/BrinstarPinkHelper3"
+          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3regionAccess/BrinstarRedHelper1"
         ],
         "item_count": 1
       },
@@ -779,7 +831,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// (BrinstarPinkHelper1 && canOpenGreenDoors && canMorph) || canAccessNorfairPortal
         "name": "CrocomireHelper1",
         "access_rules": [
           "@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
@@ -787,12 +839,12 @@
         ],
         "item_count": 1
       },
-      {
+      {// (canUsePowerBombs && canDash) || wave
         "name": "CrocomireHelper2",
         "access_rules": [ "@m3logicRules/canUsePowerBombs,@m3logicRules/canDash", "wave" ],
         "item_count": 1
       },
-      {
+      {// (canFly && canMorph) || (canHiJump && canMorph) || canDash
         "name": "CrocomireHelper3",
         "access_rules": [
           "@m3logicRules/canFly,@m3logicRules/canMorph",
@@ -801,26 +853,50 @@
         ],
         "item_count": 1
       },
+      {// (alltanks:2 && canDash) || canHellRun
+        "name": "CrocomireTourneyHelper1",
+        "access_rules": [ "alltanks:2,@m3logicRules/canDash", "@m3logicRules/canHellRun" ],
+        "item_count": 1
+      },
+      {// canFly || canHiJump || canSpringBallJump || (heatProof && ice)
+        "name": "CrocomireTourneyHelper2",
+        "access_rules": [
+          "@m3logicRules/canFly",
+          "@m3logicRules/canHiJump",
+          "@m3logicRules/canSpringBallJump",
+          "@m3logicRules/heatProof,ice",
+          "@m3logicRules/canDash"
+        ],
+        "item_count": 1
+      },
+      {// canPassBombPassages || canDash || (heatProof && canMorph)
+        "name": "CrocomireTourneyHelper3",
+        "access_rules": [
+          "@m3logicRules/canPassBombPassages",
+          "@m3logicRules/canDash",
+          "@m3logicRules/heatProof,@m3logicRules/canMorph"
+        ],
+        "item_count": 1
+      },
       {// Norfair Crocomire
         "name": "NorfairCrocomire",
         "access_rules": [
           "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper2,@m3regionAccess/CrocomireHelper3",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,alltanks:3,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper3",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper3"
+          "m3tournament,@m3regionAccess/CrocomireTourneyHelper1,@m3logicRules/canOpenDoors,@m3regionAccess/CrocomireTourneyHelper2,@m3regionAccess/CrocomireTourneyHelper3"
         ],
         "item_count": 1
       },
-      {
+      {// canDash && canUsePowerBombs
         "name": "NorfairEastHelper1",
         "access_rules": [ "@m3logicRules/canDash,@m3logicRules/canUsePowerBombs" ],
         "item_count": 1
       },
-      {
+      {// ice || canDash
         "name": "NorfairEastHelper2",
         "access_rules": [ "ice", "@m3logicRules/canDash" ],
         "item_count": 1
       },
-      {
+      {// canFly || canHiJump || NorfairEastHelper1 || (heatProof && NorfairEastHelper2)
         "name": "NorfairEastHelper3",
         "access_rules": [
           "@m3logicRules/canFly",
@@ -834,7 +910,9 @@
         "name": "NorfairEast",
         "access_rules": [
           "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3regionAccess/NorfairEastHelper3",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3regionAccess/NorfairEastHelper3"
+          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3regionAccess/NorfairEastHelper3",
+          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3logicRules/canOpenGreenDoors,@m3regionAccess/NorfairEastHelper3",
+          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3logicRules/canOpenGreenDoors,@m3regionAccess/canSpringBallJump"
         ],
         "item_count": 1
       },
@@ -861,7 +939,8 @@
           "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
           "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,space",
           "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSpringBallJump",
-          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors"
+          "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs",
+          "m3tournament,@m3logicRules/canOpenGreenDoors,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canHiJump,@m3logicRules/canPassBombPassages"
         ],
         "item_count": 1
       },
@@ -871,41 +950,52 @@
           "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
           "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
           "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,ice"
+          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,ice",
+          "m3tournament,@z3portalAccess/canAccessMaridiaPortal"
         ],
         "item_count": 1
       },
-      {
+      {// (charge && alltanks:3) || screw || plasma || canDash
         "name": "PlasmaRoomHelper1",
-        "access_rules": [ "charge" ],
+        "access_rules": [ "charge,alltanks:3", "screw", "plasma", "@m3logicRules/canDash" ],
         "item_count": 1
       },
-      {
+      {// canHiJump || canSpringBallJump || canFly || canDash
         "name": "PlasmaRoomHelper2",
-        "access_rules": [ "alltanks:6" ],
-        "item_count": 1
-      },
-      {
-        "name": "PlasmaRoomHelper3",
-        "access_rules": [ "@m3logicRules/heatProof,alltanks:1" ],
-        "item_count": 1
-      },
-      {
-        "name": "PlasmaRoomHelper4",
-        "access_rules": [ "plasma", "screw" ],
-        "item_count": 1
-      },
-      {
-        "name": "PlasmaRoomHelper5",
-        "access_rules": [ "@m3logicRules/canFly", "@m3logicRules/canHiJump" ],
-        "item_count": 1
-      },
-      {
-        "name": "PlasmaRoomHelper6",
         "access_rules": [
-          "charge,@m3regionAccess/PlasmaRoomHelper2",
-          "charge,@m3regionAccess/PlasmaRoomHelper3"
+          "@m3logicRules/canHiJump",
+          "@m3logicRules/canSpringBallJump",
+          "@m3logicRules/canFly",
+          "@m3logicRules/canDash"
         ],
+        "item_count": 1
+      },
+      {// ice || canSpringBallJump
+        "name": "MaridiaInnerHelper1",
+        "access_rules": [ "ice", "@m3logicRules/canSpringBallJump" ],
+        "item_count": 1
+      },
+      {// canHiJump || MaridiaInnerHelper1 || canGrapple
+        "name": "MaridiaInnerHelper2",
+        "access_rules": [
+          "@m3logicRules/canHiJump",
+          "@m3regionAccess/MaridiaInnerHelper1",
+          "@m3logicRules/canGrapple"
+        ],
+        "item_count": 1
+      },
+      {// canSwim || ice || (canHiJump && canSpringBallJump)
+        "name": "MaridiaInnerLocationHelper1",
+        "access_rules": [
+          "@m3logicRules/canSwim",
+          "ice",
+          "@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump"
+        ],
+        "item_count": 1
+      },
+      {// canHiJump || canSwim
+        "name": "MaridiaInnerLocationHelper2",
+        "access_rules": [ "@m3logicRules/canHiJump", "@m3logicRules/canSwim" ],
         "item_count": 1
       },
       {// Maridia Inner
@@ -915,7 +1005,19 @@
           "m3casual,@m3regionAccess/MaridiaOuter,@m3logicRules/canGrapple",
           "m3casual,@m3regionAccess/MaridiaOuter,@m3logicRules/canDash",
           "m3casual,@m3regionAccess/MaridiaOuter,@z3portalAccess/canAccessMaridiaPortal",
-          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors"
+          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors",
+          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
+          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3regionAccess/MaridiaInnerHelper2",
+          "m3tournament,@z3portalAccess/canAccessMaridiaPortal"
+        ],
+        "item_count": 1
+      },
+      {// canAccessLowerNorfairPortal && (canFly || canSpringBallJump || canDash)
+        "name": "MissileGoldTorizoHelper1",
+        "access_rules": [
+          "@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canFly",
+          "@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canSpringBallJump",
+          "@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canDash"
         ],
         "item_count": 1
       },
@@ -928,46 +1030,46 @@
           "m3casual,@m3regionAccess/NorfairEast,@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/heatProof,@m3logicRules/canSwim,@z3portalAccess/canAccessLowerNorfairPortal",
           "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canHiJump",
           "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canSwim",
-          "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canHellRun,@m3logicRules/canDestroyBombWalls"
+          "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canDestroyBombWalls"
         ],
         "item_count": 1
       },
-      {
+      {// NorfairEast && canUsePowerBombs && (canHiJump || canSwim)
         "name": "LowerNorfairEastHelper1",
-        "access_rules": [ "@m3logicRules/canFly", "@m3logicRules/canHiJump", "ice,charge" ],
+        "access_rules": [
+          "@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump",
+          "@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim"
+        ],
         "item_count": 1
       },
-      {
+      {// canAccessLowerNorfairPortal && canDestroyBombWalls && (canFly || canSpringBallJump || canDash)
         "name": "LowerNorfairEastHelper2",
         "access_rules": [
-          "@m3logicRules/heatProof,@m3logicRules/canHiJump",
-          "@m3logicRules/heatProof,@m3logicRules/canSwim"
+          "@m3regionAccess/MissileGoldTorizoHelper1,@m3logicRules/canDestroyBombWalls"
         ],
         "item_count": 1
       },
-      {
+      {// canFly || canHiJump || canSpringBallJump || (ice && charge)
         "name": "LowerNorfairEastHelper3",
         "access_rules": [
-          "screw",
-          "@m3logicRules/canPassBombPassages",
-          "@m3logicRules/canUsePowerBombs"
+          "@m3logicRules/canFly",
+          "@m3logicRules/canHiJump",
+          "@m3logicRules/canSpringBallJump",
+          "ice,charge"
         ],
         "item_count": 1
       },
-      {
-        "name": "SuperMissileGoldTorizoHelper1",
-        "access_rules": [ "@m3logicRules/canDestroyBombWalls,@m3logicRules/heatProof" ],
+      {// canPassBombPassages || (screw && space)
+        "name": "LowerNorfairEastHelper4",
+        "access_rules": [ "@m3logicRules/canPassBombPassages", "screw,space" ],
         "item_count": 1
       },
       {// Lower Norfair East
         "name": "LowerNorfairEast",
         "access_rules": [
           "m3casual,@m3regionAccess/LowerNorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canFly,@m3logicRules/heatProof",
-          "m3tournament,@m3regionAccess/LowerNorfairWest,@m3regionAccess/BrinstarPinkHelper1,@m3regionAccess/LowerNorfairEastHelper1,@m3logicRules/canPassBombPassages,@m3regionAccess/LowerNorfairEastHelper2",
-          "m3tournament,@m3regionAccess/LowerNorfairWest,@m3regionAccess/BrinstarPinkHelper1,@m3regionAccess/LowerNorfairEastHelper1,@m3logicRules/canPassBombPassages,@m3logicRules/heatProof,@m3logicRules/canIbj",
-          "m3tournament,@m3regionAccess/LowerNorfairWest,@m3regionAccess/BrinstarPinkHelper1,@m3regionAccess/LowerNorfairEastHelper1,@m3logicRules/canPassBombPassages,@m3logicRules/heatProof,space,@m3regionAccess/LowerNorfairEastHelper3",
-          "m3tournament,@m3regionAccess/LowerNorfairWest,@m3regionAccess/BrinstarPinkHelper1,@m3regionAccess/LowerNorfairEastHelper1,@m3logicRules/canPassBombPassages,@m3logicRules/heatProof,springball,@m3logicRules/canUsePowerBombs",
-          "m3tournament,@m3regionAccess/LowerNorfairWest,@m3regionAccess/BrinstarPinkHelper1,@m3regionAccess/LowerNorfairEastHelper1,@m3logicRules/canPassBombPassages,@m3logicRules/heatProof,@m3logicRules/canDash"
+          "m3tournament,@m3regionAccess/LowerNorfairEastHelper1,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4",
+          "m3tournament,@m3regionAccess/LowerNorfairEastHelper2,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4"
         ],
         "item_count": 1
       },
@@ -1644,7 +1746,7 @@
           },
           {
             "name": "Mothula",
-            "access_rules": [ "moonpearl.firerod,@z3logicRules/hasSword,@z3bossBeat/Mothula" ],
+            "access_rules": [ "moonpearl,firerod,@z3logicRules/hasSword,@z3bossBeat/Mothula" ],
             "hosted_item": "sw"
           }
         ],/*
@@ -2789,10 +2891,10 @@
                     "access_rules": [
                       "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,$canExtendMagic:2,cape,@z3regionAccess/DeathMountainWest",
                       "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3ohko,$canExtendMagic:2,byrna,@z3regionAccess/DeathMountainWest",
-                      "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nokho,byrna,@z3regionAccess/DeathMountainWest",
+                      "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nohko,byrna,@z3regionAccess/DeathMountainWest",
                       "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,$canExtendMagic:2,cape,@z3regionAccess/DeathMountainWest",
                       "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3ohko,$canExtendMagic:2,byrna,@z3regionAccess/DeathMountainWest",
-                      "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nokho,byrna,@z3regionAccess/DeathMountainWest"
+                      "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nohko,byrna,@z3regionAccess/DeathMountainWest"
                     ],
                     "sections": [
                       {
@@ -3961,7 +4063,9 @@
                 "chest_opened_img": "images/zelda3/locations/standing_opened.png",
                 "access_rules": [
                   "z3noglitches,@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks,mirror",
-                  "z3minorglitches,@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks,mirror"
+                  "z3noglitches,@z3logicRules/canFly,@m3portalAccess/canAccessMiseryMirePortal,mirror",
+                  "z3minorglitches,@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks,mirror",
+                  "z3minorglitches,@z3logicRules/canFly,@m3portalAccess/canAccessMiseryMirePortal,mirror"
                 ],
                 "sections": [
                   {
@@ -4463,7 +4567,7 @@
                 "name": "Bombs",
                 "access_rules": [
                   "m3casual,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors",
-                  "m3tournament,@m3logicRules/canAlcratraz,@m3logicRules/canOpenRedDoors"
+                  "m3tournament,@m3logicRules/canAlcatraz,@m3logicRules/canOpenRedDoors"
                 ],
                 "sections": [
                   {
@@ -4490,7 +4594,7 @@
                 "name": "Bomb Torizo",
                 "access_rules": [
                   "m3casual,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors,@m3bossBeat/BombTorizo",
-                  "m3tournament,@m3logicRules/canAlcratraz,@m3logicRules/canOpenRedDoors,@m3bossBeat/BombTorizo"
+                  "m3tournament,@m3logicRules/canAlcatraz,@m3logicRules/canOpenRedDoors,@m3bossBeat/BombTorizo"
                 ],
                 "sections": [
                   {
@@ -4554,9 +4658,7 @@
                   "m3casual,space,alltanks:2",
                   "m3casual,@m3logicRules/canDash,alltanks:2",
                   "m3casual,@m3logicRules/canGrapple,alltanks:2",
-                  "m3tournament,space,alltanks:2",
-                  "m3tournament,@m3logicRules/canDash,alltanks:2",
-                  "m3tournament,@m3logicRules/canGrapple,alltanks:2"
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
                   {
@@ -4583,9 +4685,7 @@
                   "m3casual,space,alltanks:2",
                   "m3casual,@m3logicRules/canDash,alltanks:2",
                   "m3casual,@m3logicRules/canGrapple,alltanks:2",
-                  "m3tournament,space,alltanks:2",
-                  "m3tournament,@m3logicRules/canDash,alltanks:2",
-                  "m3tournament,@m3logicRules/canGrapple,alltanks:2"
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
                   {
@@ -4988,10 +5088,8 @@
                 "name": "Super Missile (green Brinstar top)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors",
-                  "m3tournament,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash"
                 ],
                 "sections": [
                   {
@@ -5016,10 +5114,8 @@
                 "name": "Reserve Tank, Brinstar",
                 "access_rules": [
                   "m3casual,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors",
-                  "m3tournament,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canDash,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash"
                 ],
                 "sections": [
                   {
@@ -5046,7 +5142,8 @@
                 "name": "Missile (green Brinstar behind missile)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canDash,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors",
-                  "m3tournament,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors"
+                  "m3tournament,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors",
+                  "m3tournament,@m3logicRules/canMorph,screw,@m3logicRules/canOpenRedDoors"
                 ],
                 "sections": [
                   {
@@ -5302,8 +5399,10 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenYellowDoors",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors",
+                  "m3casual,@m3logicRules/canMorph,@z3portalAccess/canAccessNorfairPortal",
                   "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenYellowDoors",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors"
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors",
+                  "m3tournament,@m3logicRules/canMorph,@z3portalAccess/canAccessNorfairPortal"
                 ],
                 "sections": [
                   {
@@ -5327,8 +5426,8 @@
               {
                 "name": "Energy Tank, Waterway",
                 "access_rules": [
-                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash"
+                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:2",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:2"
                 ],
                 "sections": [
                   {
@@ -5659,7 +5758,8 @@
                   "m3casual,@m3logicRules/canHiJump,@m3logicRules/canDash",
                   "m3tournament,@m3logicRules/canFly,@m3logicRules/canHellRun",
                   "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canHellRun",
-                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canDash,@m3logicRules/canHellRun"
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canDash,@m3logicRules/canHellRun",
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,@m3logicRules/canHellRun"
                 ],
                 "sections": [
                   {
@@ -5741,9 +5841,9 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canFly",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canFly,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canDash,@m3logicRules/canMorph",
-                  "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canMorph"
+                  "m3tournament,@m3logicRules/canDash",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canFly",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canGrapple"
                 ],
                 "sections": [
                   {
@@ -5769,10 +5869,10 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canFly",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canDash",
+                  "m3tournament,space",
+                  "m3tournament,@m3logicRules/canMorph",
                   "m3tournament,@m3logicRules/canGrapple",
-                  "m3tournament,@m3logicRules/canMorph"
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canDash"
                 ],
                 "sections": [
                   {
@@ -5859,10 +5959,7 @@
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,ice",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,ice"
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors"
                 ],
                 "sections": [
                   {
@@ -5892,10 +5989,7 @@
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,ice",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors,ice"
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canOpenGreenDoors"
                 ],
                 "sections": [
                   {
@@ -5925,10 +6019,7 @@
                   "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
                   "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
                   "m3casual,@m3logicRules/canOpenGreenDoors,ice",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,ice"
+                  "m3tournament,@m3logicRules/canOpenGreenDoors"
                 ],
                 "sections": [
                   {
@@ -5973,7 +6064,7 @@
               },
               {
                 "name": "Missile (Speed Booster)",
-                "access_rules": [],
+                "access_rules": [ "m3tournament,@m3logicRules/canOpenGreenDoors" ],
                 "sections": [
                   {
                     "name": "Hidden",
@@ -5997,7 +6088,7 @@
               },
               {
                 "name": "Speed Booster",
-                "access_rules": [],
+                "access_rules": [ "m3tournament,@m3logicRules/canOpenGreenDoors" ],
                 "sections": [
                   {
                     "name": "Chozo",
@@ -6048,12 +6139,10 @@
                   "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canGrapple,ice",
                   "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canFly,@m3logicRules/canHiJump",
                   "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canFly,ice",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,ice",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canGrapple,ice"
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canMorph",
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canGrapple",
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canHiJump,@m3logicRules/heatProof",
+                  "m3tournament,@m3logicRules/canOpenRedDoors,space"
                 ],
                 "sections": [
                   {
@@ -6086,8 +6175,8 @@
                 "name": "Ice Beam",
                 "access_rules": [
                   "m3casual,@m3logicRules/canPassBombPassages,@m3logicRules/heatproof,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/heatProof",
-                  "m3tournament,@m3logicRules/canMorph,alltanks:3"
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/heatProof",
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,alltanks:3"
                 ],
                 "sections": [
                   {
@@ -6115,8 +6204,9 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canDash",
                   "m3casual,wave,@m3logicRules/heatProof,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canHellRun",
-                  "m3tournament,@m3logicRules/heatProof,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,alltanks:3",
+                  "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof",
+                  "m3tournament,@m3logicRules/heatProof,@m3logicRules/canDash,@m3logicRules/canOpenGreenDoors"
                 ],
                 "sections": [
                   {
@@ -6140,10 +6230,32 @@
                 ]
               },
               {
+                "name": "Energy Tank (Hi-Jump Boots)",
+                "access_rules": [ "m3tournament,@m3logicRules/canOpenRedDoors" ],
+                "sections": [
+                  {
+                    "name": "Visible",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 644,
+                    "y": 788
+                  },
+                  {
+                    "map": "norfairmapMM1",
+                    "x": 136,
+                    "y": 82
+                  }
+                ]
+              },
+              {
                 "name": "Hi-Jump Boots",
                 "access_rules": [
                   "m3casual,@m3logicRules/canPassBombPassages",
-                  "m3tournament,@m3logicRules/canPassBombPassages"
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
                   {
@@ -6170,7 +6282,7 @@
                 "name": "Missile (Hi-Jump Boots)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canPassBombPassages",
-                  "m3tournament,@m3logicRules/canPassBombPassages"
+                  "m3tournament,@m3logicRules/canOpenRedDoors,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
                   {
@@ -6187,28 +6299,6 @@
                   {
                     "map": "norfairmapMM1",
                     "x": 118,
-                    "y": 82
-                  }
-                ]
-              },
-              {
-                "name": "Energy Tank (Hi-Jump Boots)",
-                "access_rules": [],
-                "sections": [
-                  {
-                    "name": "Visible",
-                    "item_count": 1
-                  }
-                ],
-                "map_locations": [
-                  {
-                    "map": "fullmapMM1",
-                    "x": 644,
-                    "y": 788
-                  },
-                  {
-                    "map": "norfairmapMM1",
-                    "x": 136,
                     "y": 82
                   }
                 ]
@@ -6253,7 +6343,7 @@
                   "m3casual,phantoon,@m3logicRules/canDash,@m3logicRules/heatProof,alltanks:2",
                   "m3casual,phantoon,@m3logicRules/canDash,alltanks:3",
                   "m3tournament,phantoon,@m3logicRules/canDash,@m3logicRules/heatProof",
-                  "m3tournament,phantoon,@m3logicRules/canDash,alltanks:3"
+                  "m3tournament,phantoon,@m3logicRules/canDash,alltanks:2"
                 ],
                 "sections": [
                   {
@@ -6283,7 +6373,7 @@
                   "m3casual,phantoon,@m3logicRules/heatProof,alltanks:2",
                   "m3casual,phantoon,alltanks:3",
                   "m3tournament,phantoon,@m3logicRules/heatProof",
-                  "m3tournament,phantoon,alltanks:2"
+                  "m3tournament,phantoon,alltanks:1"
                 ],
                 "sections": [
                   {
@@ -6410,7 +6500,7 @@
                   "m3casual,phantoon,@m3logicRules/heatProof,alltanks:2",
                   "m3casual,phantoon,alltanks:3",
                   "m3tournament,phantoon,@m3logicRules/heatProof",
-                  "m3tournament,phantoon,alltanks:2"
+                  "m3tournament,phantoon,alltanks:1"
                 ],
                 "sections": [
                   {
@@ -6522,7 +6612,8 @@
                   "m3casual,@m3logicRules/canGrapple",
                   "m3tournament,@m3logicRules/canFly",
                   "m3tournament,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canGrapple"
+                  "m3tournament,@m3logicRules/canGrapple",
+                  "m3tournament,@m3logicRules/canSpringBallJump"
                 ],
                 "sections": [
                   {
@@ -6575,7 +6666,7 @@
             "children": [
               {
                 "name": "Super Missile (yellow Maridia)",
-                "access_rules": [],
+                "access_rules": [ "m3tournament,@m3regionAccess/MaridiaInnerLocationHelper1" ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6597,7 +6688,7 @@
               },
               {
                 "name": "Missile (yellow Maridia super missile)",
-                "access_rules": [],
+                "access_rules": [ "m3tournament,@m3regionAccess/MaridiaInnerLocationHelper1" ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6619,7 +6710,7 @@
               },
               {
                 "name": "Missile (yellow Maridia false wall)",
-                "access_rules": [],
+                "access_rules": [ "m3tournament,@m3regionAccess/MaridiaInnerLocationHelper1" ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6646,13 +6737,7 @@
                   "m3casual,@m3bossBeat/Draygon,plasma,@m3logicRules/canHiJump",
                   "m3casual,@m3bossBeat/Draygon,screw,@m3logicRules/canFly",
                   "m3casual,@m3bossBeat/Draygon,screw,@m3logicRules/canHiJump",
-                  "m3tournament,@m3bossBeat/Draygon,@m3logicRules/canDash",
-                  "m3tournament,@m3bossBeat/Draygon,@m3regionAccess/PlasmaRoomHelper6,@m3logicRules/canFly",
-                  "m3tournament,@m3bossBeat/Draygon,@m3regionAccess/PlasmaRoomHelper6,@m3logicRules/canHiJump",
-                  "m3tournament,@m3bossBeat/Draygon,plasma,@m3logicRules/canFly",
-                  "m3tournament,@m3bossBeat/Draygon,plasma,@m3logicRules/canHiJump",
-                  "m3tournament,@m3bossBeat/Draygon,screw,@m3logicRules/canFly",
-                  "m3tournament,@m3bossBeat/Draygon,screw,@m3logicRules/canHiJump"
+                  "m3tournament,@m3bossBeat/Draygon,@m3regionAccess/PlasmaRoomHelper1,@m3regionAccess/PlasmaRoomHelper2"
                 ],
                 "sections": [
                   {
@@ -6677,7 +6762,7 @@
               },
               {
                 "name": "Missile (left Maridia sand pit room)",
-                "access_rules": [],
+                "access_rules": [ "@m3regionAccess/MaridiaInnerLocationHelper2" ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6699,7 +6784,7 @@
               },
               {
                 "name": "Reserve Tank, Maridia",
-                "access_rules": [],
+                "access_rules": [ "@m3regionAccess/MaridiaInnerLocationHelper2" ],
                 "sections": [
                   {
                     "name": "Chozo",
@@ -6723,7 +6808,7 @@
               },
               {
                 "name": "Missile (right Maridia sand pit room)",
-                "access_rules": [],
+                "access_rules": [ "@m3regionAccess/MaridiaInnerLocationHelper2" ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6745,7 +6830,11 @@
               },
               {
                 "name": "Power Bomb (right Maridia sand pit room)",
-                "access_rules": [ "m3casual", "m3tournament,@m3logicRules/canSwim" ],
+                "access_rules": [
+                  "m3casual",
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump",
+                  "m3tournament,@m3logicRules/canSwim"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6769,7 +6858,7 @@
                 "name": "Missile (pink Maridia)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canSwim,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canSwim"
                 ],
                 "sections": [
                   {
@@ -6794,7 +6883,7 @@
                 "name": "Super Missile (pink Maridia)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canDash",
-                  "m3tournament,@m3logicRules/canSwim,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canSwim"
                 ],
                 "sections": [
                   {
@@ -6820,8 +6909,9 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canGrapple,space",
                   "m3casual,@m3logicRules/canGrapple,@m3logicRules/canHiJump",
-                  "m3tournament,@m3logicRules/canSwim,@m3logicRules/canGrapple,@m3logicRules/canFly",
-                  "m3tournament,@m3logicRules/canSwim,@m3logicRules/canGrapple,@m3logicRules/canHiJump"
+                  "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim,@m3logicRules/canFly",
+                  "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim,@m3logicRules/canHiJump",
+                  "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,space"
                 ],
                 "sections": [
                   {
@@ -6846,7 +6936,10 @@
               },
               {
                 "name": "Missile (Draygon)",
-                "access_rules": [ "m3casual,@m3bossBeat/Botwoon", "m3tournament,@m3bossBeat/Botwoon" ],
+                "access_rules": [
+                  "m3casual,@m3bossBeat/Botwoon",
+                  "m3tournament,@m3bossBeat/Botwoon,@m3logicRules/canSwim"
+                ],
                 "sections": [
                   {
                     "name": "Hidden",
@@ -6870,7 +6963,10 @@
               },
               {
                 "name": "Energy Tank, Botwoon",
-                "access_rules": [ "m3casual,@m3bossBeat/Botwoon", "m3tournament,@m3bossBeat/Botwoon" ],
+                "access_rules": [
+                  "m3casual,@m3bossBeat/Botwoon",
+                  "m3tournament,@m3bossBeat/Botwoon,@m3logicRules/canSwim"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6979,11 +7075,9 @@
                 "name": "Missile (Gold Torizo)",
                 "access_rules": [
                   "m3casual,@m3logicRules/canUsePowerBombs,space",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3regionAccess/LowerNorfairEastHelper2",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canIbj",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,space,@m3regionAccess/LowerNorfairEastHelper3",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canSpringBallJump,@m3logicRules/canUsePowerBombs",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canHiJump",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canSwim",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3regionAccess/MissileGoldTorizoHelper1"
                 ],
                 "sections": [
                   {
@@ -7009,10 +7103,7 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canDestroyBombWalls,@z3portalAccess/canAccessLowerNorfairPortal",
                   "m3casual,@m3logicRules/canDestroyBombWalls,space,@m3logicRules/canUsePowerBombs",
-                  "m3tournament,@m3regionAccess/SuperMissileGoldTorizoHelper1,@m3logicRules/canIbj",
-                  "m3tournament,@m3regionAccess/SuperMissileGoldTorizoHelper1,space,@m3regionAccess/LowerNorfairEastHelper3",
-                  "m3tournament,@m3regionAccess/SuperMissileGoldTorizoHelper1,@m3logicRules/canSpringBallJump,@m3logicRules/canUsePowerBombs",
-                  "m3tournament,@m3regionAccess/SuperMissileGoldTorizoHelper1,@m3logicRules/canDash"
+                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/heatProof"
                 ],
                 "sections": [
                   {
@@ -7040,11 +7131,8 @@
                 "access_rules": [
                   "m3casual,@m3logicRules/canDestroyBombWalls,@z3portalAccess/canAccessLowerNorfairPortal",
                   "m3casual,@m3logicRules/canDestroyBombWalls,space,@m3logicRules/canUsePowerBombs",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canIbj",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,space,@m3regionAccess/LowerNorfairEastHelper3",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canSpringBallJump,@m3logicRules/canUsePowerBombs",
-                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canDash",
-                  "m3tournament,@z3portalAccess/canAccessLowerNorfairPortal"
+                  "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/heatProof",
+                  "m3tournament,@m3logicRules/canDestroyBombWalls,@z3portalAccess/canAccessLowerNorfairPortal"
                 ],
                 "sections": [
                   {
