@@ -566,8 +566,9 @@
       {// Lower Norfair Gold Torizo Energy Refill -> Dark World Mire East 'Entrance'
         "name": "canAccessMiseryMirePortal",
         "access_rules": [
-          "varia,super,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
-          "varia,super,@m3logicRules/canSwim,@m3logicRules/canOpenYellowDoors"
+          "m3casual,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canOpenYellowDoors,@m3logicRules/canSwim,space",
+          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
+          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canOpenYellowDoors"
         ],
         "item_count": 1
       }
@@ -7398,8 +7399,8 @@
               {
                 "name": "Ridley",
                 "access_rules": [
-                  "m3casual,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge",
-                  "m3tournament,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge"
+                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge"
                 ],
                 "sections": [
                   {
