@@ -2,112 +2,112 @@
   {// Z3 Logic Rules
     "name": "z3logicRules",
     "sections": [
-      {
+      {// canBlockLasers : shield3
         "name": "canBlockLasers",
         "access_rules": [ "shield3" ],
         "item_count": 1
       },
-      {
+      {// canDash : boots
         "name": "canDash",
         "access_rules": [ "boots" ],
         "item_count": 1
       },
-      {
+      {// canFakePoweder : somaria && mushroom
         "name": "canFakePowder",
         "access_rules": [ "somaria,mushroom" ],
         "item_count": 1
       },
-      {
+      {// canFly : flute
         "name": "canFly",
         "access_rules": [ "flute" ],
         "item_count": 1
       },
-      {
+      {// canGetGoodBee : (net && bottle && canDash) || (net && bottle && sword && quake)
         "name": "canGetGoodBee",
         "access_rules": [ "net,bottle,@z3logicRules/canDash", "net,bottle,sword,quake" ],
         "item_count": 1
       },
-      {
+      {// canGrapple : hookshot
         "name": "canGrapple",
         "access_rules": [ "hookshot" ],
         "item_count": 1
       },
-      {
+      {// canHover : canDash
         "name": "canHover",
         "access_rules": [ "@z3logicRules/canDash" ],
         "item_count": 1
       },
-      {
+      {// canLiftRocks : glove1 || glove2
         "name": "canLiftRocks",
         "access_rules": [ "glove" ],
         "item_count": 1
       },
-      {
+      {// canLiftDarkRocks : glove2
         "name": "canLiftDarkRocks",
         "access_rules": [ "glove2" ],
         "item_count": 1
       },
-      {
+      {// canLightTorches : lamp || firerod
         "name": "canLightTorches",
         "access_rules": [ "firesource" ],
         "item_count": 1
       },
-      {
+      {// canMeltThings : firerod || bombos
         "name": "canMeltThings",
         "access_rules": [ "melt" ],
         "item_count": 1
       },
-      {
+      {// canNightVision : [lamp]
         "name": "canNightVision",
         "access_rules": [ "[lamp]" ],
         "item_count": 1
       },
-      {
+      {// canRead : book
         "name": "canRead",
         "access_rules": [ "book" ],
         "item_count": 1
       },
-      {
+      {// canShootArrows : bow || (retro && bow && wooden) || (retro && bow && silvers)
         "name": "canShootArrows",
         "access_rules": [ "bow", "z3retro,bow,wooden", "z3retro,bow,silvers" ],
         "item_count": 1
       },
-      {
+      {// canSwim : flippers
         "name": "canSwim",
         "access_rules": [ "flippers" ],
         "item_count": 1
       },
-      {
+      {// hasSword : sword || (swordless && hammer)
         "name": "hasSword",
         "access_rules": [ "sword", "swordless,hammer" ],
         "item_count": 1
       },
-      {
+      {// hasMS : sword2 || sword3 || sword4 || (swordless && hammer)
         "name": "hasMS",
         "access_rules": [ "sword2", "sword3", "sword4", "swordless,hammer" ],
         "item_count": 1
       },
-      {
+      {// hasTempered : sword3 || sword4
         "name": "hasTempered",
         "access_rules": [ "sword3", "sword4" ],
         "item_count": 1
       },
-      {
+      {// hasGolden : sword4
         "name": "hasGolden",
         "access_rules": [ "sword4" ],
         "item_count": 1
       },
-      {
+      {// canActivateMedallions : hasSword
         "name": "canActivateMedallions",
         "access_rules": [ "@z3logicRules/hasSword" ],
         "item_count": 1
       },
-      {
+      {// canActivateTablets : canRead && hasMS
         "name": "canActivateTablets",
         "access_rules": [ "@z3logicRules/canRead,@z3logicRules/hasMS" ],
         "item_count": 1
       },
-      {
+      {// canBeatAga1 : (cape && hasSword && lamp) || (hasMS && lamp)
         "name": "canBeatAga1",
         "access_rules": [
           "z3noglitches,cape,@z3logicRules/hasSword,@z3logicRules/canNightVision",
@@ -450,7 +450,7 @@
         "access_rules": [ "@m3logicRules/canUsePowerBombs" ],
         "item_count": 1
       },
-      
+
        // Derived from Tech
       {// canFly : canIbj || space
         "name": "canFly",
@@ -489,7 +489,7 @@
         "access_rules": [ "@z3regionAccess/DeathMountainWest" ],
         "item_count": 1
       },
-      {// Dark World Mire East 'Entrance' -> Lower Norfair Golden Torizo Energy Refill
+      {// Dark World Mire East 'Entrance' -> Lower Norfair Gold Torizo Energy Refill
         "name": "canAccessLowerNorfairPortal",
         "access_rules": [ "@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks" ],
         "item_count": 1
@@ -556,7 +556,7 @@
         ],
         "item_count": 1
       },
-      {// Lower Norfair Golden Torizo Energy Refill -> Dark World Mire East 'Entrance'
+      {// Lower Norfair Gold Torizo Energy Refill -> Dark World Mire East 'Entrance'
         "name": "canAccessMiseryMirePortal",
         "access_rules": [
           "varia,super,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
@@ -663,7 +663,7 @@
   {// M3 Region Access
     "name": "m3regionAccess",
     "sections": [
-      {
+      {// Crateria Central
         "name": "CrateriaCentral",
         "access_rules": [
           "m3casual,@z3portalAccess/canAccessCrateriaPortal",
@@ -671,7 +671,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Crateria East
         "name": "CrateriaEast",
         "access_rules": [
           "m3casual,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors",
@@ -679,7 +679,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Crateria West
         "name": "CrateriaWest",
         "access_rules": [
           "m3casual,@m3logicRules/canDestroyBombWalls,@m3logicRules/canDash",
@@ -687,7 +687,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Brinstar Blue
         "name": "BrinstarBlue",
         "access_rules": [
           "m3casual,@z3portalAccess/canAccessCrateriaPortal",
@@ -695,7 +695,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Brinstar Green
         "name": "BrinstarGreen",
         "access_rules": [
           "m3casual,@m3logicRules/canDestroyBombWalls",
@@ -720,7 +720,7 @@
         "access_rules": [ "ice", "@m3logicRules/canHiJump", "@m3logicRules/canFly" ],
         "item_count": 1
       },
-      {
+      {// Brinstar Pink
         "name": "BrinstarPink",
         "access_rules": [
           "m3casual,@m3logicRules/canOpenRedDoors,@m3regionAccess/BrinstarPinkHelper1",
@@ -757,7 +757,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Brinstar Red
         "name": "BrinstarRed",
         "access_rules": [
           "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
@@ -767,7 +767,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Brinstar Kraid
         "name": "BrinstarKraid",
         "access_rules": [
           "m3casual,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
@@ -801,7 +801,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Norfair Crocomire
         "name": "NorfairCrocomire",
         "access_rules": [
           "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper2,@m3regionAccess/CrocomireHelper3",
@@ -830,7 +830,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Norfair East
         "name": "NorfairEast",
         "access_rules": [
           "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3regionAccess/NorfairEastHelper3",
@@ -838,7 +838,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Norfair West
         "name": "NorfairWest",
         "access_rules": [
           "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors",
@@ -854,7 +854,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Wrecked Ship
         "name": "WreckedShipMain",
         "access_rules": [
           "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3logicRules/canDash",
@@ -865,7 +865,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Maridia Outer
         "name": "MaridiaOuter",
         "access_rules": [
           "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
@@ -908,7 +908,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Maridia Inner
         "name": "MaridiaInner",
         "access_rules": [
           "m3casual,@m3regionAccess/MaridiaOuter,@m3logicRules/canFly",
@@ -919,7 +919,7 @@
         ],
         "item_count": 1
       },
-      {
+      {// Lower Norfair West
         "name": "LowerNorfairWest",
         "access_rules": [
           "m3casual,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canSwim,space",
@@ -959,7 +959,7 @@
         "access_rules": [ "@m3logicRules/canDestroyBombWalls,@m3logicRules/heatProof" ],
         "item_count": 1
       },
-      {
+      {// Lower Norfair East
         "name": "LowerNorfairEast",
         "access_rules": [
           "m3casual,@m3regionAccess/LowerNorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canFly,@m3logicRules/heatProof",
@@ -971,12 +971,12 @@
         ],
         "item_count": 1
       },
-      {
+      {// Tourian Main
         "name": "TourianMain",
         "access_rules": [ "m3casual,g4:4", "m3tournament,g4:4" ],
         "item_count": 1
       },
-      {
+      {// Hyrule Portals Main
         "name": "HyrulePortalsMain",
         "access_rules": [ "m3casual", "m3tournament" ],
         "item_count": 1
@@ -986,6 +986,36 @@
   {// M3 Boss Defeat
     "name": "m3bossBeat",
     "sections": [
+      {// Bomb Torizo
+        "name": "BombTorizo",
+        "access_rules": [
+          "m3casual,@m3logicRules/canOpenRedDoors",
+          "m3casual,charge",
+          "m3tournament,@m3logicRules/canOpenRedDoors",
+          "m3tournament,charge"
+        ],
+        "item_count": 1
+      },
+      {// Spore Spawn
+        "name": "SporeSpawn",
+        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "item_count": 1
+      },
+      {// Kraid
+        "name": "Kraid",
+        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "item_count": 1
+      },
+      {// Crocomire
+        "name": "Crocomire",
+        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "item_count": 1
+      },
+      {// Phantoon
+        "name": "Phantoon",
+        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "item_count": 1
+      },
       {// Botwoon
         "name": "Botwoon",
         "access_rules": [
@@ -1003,6 +1033,24 @@
           "m3casual,@m3bossBeat/Botwoon,@m3logicRules/canSwim,@m3logicRules/canDash,@m3logicRules/canHiJump",
           "m3casual,@m3bossBeat/Botwoon,@m3logicRules/canSwim,@m3logicRules/canFly",
           "m3tournament,@m3bossBeat/Botwoon,@m3logicRules/canSwim"
+        ],
+        "item_count": 1
+      },
+      {// Gold Torizo
+        "name": "GoldTorizo",
+        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "item_count": 1
+      },
+      {// Ridley
+        "name": "Ridley",
+        "access_rules": [ "@m3bossBeat/BombTorizo", "@m3logicRules/canUsePowerBombs" ],
+        "item_count": 1
+      },
+      {// Mother Brain
+        "name": "MotherBrain",
+        "access_rules": [
+          "@m3logicRules/canOpenRedDoors,alltanks:6",
+          "@m3logicRules/canOpenRedDoors,varia,alltanks:3"
         ],
         "item_count": 1
       }
@@ -4168,13 +4216,13 @@
           }
         ]
       },
-      {
+      {// Zebes Portals Main
         "name": "Zebes Portals Main",
         "chest_unopened_img": "images/zelda3/locations/portal.png",
         "chest_opened_img": "images/zelda3/locations/portal.png",
         "children": [
           {
-            "name": "M3 Portal: Crateria Map Room",
+            "name": "Zebes Portal: Crateria Map Room",
             "sections": [
               {
                 "name": "Portal",
@@ -4204,7 +4252,7 @@
             ]
           },
           {
-            "name": "M3 Portal: Norfair Map Room",
+            "name": "Zebes Portal: Norfair Map Room",
             "access_rules": [
               "@z3portalAccess/canAccessNorfairPortal",
               "@m3portalAccess/canAccessDeathMountainPortal"
@@ -4234,7 +4282,7 @@
             ]
           },
           {
-            "name": "M3 Portal: Maridia Missile Refill",
+            "name": "Zebes Portal: Maridia Missile Refill",
             "access_rules": [
               "@z3portalAccess/canAccessMaridiaPortal",
               "@m3portalAccess/canAccessDarkWorldPortal"
@@ -4264,7 +4312,7 @@
             ]
           },
           {
-            "name": "M3 Portal: Lower Norfair Golden Torizo Energy Refill",
+            "name": "Zebes Portal: Lower Norfair Gold Torizo Energy Refill",
             "access_rules": [
               "@z3portalAccess/canAccessLowerNorfairPortal",
               "@m3portalAccess/canAccessMiseryMirePortal"
@@ -4434,6 +4482,33 @@
                   {
                     "map": "crateriamapMM1",
                     "x": 352,
+                    "y": 122
+                  }
+                ]
+              },
+              {
+                "name": "Bomb Torizo",
+                "access_rules": [
+                  "m3casual,@m3logicRules/canPassBombPassages,@m3logicRules/canOpenRedDoors,@m3bossBeat/BombTorizo",
+                  "m3tournament,@m3logicRules/canAlcratraz,@m3logicRules/canOpenRedDoors,@m3bossBeat/BombTorizo"
+                ],
+                "sections": [
+                  {
+                    "name": "Mini-Boss",
+                    "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                    "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 448,
+                    "y": 122
+                  },
+                  {
+                    "map": "crateriamapMM1",
+                    "x": 372,
                     "y": 122
                   }
                 ]
@@ -5068,6 +5143,30 @@
                     "y": 172
                   }
                 ]
+              },
+              {
+                "name": "Spore Spawn",
+                "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                "access_rules": [ "@m3bossBeat/SporeSpawn" ],
+                "sections": [
+                  {
+                    "name": "Mini-Boss",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 320,
+                    "y": 396
+                  },
+                  {
+                    "map": "brinstarmapMM1",
+                    "x": 316,
+                    "y": 32
+                  }
+                ]
               }
             ]
           },
@@ -5495,6 +5594,29 @@
                     "y": 316
                   }
                 ]
+              },
+              {
+                "name": "Kraid",
+                "access_rules": [ "@m3bossBeat/Kraid" ],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "hosted_item": "kraid",
+                    "item_count": 0
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 910,
+                    "y": 678
+                  },
+                  {
+                    "map": "brinstarmapMM1",
+                    "x": 906,
+                    "y": 314
+                  }
+                ]
               }
             ]
           }
@@ -5670,6 +5792,30 @@
                     "map": "norfairmapMM1",
                     "x": 28,
                     "y": 280
+                  }
+                ]
+              },
+              {
+                "name": "Crocomire",
+                "access_rules": [],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                    "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 754,
+                    "y": 878
+                  },
+                  {
+                    "map": "norfairmapMM1",
+                    "x": 246,
+                    "y": 172
                   }
                 ]
               }
@@ -6286,6 +6432,29 @@
                     "y": 68
                   }
                 ]
+              },
+              {
+                "name": "Phantoon",
+                "access_rules": [],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "hosted_item": "phantoon",
+                    "item_count": 0
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 935,
+                    "y": 177
+                  },
+                  {
+                    "map": "wreckedshipmapMM1",
+                    "x": 175,
+                    "y": 177
+                  }
+                ]
               }
             ]
           }
@@ -6748,6 +6917,52 @@
                     "y": 190
                   }
                 ]
+              },
+              {
+                "name": "Botwoon",
+                "access_rules": [ "@m3bossBeat/Botwoon" ],
+                "sections": [
+                  {
+                    "name": "Mini-Boss",
+                    "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                    "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 860,
+                    "y": 498
+                  },
+                  {
+                    "map": "maridiamapMM1",
+                    "x": 262,
+                    "y": 152
+                  }
+                ]
+              },
+              {
+                "name": "Draygon",
+                "access_rules": [ "@m3bossBeat/Draygon" ],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "hosted_item": "draygon"
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 1152,
+                    "y": 536
+                  },
+                  {
+                    "map": "maridiamapMM1",
+                    "x": 554,
+                    "y": 190
+                  }
+                ]
               }
             ]
           }
@@ -6848,6 +7063,37 @@
                   {
                     "map": "norfairmapMM1",
                     "x": 334,
+                    "y": 280
+                  }
+                ]
+              },
+              {
+                "name": "Gold Torizo",
+                "access_rules": [
+                  "m3casual,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space",
+                  "m3tournament,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space,@m3regionAccess/LowerNorfairEastHelper2",
+                  "m3tournament,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canIbj",
+                  "m3tournament,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,space,@m3regionAccess/LowerNorfairEastHelper3",
+                  "m3tournament,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canSpringBallJump,@m3logicRules/canUsePowerBombs",
+                  "m3tournament,@m3bossBeat/GoldTorizo,@m3logicRules/canUsePowerBombs,space,@m3logicRules/heatProof,@m3logicRules/canDash"
+                ],
+                "sections": [
+                  {
+                    "name": "Mini-Boss",
+                    "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                    "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 806,
+                    "y": 986
+                  },
+                  {
+                    "map": "norfairmapMM1",
+                    "x": 298,
                     "y": 280
                   }
                 ]
@@ -7019,6 +7265,31 @@
                     "y": 190
                   }
                 ]
+              },
+              {
+                "name": "Ridley",
+                "access_rules": [
+                  "m3casual,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge",
+                  "m3tournament,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge"
+                ],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "hosted_item": "ridley"
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 898,
+                    "y": 984
+                  },
+                  {
+                    "map": "norfairmapMM1",
+                    "x": 390,
+                    "y": 278
+                  }
+                ]
               }
             ]
           }
@@ -7030,16 +7301,36 @@
           {// Tourian Main
             "name": "Tourian Main",
             "access_rules": [ "@m3regionAccess/TourianMain" ],
-            "children": []
+            "children": [
+              {
+                "name": "Mother Brain",
+                "access_rules": [ "kraid,phantoon,draygon,ridley,@m3bossBeat/MotherBrain" ],
+                "sections": [
+                  {
+                    "name": "Boss",
+                    "chest_unopened_img": "images/metroid3/locations/chozo_unopened.png",
+                    "chest_opened_img": "images/metroid3/locations/chozo_opened.png",
+                    "item_count": 1
+                  }
+                ],
+                "map_locations": [
+                  {
+                    "map": "fullmapMM1",
+                    "x": 142,
+                    "y": 358
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
-      {// Hyrule Portals
+      {// Hyrule Portals Main
         "name": "Hyrule Portals Main",
         "access_rules": [ "@m3regionAccess/HyrulePortalsMain" ],
         "children": [
           {
-            "name": "Z3R Portal: Link's Fortune Teller",
+            "name": "Hyrule Portal: Link's Fortune Teller",
             "access_rules": [
               "m3casual,@z3portalAccess/canAccessCrateriaPortal",
               "m3casual,@m3portalAccess/canAccessLightWorldPortal",
@@ -7068,7 +7359,7 @@
             ]
           },
           {
-            "name": "Z3R Portal: Death Mountain Cave",
+            "name": "Hyrule Portal: Death Mountain Cave",
             "access_rules": [
               "m3casual,@z3portalAccess/canAccessNorfairPortal",
               "m3casual,@m3portalAccess/canAccessDeathMountainPortal",
@@ -7097,7 +7388,7 @@
             ]
           },
           {
-            "name": "Z3R Portal: Dark World Ice Cave Right",
+            "name": "Hyrule Portal: Dark World Ice Cave Right",
             "access_rules": [
               "m3casual,@z3portalAccess/canAccessMaridiaPortal",
               "m3casual,@m3portalAccess/canAccessDarkWorldPortal",
@@ -7126,7 +7417,7 @@
             ]
           },
           {
-            "name": "Z3R Portal: Misery Mire East 'Entrance'",
+            "name": "Hyrule Portal: Misery Mire East 'Entrance'",
             "access_rules": [
               "m3casual,@z3portalAccess/canAccessLowerNorfairPortal",
               "m3casual,@m3portalAccess/canAccessMiseryMirePortal",
