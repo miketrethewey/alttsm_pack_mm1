@@ -559,8 +559,9 @@
       {// Lower Norfair Gold Torizo Energy Refill -> Dark World Mire East 'Entrance'
         "name": "canAccessMiseryMirePortal",
         "access_rules": [
-          "varia,super,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
-          "varia,super,@m3logicRules/canSwim,@m3logicRules/canOpenYellowDoors"
+          "m3casual,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canOpenYellowDoors,@m3logicRules/canSwim,space",
+          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
+          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canOpenYellowDoors"
         ],
         "item_count": 1
       }
@@ -1644,7 +1645,7 @@
           },
           {
             "name": "Mothula",
-            "access_rules": [ "moonpearl.firerod,@z3logicRules/hasSword,@z3bossBeat/Mothula" ],
+            "access_rules": [ "moonpearl,firerod,@z3logicRules/hasSword,@z3bossBeat/Mothula" ],
             "hosted_item": "sw"
           }
         ],/*
@@ -2789,10 +2790,10 @@
                     "access_rules": [
                       "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,$canExtendMagic:2,cape,@z3regionAccess/DeathMountainWest",
                       "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3ohko,$canExtendMagic:2,byrna,@z3regionAccess/DeathMountainWest",
-                      "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nokho,byrna,@z3regionAccess/DeathMountainWest",
+                      "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nohko,byrna,@z3regionAccess/DeathMountainWest",
                       "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,$canExtendMagic:2,cape,@z3regionAccess/DeathMountainWest",
                       "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3ohko,$canExtendMagic:2,byrna,@z3regionAccess/DeathMountainWest",
-                      "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nokho,byrna,@z3regionAccess/DeathMountainWest"
+                      "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks,z3nohko,byrna,@z3regionAccess/DeathMountainWest"
                     ],
                     "sections": [
                       {
@@ -7269,8 +7270,8 @@
               {
                 "name": "Ridley",
                 "access_rules": [
-                  "m3casual,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge",
-                  "m3tournament,ridley,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge"
+                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,charge"
                 ],
                 "sections": [
                   {
