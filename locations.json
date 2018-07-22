@@ -138,8 +138,8 @@
       {// Dark World Mire
         "name": "DarkWorldMire",
         "access_rules": [
-          "z3noglitches,@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks",
-          "z3minorglitches,@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks"
+          "z3noglitches,$canAccessDarkWorldMire",
+          "z3minorglitches,$canAccessDarkWorldMire"
         ],
         "item_count": 1
       },
@@ -159,81 +159,62 @@
       {// Dark World North West
         "name": "DarkWorldNorthWest",
         "access_rules": [
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canSwim",
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canLiftRocks",
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,hammer",
-          "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks",
-          "z3noglitches,moonpearl,@z3logicRules/canLiftDarkRocks",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canSwim",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canLiftRocks",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,hammer",
-          "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks",
-          "z3minorglitches,moonpearl,@z3logicRules/canLiftDarkRocks"
+          "@z3regionAccess/DarkWorldNorthEast,$canAccessDarkWorldNorthWest",
+          "moonpearl,hammer,$canLiftRocks",
+          "moonpearl,$canLiftDarkRocks",
         ],
         "item_count": 1
       },
       {// Dark World South
         "name": "DarkWorldSouth",
         "access_rules": [
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,hammer",
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canSwim",
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canLiftRocks",
-          "z3noglitches,moonpearl,hammer,@z3logicRules/canLiftRocks",
-          "z3noglitches,moonpearl,@z3logicRules/canLiftDarkRocks",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,hammer",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canSwim",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast,@z3logicRules/canGrapple,@z3logicRules/canLiftRocks",
-          "z3minorglitches,moonpearl,hammer,@z3logicRules/canLiftRocks",
-          "z3minorglitches,moonpearl,@z3logicRules/canLiftDarkRocks"
+          "@z3regionAccess/DarkWorldNorthEast,$canAccessDarkWorldSouth",
+          "moonpearl,hammer,$canLiftRocks",
+          "moonpearl,$canLiftDarkRocks",
         ],
         "item_count": 1
       },
       {// Death Mountain West
         "name": "DeathMountainWest",
         "access_rules": [
-          "z3noglitches,@z3logicRules/canFly",
-          "z3noglitches,@z3logicRules/canLiftRocks,@z3logicRules/canNightVision",
-          "z3minorglitches,@z3logicRules/canFly",
-          "z3minorglitches,@z3logicRules/canLiftRocks,@z3logicRules/canNightVision"
+          "$canAccessDeathMountainWest",
+          "z3noglitches,$canLiftRocks,@z3logicRules/canNightVision",
+          "z3minorglitches,$canLiftRocks,@z3logicRules/canNightVision"
         ],
         "item_count": 1
       },
       {// Death Mountain East
         "name": "DeathMountainEast",
         "access_rules": [
-          "z3noglitches,@z3regionAccess/DeathMountainWest,hammer,mirror",
-          "z3noglitches,@z3regionAccess/DeathMountainWest,@z3logicRules/canGrapple",
-          "z3minorglitches,@z3regionAccess/DeathMountainWest,hammer,mirror",
-          "z3minorglitches,@z3regionAccess/DeathMountainWest,@z3logicRules/canGrapple"
+          "@z3regionAccess/DeathMountainWest,$canAccessDeathMountainEast",
         ],
         "item_count": 1
       },
       {// Dark World Death Mountain East
         "name": "DarkWorldDeathMountainEast",
         "access_rules": [
-          "z3noglitches,@z3logicRules/canLiftDarkRocks,@z3regionAccess/DeathMountainEast",
-          "z3minorglitches,@z3logicRules/canLiftDarkRocks,@z3regionAccess/DeathMountainEast"
+          "@z3regionAccess/DeathMountainEast,$canAccessDarkWorldDeathMountainEast",
         ],
         "item_count": 1
       },
       {// Dark World Death Mountain West
         "name": "DarkWorldDeathMountainWest",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessDarkWorldDeathMountainWest" ],
         "item_count": 1
       },
       {// Light World North East
         "name": "LightWorldNorthEast",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessLightWorldNorthEast" ],
         "item_count": 1
       },
       {// Light World North West
         "name": "LightWorldNorthWest",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessLightWorldNorthWest" ],
         "item_count": 1
       },
       {// Light World South
         "name": "LightWorldSouth",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessLightWorldSouth" ],
         "item_count": 1
       }
     ]
@@ -243,98 +224,57 @@
     "sections": [
       {// Armos Knights
         "name": "ArmosKnights",
-        "access_rules": [
-          "@z3logicRules/hasSword",
-          "hammer",
-          "@z3logicRules/canShootArrows",
-          "boomerang",
-          "$canExtendMagic:4,firerod",
-          "$canExtendMagic:4,icerod",
-          "$canExtendMagic:2,byrna",
-          "$canExtendMagic:2,somaria"
-        ],
+        "access_rules": [ "$canBeatArmosKnights" ],
         "item_count": 1
       },
       {// Agahnim
         "name": "Agahnim",
-        "access_rules": [ "@z3logicRules/hasSword", "hammer", "net" ],
+        "access_rules": [ "$canBeatAgahnim" ],
         "item_count": 1
       },
       {// Arrghus
         "name": "Arrghus",
-        "access_rules": [
-          "hookshot,hammer",
-          "hookshot,@z3logicRules/hasSword",
-          "hookshot,$canExtendMagic:2,firerod",
-          "hookshot,$canExtendMagic:2,icerod",
-          "hookshot,@z3logicRules/canShootArrows,firerod",
-          "hookshot,@z3logicRules/canShootArrows,icerod"
-        ],
+        "access_rules": [ "$canBeatArrghus" ],
         "item_count": 1
       },
       {// Blind
         "name": "Blind",
-        "access_rules": [ "@z3logicRules/hasSword", "hammer", "somaria", "byrna" ],
+        "access_rules": [ "$canBeatBlind" ],
         "item_count": 1
       },
       {// Helmasaur King
         "name": "HelmasaurKing",
-        "access_rules": [ "@z3logicRules/hasSword", "hammer", "@z3logicRules/canShootArrows" ],
+        "access_rules": [ "$canBeatHelmasaurKing" ],
         "item_count": 1
       },
       {// Kholdstare
         "name": "Kholdstare",
-        "access_rules": [
-          "@z3logicRules/canMeltThings,hammer",
-          "@z3logicRules/canMeltThings,@z3logicRules/hasSword",
-          "@z3logicRules/canMeltThings,$canExtendMagic:3,firerod",
-          "@z3logicRules/canMeltThings,$canExtendMagic:2,firerod,bombos"
-        ],
+        "access_rules": [ "$canBeatKholdstare" ],
         "item_count": 1
       },
       {// Lanmolas
         "name": "Lanmolas",
-        "access_rules": [
-          "@z3logicRules/hasSword",
-          "hammer",
-          "@z3logicRules/canShootArrows",
-          "firerod",
-          "icerod",
-          "byrna",
-          "somaria"
-        ],
+        "access_rules": [ "$canBeatLanmolas" ],
         "item_count": 1
       },
       {// Moldorm
         "name": "Moldorm",
-        "access_rules": [ "@z3logicRules/hasSword", "hammer" ],
+        "access_rules": [ "$canBeatMoldorm" ],
         "item_count": 1
       },
       {// Mothula
         "name": "Mothula",
-        "access_rules": [
-          "@z3logicRules/hasSword",
-          "hammer",
-          "$canExtendMagic:2,firerod",
-          "$canExtendMagic:2,somaria",
-          "$canExtendMagic:2,byrna",
-          "bottle,@z3logicRules/canGetGoodBee"
-        ],
+        "access_rules": [ "$canBeatMothula" ],
         "item_count": 1
       },
       {// Trinexx
         "name": "Trinexx",
-        "access_rules": [
-          "firerod,icerod,sword3",
-          "firerod,icerod,hammer",
-          "firerod,icerod,$canExtendMagic:2,sword2",
-          "firerod,icerod,$canExtendMagic:4,sword"
-        ],
+        "access_rules": [ "$canBeatTrinexx" ],
         "item_count": 1
       },
       {// Vitreous
         "name": "Vitreous",
-        "access_rules": [ "hammer", "@z3logicRules/hasSword", "@z3logicRules/canShootArrows" ],
+        "access_rules": [ "$canBeatVitreous" ],
         "item_count": 1
       }
     ]

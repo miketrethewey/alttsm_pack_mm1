@@ -1,23 +1,18 @@
--- canExtendMagic
--- Half Magic    = Double Capacity
--- Quarter Magic = Quadruple Capacity
--- Each Bottle   = Refill 1 bar
--- Start with 1 bar
-function canExtendMagic()
-  local half = Tracker:ProviderCountForCode("halfmagic")
-  local quarter = Tracker:ProviderCountForCode("quartermagic")
-  local bottles = Tracker:ProviderCountForCode("bottle")
+-- Check inventory for item (optional amount)
+function has(item,amount)
+  amount = amount or -1
 
-  if(half >= 1) then
-    half = 2 -- Double
+  local ret = 0
+
+  if(amount > -1) then
+    if(Tracker:ProviderCountForCode(item) >= amount) then
+      ret = Tracker:ProviderCountForCode(item)
+    end
   else
-    half = 1
-  end
-  if(quarter >= 1) then
-    quarter = 4 -- Quadruple
-  else
-    quarter = 1
+    if(Tracker:ProviderCountForCode(item) == 1) then
+      ret = 1
+    end
   end
 
-  return half * quarter * (bottles + 1)
+  return ret
 end
