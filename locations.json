@@ -893,7 +893,8 @@
         "name": "NorfairCrocomire",
         "access_rules": [
           "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper2,@m3regionAccess/CrocomireHelper3",
-          "m3tournament,@m3regionAccess/CrocomireTourneyHelper1,@m3logicRules/canOpenDoors,@m3regionAccess/CrocomireTourneyHelper2,@m3regionAccess/CrocomireTourneyHelper3"
+          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireTourneyHelper1,@m3regionAccess/CrocomireTourneyHelper2,@m3regionAccess/CrocomireTourneyHelper3",
+          "m3tournament,@z3portalAccess/canAccessNorfairPortal,screw,space,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,alltanks:2"
         ],
         "item_count": 1
       },
@@ -1078,6 +1079,14 @@
         "access_rules": [ "@m3logicRules/canPassBombPassages", "screw,space" ],
         "item_count": 1
       },
+      {// canMorph || alltanks:5
+        "name": "LowerNorfairEastHelper5",
+        "access_rules": [
+          "@m3logicRules/canMorph",
+          "alltanks:5"
+        ],
+        "item_count": 1
+      },
       {// Lower Norfair East
         "name": "LowerNorfairEast",
         "access_rules": [
@@ -1086,8 +1095,8 @@
           "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canFly,@m3logicRules/canHiJump",
           "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash,@m3logicRules/canFly",
           "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash,@m3logicRules/canHiJump",
-          "m3tournament,@m3regionAccess/LowerNorfairEastHelper1,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4",
-          "m3tournament,@m3regionAccess/LowerNorfairEastHelper2,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4"
+          "m3tournament,@m3logicRules/heatProof,@m3regionAccess/LowerNorfairEastHelper1,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4,@m3regionAccess/LowerNorfairEastHelper5",
+          "m3tournament,@m3logicRules/heatProof,@m3regionAccess/LowerNorfairEastHelper2,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4,@m3regionAccess/LowerNorfairEastHelper5"
         ],
         "item_count": 1
       },
@@ -5776,7 +5785,8 @@
                   "m3tournament,@m3logicRules/canFly,@m3logicRules/canHellRun",
                   "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canHellRun",
                   "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canDash,@m3logicRules/canHellRun",
-                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,@m3logicRules/canHellRun"
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,@m3logicRules/canHellRun",
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/heatProof,ice,@m3logicRules/canHellRun"
                 ],
                 "sections": [
                   {
@@ -7236,7 +7246,9 @@
             "children": [
               {
                 "name": "Missile (Mickey Mouse room)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -7280,7 +7292,9 @@
               },
               {
                 "name": "Power Bomb (lower Norfair above fire flea room)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3tournament,@m3logicRules/canPassBombPassages"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -7327,7 +7341,9 @@
               },
               {
                 "name": "Missile (lower Norfair near Wave Beam)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
