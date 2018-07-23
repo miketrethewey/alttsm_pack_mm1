@@ -16,3 +16,7 @@ function has(item,amount)
 
   return ret
 end
+
+function getHas(item)
+  return Tracker:ProviderCountForCode(item)
+end

@@ -24,7 +24,7 @@ function canFly(game)
   game = game or "z3"
 
   if(game == "sm") then
-    return has("space")
+    return (has("morph") and has("bomb")) or has("space")
   else
     return has("flute")
   end
@@ -84,7 +84,7 @@ end
 -- canSwim : flippers; gravity
 function canSwim(game)
   game = game or "z3"
-  
+
   if(game == "sm") then
     return has("gravity")
   else

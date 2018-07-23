@@ -4,6 +4,8 @@ ScriptHost:LoadScript("scripts/code_providers.lua")
 
 -- Zelda3 inventory
 ScriptHost:LoadScript("scripts/zelda3/zelda3_inventory.lua")
+-- Metroid3 inventory
+ScriptHost:LoadScript("scripts/metroid3/metroid3_inventory.lua")
 
 -- Game Regions
 local gameRegions = {
@@ -43,6 +45,16 @@ local gameRegions = {
         "NorthEast",
         "NorthWest",
         "South"
+      },
+      ZebesPortals = {
+        "Main"
+      }
+    }
+  },
+  metroid3: {
+    regions = {
+      HyrulePortals = {
+        "Main"
       }
     }
   }
