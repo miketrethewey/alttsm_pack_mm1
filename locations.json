@@ -428,34 +428,23 @@
     "sections": [
       {// Light World: Link's Fortune Teller -> Crateria: Map Room
         "name": "canAccessCrateriaPortal",
+        "access_rules": [ "$canAccessCrateriaPortal" ],
         "item_count": 1
       },
       {// Light World Death Mountain Cave -> Norfair Map Room
         "name": "canAccessNorfairPortal",
-        "access_rules": [ "@z3regionAccess/DeathMountainWest" ],
+        "access_rules": [ "$canAccessNorfairPortal" ],
         "item_count": 1
       },
       {// Dark World Mire East 'Entrance' -> Lower Norfair Gold Torizo Energy Refill
         "name": "canAccessLowerNorfairPortal",
-        "access_rules": [ "@z3logicRules/canFly,@z3logicRules/canLiftDarkRocks" ],
-        "item_count": 1
-      },
-      {//
-        "name": "MaridiaPortalHelper1",
-        "access_rules": [
-          "m3casual,@m3logicRules/canSwim",
-          "m3tournament,@m3logicRules/canSpringBallJump",
-          "m3tournament,@m3logicRules/canHiJump",
-          "m3tournament,@m3logicRules/canSwim"
-        ],
+        "access_rules": [ "$canAccessLowerNorfairPortal" ],
         "item_count": 1
       },
       {// Dark World Ice Cave -> Maridia Missile Refill
         "name": "canAccessMaridiaPortal",
         "access_rules": [
-          "moonpearl,@z3logicRules/canSwim,@z3portalAccess/MaridiaPortalHelper1,@m3logicRules/canMorph,@z3logicRules/canBeatAga1",
-          "moonpearl,@z3logicRules/canSwim,@z3portalAccess/MaridiaPortalHelper1,@m3logicRules/canMorph,hammer,@z3logicRules/canLiftRocks",
-          "moonpearl,@z3logicRules/canSwim,@z3portalAccess/MaridiaPortalHelper1,@m3logicRules/canMorph,@z3logicRules/canLiftDarkRocks",
+          "$canAccessMaridiaPortal"
         ],
         "item_count": 1
       }
@@ -466,49 +455,27 @@
     "sections": [
       {// Crateria: Map Room -> Light World: Link's Fortune Teller
         "name": "canAccessLightWorldPortal",
-        "access_rules": [ "m3casual", "m3tournament" ],
-        "item_count": 1
-      },
-      {// charge || (super && missile)
-        "name": "DWHelper1",
-        "access_rules": [ "charge", "super,missile" ],
-        "item_count": 1
-      },
-      {// canSwim || (canHiJump && ice && canGrapple)
-        "name": "DWHelper2",
-        "access_rules": [
-          "@m3logicRules/canSwim",
-          "@m3logicRules/canHiJump,ice,@m3logicRules/canGrapple"
-        ],
-        "item_count": 1
-      },
-      {// ice || (canDash && canSwim)
-        "name": "DWHelper3",
-        "access_rules": [ "ice", "@m3logicRules/canDash,@m3logicRules/canSwim" ],
+        "access_rules": [ "$canAccessLightWorldPortal" ],
         "item_count": 1
       },
       {// Maridia Missile Refill -> Dark World Ice Cave
         "name": "canAccessDarkWorldPortal",
         "access_rules": [
-          "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canDash",
-          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors,@m3portalAccess/DWHelper1,@m3portalAccess/DWHelper2,@m3portalAccess/DWHelper3"
+          "$canAccessDarkWorldPortal"
         ],
         "item_count": 1
       },
       {// Norfair Map Room -> Light World Death Mountain Cave
         "name": "canAccessDeathMountainPortal",
         "access_rules": [
-          "@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
-          "@m3logicRules/canDash,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph"
+          "$canAccessDeathMountainPortal"
         ],
         "item_count": 1
       },
       {// Lower Norfair Gold Torizo Energy Refill -> Dark World Mire East 'Entrance'
         "name": "canAccessMiseryMirePortal",
         "access_rules": [
-          "m3casual,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canOpenYellowDoors,@m3logicRules/canSwim,space",
-          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump,@m3logicRules/canOpenYellowDoors",
-          "m3tournament,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canSwim,@m3logicRules/canOpenYellowDoors"
+          "$canAccessMiseryMirePortal"
         ],
         "item_count": 1
       }
@@ -519,91 +486,76 @@
     "sections": [
       {// Hyrule Castle Escape
         "name": "HyruleCastleEscape",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessHyruleCastleEscape" ],
         "item_count": 1
       },
       {// Eastern Palace
         "name": "EasternPalace",
-        "access_rules": [ "z3noglitches", "z3minorglitches" ],
+        "access_rules": [ "$canAccessEasternPalace" ],
         "item_count": 1
       },
       {// Desert Palace
         "name": "DesertPalace",
         "access_rules": [
-          "z3noglitches,@z3logicRules/canRead",
-          "z3noglitches,mirror,@z3logicRules/canLiftDarkRocks,@z3logicRules/canFly",
-          "z3noglitches,@m3portalAccess/canAccessMiseryMirePortal,mirror",
-          "z3minorglitches,@z3logicRules/canRead",
-          "z3minorglitches,mirror,@z3logicRules/canLiftDarkRocks,@z3logicRules/canFly",
-          "z3minorglitches,@m3portalAccess/canAccessMiseryMirePortal,mirror"
+          "$canAccessDesertPalace"
         ],
         "item_count": 1
       },
       {// Tower Of Hera
         "name": "TowerOfHera",
         "access_rules": [
-          "z3noglitches,mirror,@z3regionAccess/DeathMountainWest",
-          "z3noglitches,@z3logicRules/canGrapple,hammer,@z3regionAccess/DeathMountainWest",
-          "z3minorglitches,mirror,@z3regionAccess/DeathMountainWest",
-          "z3minorglitches,@z3logicRules/canGrapple,hammer,@z3regionAccess/DeathMountainWest"
+          "$canAccessTowerOfHera"
         ],
         "item_count": 1
       },
       {// Palace Of Darkness
         "name": "PalaceOfDarkness",
         "access_rules": [
-          "z3noglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast",
-          "z3minorglitches,moonpearl,@z3regionAccess/DarkWorldNorthEast"
+          "$canAccessPalaceOfDarkness"
         ],
         "item_count": 1
       },
       {// Swamp Palace
         "name": "SwampPalace",
         "access_rules": [
-          "moonpearl,mirror,@z3logicRules/canSwim,@z3regionAccess/DarkWorldSouth"
+          "$canAccessSwampPalace"
         ],
         "item_count": 1
       },
       {// Skull Woods
         "name": "SkullWoods",
-        "access_rules": [ "moonpearl,@z3regionAccess/DarkWorldNorthWest" ],
+        "access_rules": [ "$canAccessSkullWoods" ],
         "item_count": 1
       },
       {// Thieves' Town
         "name": "ThievesTown",
-        "access_rules": [ "moonpearl,@z3regionAccess/DarkWorldNorthWest" ],
+        "access_rules": [ "$canAccessThievesTown" ],
         "item_count": 1
       },
       {// Ice Palace
         "name": "IcePalace",
         "access_rules": [
-          "moonpearl,@z3logicRules/canSwim,@z3logicRules/canLiftDarkRocks,@z3logicRules/canMeltThings"
+          "$canAccessIcePalace"
         ],
         "item_count": 1
       },
       {// Misery Mire
         "name": "MiseryMire",
         "access_rules": [
-          "mm_medallion,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canDash,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire",
-          "mm_medallion,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canDash,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire",
-          "bombos,ether,quake,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canDash,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire",
-          "mm_medallion,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canGrapple,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire",
-          "mm_medallion,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canGrapple,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire",
-          "bombos,ether,quake,@z3logicRules/canActivateMedallions,moonpearl,@z3logicRules/canGrapple,@z3logicRules/canKillMostThings,@z3regionAccess/DarkWorldMire"
+          "$canAccessMiseryMire"
         ],
         "item_count": 1
       },
       {// Turtle Rock
         "name": "TurtleRock",
         "access_rules": [
-          "tr_medallion,@z3logicRules/canActivateMedallions,moonpearl,somaria,@z3logicRules/canLiftDarkRocks,hammer,@z3regionAccess/DeathMountainEast",
-          "bombos,ether,quake,@z3logicRules/canActivateMedallions,moonpearl,somaria,@z3logicRules/canLiftDarkRocks,hammer,@z3regionAccess/DeathMountainEast"
+          "$canAccessTurtleRock"
         ],
         "item_count": 1
       },
       {// Ganon's Tower
         "name": "GanonsTower",
-        "access_rules": [ "moonpearl,crystal:7,@z3regionAccess/DarkWorldDeathMountainEast" ],
+        "access_rules": [ "$canAccessGanonsTower" ],
         "item_count": 1
       }
     ]

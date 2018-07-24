@@ -5,7 +5,7 @@ end
 
 -- canDash : boots; speed
 function canDash(game)
-  game = game or "z3"
+  game = game:lower() or "z3"
 
   if(game == "sm") then
     return has("speed")
@@ -21,7 +21,7 @@ end
 
 -- canFly : flute; space
 function canFly(game)
-  game = game or "z3"
+  game = game:lower() or "z3"
 
   if(game == "sm") then
     return (has("morph") and has("bomb")) or has("space")
@@ -37,7 +37,7 @@ end
 
 -- canGrapple : hookshot; grappling
 function canGrapple(game)
-  game = game or "z3"
+  game = game:lower() or "z3"
 
   if(game == "sm") then
     return has("grappling")
@@ -83,7 +83,7 @@ end
 
 -- canSwim : flippers; gravity
 function canSwim(game)
-  game = game or "z3"
+  game = game:lower() or "z3"
 
   if(game == "sm") then
     return has("gravity")
@@ -165,4 +165,21 @@ function canExtendMagic(bars)
   end
 
   return ((half * quarter * (bottles + 1)) > bars)
+end
+
+-- getMedallion
+function getMedallion(id)
+  id = id or "mm"
+
+  local ret = ""
+
+  local medallions = {"bombos","ether","quake"}
+
+  for i, medallion in ipairs(medallions) do
+    if(has(id .. medallion) == 1) then
+      ret = medallion
+    end
+  end
+
+  return ret
 end

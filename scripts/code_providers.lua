@@ -1,5 +1,6 @@
 -- Check inventory for item (optional amount)
 function has(item,amount)
+  item = item:lower()
   amount = amount or -1
 
   local ret = 0
@@ -18,5 +19,7 @@ function has(item,amount)
 end
 
 function getHas(item)
+  item = item:lower()
+
   return Tracker:ProviderCountForCode(item)
 end

@@ -115,3 +115,17 @@ function canEnterAndLeaveGauntlet()
 
   return ret
 end
+
+-- getSMLogic
+function getSMLogic()
+  local ret = ""
+  local m3logics = {"casual","tournament"}
+
+  for i, logic in ipairs(m3logics) do
+    if(has("m3" .. logic) == 1) then
+      ret = logic
+    end
+  end
+
+  return ret
+end
