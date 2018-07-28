@@ -1080,20 +1080,19 @@
 //        "inherit_codes": "false"
 //      },
       {
+        "name": "Hard",
+        "img": "images/metroid3/logics/hard.png",
+//        "codes": "m3hard,m3notopen",
+        "codes": "m3logic,m3tournament,m3notopen",
+        "inherit_codes": false
+      },
+      {
         "name": "Normal",
         "img": "images/metroid3/logics/normal.png",
 //        "codes": "m3normal,notopen",
         "codes": "m3casual,notopen",
         "inherit_codes": false
       },
-      {
-        "name": "Hard",
-        "img": "images/metroid3/logics/hard.png",
-//        "codes": "m3hard,m3notopen",
-        "codes": "m3tournament,m3notopen",
-        "inherit_codes": false
-      }
-//      },
 //      {
 //        "name": "Open",
 //        "img": "images/metroid3/logics/open.png",
