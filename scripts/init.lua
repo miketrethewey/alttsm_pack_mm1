@@ -100,7 +100,9 @@ local gameRegions = {
       }
     },
     bosses = { -- M3 Boss Defeat
-
+      Main = {
+        "Bosses"
+      }
     }
   }
 }
