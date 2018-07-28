@@ -79,6 +79,22 @@ local gameRegions = {
         "Red",
         "Kraid"
       },
+      Norfair = {
+        "Crocomire",
+        "East",
+        "West"
+      },
+      WreckedShip = {
+        "Main"
+      },
+      Maridia = {
+        "Inner",
+        "Outer"
+      },
+      LowerNorfair = {
+        "East",
+        "West"
+      },
       HyrulePortals = { -- M3 -> Z3 Portal Access
         "Main"
       }
