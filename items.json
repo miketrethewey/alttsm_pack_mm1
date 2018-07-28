@@ -221,17 +221,17 @@
       },
       {
         "img": "images/zelda3/inventory/bombos_mm.png",
-        "codes": "bombos,mm_medallion,melt",
+        "codes": "bombos,mm_medallion,mm_bombos,melt",
         "secondary_codes": "mm"
       },
       {
         "img": "images/zelda3/inventory/bombos_tr.png",
-        "codes": "bombos,tr_medallion,melt",
+        "codes": "bombos,tr_medallion,tr_bombos,melt",
         "secondary_codes": "tr"
       },
       {
         "img": "images/zelda3/inventory/bombos_both.png",
-        "codes": "bombos,mm_medallion,tr_medallion,melt",
+        "codes": "bombos,mm_medallion,tr_medallion,both_bombos,melt",
         "secondary_codes": "both"
       }
     ]
@@ -247,17 +247,17 @@
       },
       {
         "img": "images/zelda3/inventory/ether_mm.png",
-        "codes": "ether,mm_medallion",
+        "codes": "ether,mm_medallion,mm_ether",
         "secondary_codes": "mm"
       },
       {
         "img": "images/zelda3/inventory/ether_tr.png",
-        "codes": "ether,tr_medallion",
+        "codes": "ether,tr_medallion,tr_ether",
         "secondary_codes": "tr"
       },
       {
         "img": "images/zelda3/inventory/ether_both.png",
-        "codes": "ether,mm_medallion,tr_medallion",
+        "codes": "ether,mm_medallion,tr_medallion,both_ether",
         "secondary_codes": "both"
       }
     ]
@@ -273,17 +273,17 @@
       },
       {
         "img": "images/zelda3/inventory/quake_mm.png",
-        "codes": "quake,mm_medallion",
+        "codes": "quake,mm_medallion,mm_quake",
         "secondary_codes": "mm"
       },
       {
         "img": "images/zelda3/inventory/quake_tr.png",
-        "codes": "quake,tr_medallion",
+        "codes": "quake,tr_medallion,tr_quake",
         "secondary_codes": "tr"
       },
       {
         "img": "images/zelda3/inventory/quake_both.png",
-        "codes": "quake,mm_medallion,tr_medallion",
+        "codes": "quake,mm_medallion,tr_medallion,both_quake",
         "secondary_codes": "both"
       }
     ]
@@ -1064,7 +1064,6 @@
       }
     ]
   },
-
    // M3
   {// M3 Logic: Tournament, Normal, Hard, Open, Full, Casual
     "name": "Super Metroid Logic",
