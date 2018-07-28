@@ -566,18 +566,7 @@
       {// Crateria Central
         "name": "CrateriaCentral",
         "access_rules": [
-          "m3casual,@z3portalAccess/canAccessCrateriaPortal",
-          "m3tournament,@z3portalAccess/canAccessCrateriaPortal"
-        ],
-        "item_count": 1
-      },
-      {// ice || canSpringBallJump || canHiJump || canFly
-        "name": "CrateriaEastHelper1",
-        "access_rules": [
-          "ice",
-          "@m3logicRules/canSpringBallJump",
-          "@m3logicRules/canHiJump",
-          "@m3logicRules/canFly"
+          "$canAccessCrateriaCentral"
         ],
         "item_count": 1
       },
@@ -594,81 +583,35 @@
       {// Crateria East
         "name": "CrateriaEast",
         "access_rules": [
-          "m3casual,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,ice",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,space",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@m3logicRules/canOpenYellowDoors,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canUsePowerBombs,@m3regionAccess/CrateriaEastHelper1",
-          "m3tournament,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canHiJump,@m3logicRules/canOpenGreenDoors"
+          "$canAccessCrateriaEast"
         ],
         "item_count": 1
       },
       {// Crateria West
         "name": "CrateriaWest",
         "access_rules": [
-          "m3casual,@m3logicRules/canDestroyBombWalls,@m3logicRules/canDash",
-          "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canDash"
+          "$canAccessCrateriaWest"
         ],
         "item_count": 1
       },
       {// Brinstar Blue
         "name": "BrinstarBlue",
         "access_rules": [
-          "m3casual,@z3portalAccess/canAccessCrateriaPortal",
-          "m3tournament,@z3portalAccess/canAccessCrateriaPortal"
+          "$canAccessBrinstarBlue"
         ],
         "item_count": 1
       },
       {// Brinstar Green
         "name": "BrinstarGreen",
         "access_rules": [
-          "m3casual,@m3logicRules/canDestroyBombWalls",
-          "m3casual,@m3logicRules/canDash",
-          "m3tournament,@m3logicRules/canDestroyBombWalls",
-          "m3tournament,@m3logicRules/canDash"
-        ],
-        "item_count": 1
-      },
-      {// canDestroyBomWalls || canDash
-        "name": "BrinstarPinkHelper1",
-        "access_rules": [ "@m3logicRules/canDestroyBombWalls", "@m3logicRules/canDash" ],
-        "item_count": 1
-      },
-      {// canAccessNorfairPortal && canMorph
-        "name": "BrinstarPinkHelper2",
-        "access_rules": [ "@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph" ],
-        "item_count": 1
-      },
-      {// ice || canHiJump || canFly
-        "name": "BrinstarPinkHelper3",
-        "access_rules": [ "ice", "@m3logicRules/canHiJump", "space" ],
-        "item_count": 1
-      },
-      {// (canOpenRedDoors || wave) && (ice || canHiJump || canSpringBallJump || canFly)
-        "name": "BrinstarPinkHelper4",
-        "access_rules": [
-          "@m3logicRules/canOpenRedDoors,ice",
-          "@m3logicRules/canOpenRedDoors,@m3logicRules/canHiJump",
-          "@m3logicRules/canOpenRedDoors,@m3logicRules/canSpringBallJump",
-          "@m3logicRules/canOpenRedDoors,@m3logicRules/canFly",
-          "wave,ice",
-          "wave,@m3logicRules/canHiJump",
-          "wave,@m3logicRules/canSpringBallJump",
-          "wave,@m3logicRules/canFly"
+          "$canAccessBrinstarGreen"
         ],
         "item_count": 1
       },
       {// Brinstar Pink
         "name": "BrinstarPink",
         "access_rules": [
-          "m3casual,@m3logicRules/canOpenRedDoors,@m3regionAccess/BrinstarPinkHelper1",
-          "m3casual,@m3logicRules/canUsePowerBombs",
-          "m3casual,@m3regionAccess/BrinstarPinkHelper2,wave,@m3regionAccess/BrinstarPinkHelper3",
-          "m3tournament,@m3logicRules/canOpenRedDoors,@m3regionAccess/BrinstarPinkHelper1",
-          "m3tournament,@m3logicRules/canUsePowerBombs",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper2,@m3regionAccess/BrinstarPinkHelper4"
+          "$canAccessBrinstarPink"
         ],
         "item_count": 1
       },
@@ -705,161 +648,52 @@
         ],
         "item_count": 1
       },
-      {// BrinstarPinkHelper3 || canSpringBallJump
-        "name": "BrinstarRedHelper1",
-        "access_rules": [
-          "@m3regionAccess/BrinstarPinkHelper3",
-          "@m3logicRules/canSpringBallJump"
-        ],
-        "item_count": 1
-      },
       {// Brinstar Red
         "name": "BrinstarRed",
         "access_rules": [
-          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3regionAccess/BrinstarPinkHelper3",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3regionAccess/BrinstarRedHelper1"
+          "$canAccessBrinstarRed"
         ],
         "item_count": 1
       },
       {// Brinstar Kraid
         "name": "BrinstarKraid",
         "access_rules": [
-          "m3casual,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
-          "m3casual,@m3logicRules/canDash,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
-          "m3tournament,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
-          "m3tournament,@m3logicRules/canDash,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages"
-        ],
-        "item_count": 1
-      },
-      {// (BrinstarPinkHelper1 && canOpenGreenDoors && canMorph) || canAccessNorfairPortal
-        "name": "CrocomireHelper1",
-        "access_rules": [
-          "@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
-          "@z3portalAccess/canAccessNorfairPortal"
-        ],
-        "item_count": 1
-      },
-      {// (canUsePowerBombs && canDash) || wave
-        "name": "CrocomireHelper2",
-        "access_rules": [ "@m3logicRules/canUsePowerBombs,@m3logicRules/canDash", "@m3logicRules/canDash,wave" ],
-        "item_count": 1
-      },
-      {// (canFly && canMorph) || (canHiJump && canMorph) || canDash
-        "name": "CrocomireHelper3",
-        "access_rules": [
-          "@m3logicRules/canMorph,@m3logicRules/canFly,wave",
-          "@m3logicRules/canMorph,@m3logicRules/canHiJump,wave"
-        ],
-        "item_count": 1
-      },
-      {// (alltanks:2 && canDash) || canHellRun
-        "name": "CrocomireTourneyHelper1",
-        "access_rules": [ "alltanks:2,@m3logicRules/canDash", "@m3logicRules/canHellRun" ],
-        "item_count": 1
-      },
-      {// canFly || canHiJump || canSpringBallJump || (heatProof && ice)
-        "name": "CrocomireTourneyHelper2",
-        "access_rules": [
-          "@m3logicRules/canFly",
-          "@m3logicRules/canHiJump",
-          "@m3logicRules/canSpringBallJump",
-          "@m3logicRules/heatProof,ice",
-          "@m3logicRules/canDash"
-        ],
-        "item_count": 1
-      },
-      {// canPassBombPassages || canDash || (heatProof && canMorph)
-        "name": "CrocomireTourneyHelper3",
-        "access_rules": [
-          "@m3logicRules/canPassBombPassages",
-          "@m3logicRules/canDash",
-          "@m3logicRules/heatProof,@m3logicRules/canMorph"
+          "$canAccessBrinstarKraid"
         ],
         "item_count": 1
       },
       {// Norfair Crocomire
         "name": "NorfairCrocomire",
         "access_rules": [
-          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper2,@m3regionAccess/CrocomireHelper3",
-          "m3tournament,@m3regionAccess/CrocomireTourneyHelper1,@m3logicRules/canOpenDoors,@m3regionAccess/CrocomireTourneyHelper2,@m3regionAccess/CrocomireTourneyHelper3"
-        ],
-        "item_count": 1
-      },
-      {// canDash && canUsePowerBombs
-        "name": "NorfairEastHelper1",
-        "access_rules": [ "@m3logicRules/canDash,@m3logicRules/canUsePowerBombs" ],
-        "item_count": 1
-      },
-      {// ice || canDash
-        "name": "NorfairEastHelper2",
-        "access_rules": [ "ice", "@m3logicRules/canDash" ],
-        "item_count": 1
-      },
-      {// canFly || canHiJump || NorfairEastHelper1 || (heatProof && NorfairEastHelper2)
-        "name": "NorfairEastHelper3",
-        "access_rules": [
-          "@m3logicRules/canFly",
-          "@m3logicRules/canHiJump",
-          "@m3regionAccess/NorfairEastHelper1",
-          "@m3logicRules/heatProof,@m3regionAccess/NorfairEastHelper2"
+          "$canAccessNorfairCrocomire"
         ],
         "item_count": 1
       },
       {// Norfair East
         "name": "NorfairEast",
         "access_rules": [
-          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canFly",
-          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canHiJump",
-          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3logicRules/canDash",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3regionAccess/NorfairEastHelper3",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3logicRules/canOpenGreenDoors,@m3regionAccess/NorfairEastHelper3",
-          "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canHellRun,@m3logicRules/canOpenGreenDoors,@m3regionAccess/canSpringBallJump"
+          "$canAccessNorfairEast"
         ],
         "item_count": 1
       },
       {// Norfair West
         "name": "NorfairWest",
         "access_rules": [
-          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors",
-          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canMorph",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph",
-          "m3casual,@z3portalAccess/canAccessNorfairPortal",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canMorph",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph",
-          "m3tournament,@z3portalAccess/canAccessNorfairPortal"
+          "$canAccessNorfairWest"
         ],
         "item_count": 1
       },
       {// Wrecked Ship
         "name": "WreckedShipMain",
         "access_rules": [
-          "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash",
-          "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canGrapple",
-          "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,space",
-          "m3casual,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canSpringBallJump",
-          "m3casual,@m3logicRules/canOpenGreenDoors,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canSwim,@m3logicRules/canPassBombPassages",
-          "m3tournament,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs",
-          "m3tournament,@m3logicRules/canOpenGreenDoors,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canHiJump,@m3logicRules/canPassBombPassages",
-          "m3tournament,@m3logicRules/canOpenGreenDoors,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canDash,@m3logicRules/canPassBombPassages"
+          "$canAccessWreckedShipMain"
         ],
         "item_count": 1
       },
       {// Maridia Outer
         "name": "MaridiaOuter",
         "access_rules": [
-          "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
-          "m3casual,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canSwim",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump,ice",
-          "m3tournament,@z3portalAccess/canAccessMaridiaPortal"
+          "$canAccessMaridiaOuter"
         ],
         "item_count": 1
       },
@@ -875,20 +709,6 @@
           "@m3logicRules/canSpringBallJump",
           "@m3logicRules/canFly",
           "@m3logicRules/canDash"
-        ],
-        "item_count": 1
-      },
-      {// ice || canSpringBallJump
-        "name": "MaridiaInnerHelper1",
-        "access_rules": [ "ice", "@m3logicRules/canSpringBallJump" ],
-        "item_count": 1
-      },
-      {// canHiJump || MaridiaInnerHelper1 || canGrapple
-        "name": "MaridiaInnerHelper2",
-        "access_rules": [
-          "@m3logicRules/canHiJump",
-          "@m3regionAccess/MaridiaInnerHelper1",
-          "@m3logicRules/canGrapple"
         ],
         "item_count": 1
       },
@@ -909,14 +729,7 @@
       {// Maridia Inner
         "name": "MaridiaInner",
         "access_rules": [
-          "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canFly,@m3logicRules/canSwim",
-          "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash,@m3logicRules/canSwim",
-          "m3casual,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canGrapple,@m3logicRules/canSwim",
-          "m3casual,@z3portalAccess/canAccessMaridiaPortal,@m3logicRules/canSwim",
-          "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim",
-          "m3tournament,@m3regionAccess/NorfairWest,@m3logicRules/canUsePowerBombs,@m3regionAccess/MaridiaInnerHelper2",
-          "m3tournament,@z3portalAccess/canAccessMaridiaPortal"
+          "$canAccessMaridiaInner"
         ],
         "item_count": 1
       },
@@ -932,19 +745,7 @@
       {// Lower Norfair West
         "name": "LowerNorfairWest",
         "access_rules": [
-          "m3casual,@m3logicRules/heatProof,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim,space",
-          "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canDestroyBombWalls",
-          "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canHiJump",
-          "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/heatProof,@m3logicRules/canSwim",
-          "m3tournament,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@z3portalAccess/canAccessLowerNorfairPortal,@m3logicRules/canDestroyBombWalls"
-        ],
-        "item_count": 1
-      },
-      {// NorfairEast && canUsePowerBombs && (canHiJump || canSwim)
-        "name": "LowerNorfairEastHelper1",
-        "access_rules": [
-          "@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/canHiJump",
-          "@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,@m3logicRules/canSwim"
+          "$canAccessLowerNorfairWest"
         ],
         "item_count": 1
       },
@@ -965,21 +766,10 @@
         ],
         "item_count": 1
       },
-      {// canPassBombPassages || (screw && space)
-        "name": "LowerNorfairEastHelper4",
-        "access_rules": [ "@m3logicRules/canPassBombPassages", "screw,space" ],
-        "item_count": 1
-      },
       {// Lower Norfair East
         "name": "LowerNorfairEast",
         "access_rules": [
-          "m3casual,@m3logicRules/heatProof,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,space,@m3logicRules/canSwim,@m3logicRules/canFly",
-          "m3casual,@m3logicRules/heatProof,@m3regionAccess/NorfairEast,@m3logicRules/canUsePowerBombs,space,@m3logicRules/canSwim,@m3logicRules/canHiJump",
-          "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canFly,@m3logicRules/canHiJump",
-          "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash,@m3logicRules/canFly",
-          "m3casual,@m3logicRules/heatProof,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canDestroyBombWalls,@m3logicRules/canOpenGreenDoors,@m3logicRules/canUsePowerBombs,@m3logicRules/canDash,@m3logicRules/canHiJump",
-          "m3tournament,@m3regionAccess/LowerNorfairEastHelper1,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4",
-          "m3tournament,@m3regionAccess/LowerNorfairEastHelper2,@m3regionAccess/LowerNorfairEastHelper3,@m3regionAccess/LowerNorfairEastHelper4"
+          "$canAccessLowerNorfairEast"
         ],
         "item_count": 1
       },
@@ -1001,68 +791,58 @@
       {// Bomb Torizo
         "name": "BombTorizo",
         "access_rules": [
-          "m3casual,@m3logicRules/canOpenRedDoors",
-          "m3casual,charge",
-          "m3tournament,@m3logicRules/canOpenRedDoors",
-          "m3tournament,charge"
+          "$canBeatBombTorizo"
         ],
         "item_count": 1
       },
       {// Spore Spawn
         "name": "SporeSpawn",
-        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "access_rules": [ "$canBeatSporeSpawn" ],
         "item_count": 1
       },
       {// Kraid
         "name": "Kraid",
-        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "access_rules": [ "$canBeatKraid" ],
         "item_count": 1
       },
       {// Crocomire
         "name": "Crocomire",
-        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "access_rules": [ "$canBeatCrocomire" ],
         "item_count": 1
       },
       {// Phantoon
         "name": "Phantoon",
-        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "access_rules": [ "$canBeatPhantoon" ],
         "item_count": 1
       },
       {// Botwoon
         "name": "Botwoon",
         "access_rules": [
-          "m3casual,@m3logicRules/canDash",
-          "m3casual,@z3portalAccess/canAccessMaridiaPortal",
-          "m3tournament,ice",
-          "m3tournament,@m3logicRules/canDash",
-          "m3tournament,@z3portalAccess/canAccessMaridiaPortal"
+          "$canBeatBotwoon"
         ],
         "item_count": 1
       },
       {// Draygon
         "name": "Draygon",
         "access_rules": [
-          "m3casual,@m3bossBeat/Botwoon,@m3logicRules/canSwim,@m3logicRules/canDash,@m3logicRules/canHiJump",
-          "m3casual,@m3bossBeat/Botwoon,@m3logicRules/canSwim,@m3logicRules/canFly",
-          "m3tournament,@m3bossBeat/Botwoon,@m3logicRules/canSwim"
+          "$canBeatDraygon"
         ],
         "item_count": 1
       },
       {// Gold Torizo
         "name": "GoldTorizo",
-        "access_rules": [ "@m3bossBeat/BombTorizo" ],
+        "access_rules": [ "$canBeatGoldTorizo" ],
         "item_count": 1
       },
       {// Ridley
         "name": "Ridley",
-        "access_rules": [ "@m3bossBeat/BombTorizo", "@m3logicRules/canUsePowerBombs" ],
+        "access_rules": [ "$canBeatRidley" ],
         "item_count": 1
       },
       {// Mother Brain
         "name": "MotherBrain",
         "access_rules": [
-          "@m3logicRules/canOpenRedDoors,alltanks:6",
-          "@m3logicRules/canOpenRedDoors,varia,alltanks:3"
+          "$canBeatMotherBrain"
         ],
         "item_count": 1
       }
@@ -2235,9 +2015,7 @@
           {// Dark World Mire
             "name": "Dark World Mire",
             "access_rules": [
-              "@z3regionAccess/DarkWorldMire",
-              "z3noglitches,@m3portalAccess/canAccessMiseryMirePortal",
-              "z3minorglitches,@m3portalAccess/canAccessMiseryMirePortal"
+              "@z3regionAccess/DarkWorldMire"
             ],
             "children": [
               {
@@ -2273,9 +2051,7 @@
             "name": "Dark World North East",
             "color": "#4cff00",
             "access_rules": [
-              "@z3regionAccess/DarkWorldNorthEast",
-              "z3noglitches,@m3portalAccess/canAccessDarkWorldPortal,@z3logicRules/canSwim,moonpearl",
-              "z3minorglitches,@m3portalAccess/canAccessDarkWorldPortal,@z3logicRules/canSwim,moonpearl"
+              "@z3regionAccess/DarkWorldNorthEast"
             ],
             "children": [
               {
@@ -2978,9 +2754,7 @@
                 "name": "Death Mountain West",
                 "color": "#ff6a00",
                 "access_rules": [
-                  "@z3regionAccess/DeathMountainWest",
-                  "z3noglitches,@m3portalAccess/canAccessDeathMountainPortal",
-                  "z3minorglitches,@m3portalAccess/canAccessDeathMountainPortal"
+                  "@z3regionAccess/DeathMountainWest"
                 ],
                 "children": [
                   {
@@ -3126,10 +2900,7 @@
             "name": "Light World North East",
             "color": "#4cff00",
             "access_rules": [
-              "z3noglitches,@z3regionAccess/LightWorldNorthEast",
-              "z3minorglitches,@z3regionAccess/LightWorldNorthEast",
-              "z3noglitches,@m3portalAccess/canAccessLightWorldPortal",
-              "z3minorglitches,@m3portalAccess/canAccessLightWorldPortal"
+              "@z3regionAccess/LightWorldNorthEast"
             ],
             "children": [
               {
@@ -3304,10 +3075,7 @@
             "name": "Light World North West",
             "color": "#ff0000",
             "access_rules": [
-              "z3noglitches,@z3regionAccess/LightWorldNorthWest",
-              "z3minorglitches,@z3regionAccess/LightWorldNorthWest",
-              "z3noglitches,@m3portalAccess/canAccessLightWorldPortal",
-              "z3minorglitches,@m3portalAccess/canAccessLightWorldPortal"
+              "@z3regionAccess/LightWorldNorthWest"
             ],
             "children": [
               {
@@ -3750,10 +3518,7 @@
             "name": "Light World South",
             "color": "#0026ff",
             "access_rules": [
-              "z3noglitches,@z3regionAccess/LightWorldSouth",
-              "z3minorglitches,@z3regionAccess/LightWorldSouth",
-              "z3noglitches,@m3portalAccess/canAccessLightWorldPortal",
-              "z3minorglitches,@m3portalAccess/canAccessLightWorldPortal"
+              "@z3regionAccess/LightWorldSouth"
             ],
             "children": [
               {
@@ -7354,10 +7119,8 @@
           {
             "name": "Hyrule Portal: Link's Fortune Teller",
             "access_rules": [
-              "m3casual,@z3portalAccess/canAccessCrateriaPortal",
-              "m3casual,@m3portalAccess/canAccessLightWorldPortal",
-              "m3tournament,@z3portalAccess/canAccessCrateriaPortal",
-              "m3tournament,@m3portalAccess/canAccessLightWorldPortal"
+              "@z3portalAccess/canAccessCrateriaPortal",
+              "@m3portalAccess/canAccessLightWorldPortal"
             ],
             "sections": [
               {
@@ -7383,10 +7146,8 @@
           {
             "name": "Hyrule Portal: Death Mountain Cave",
             "access_rules": [
-              "m3casual,@z3portalAccess/canAccessNorfairPortal",
-              "m3casual,@m3portalAccess/canAccessDeathMountainPortal",
-              "m3tournament,@z3portalAccess/canAccessNorfairPortal",
-              "m3tournament,@m3portalAccess/canAccessDeathMountainPortal"
+              "@z3portalAccess/canAccessNorfairPortal",
+              "@m3portalAccess/canAccessDeathMountainPortal"
             ],
             "sections": [
               {
@@ -7412,10 +7173,8 @@
           {
             "name": "Hyrule Portal: Dark World Ice Cave Right",
             "access_rules": [
-              "m3casual,@z3portalAccess/canAccessMaridiaPortal",
-              "m3casual,@m3portalAccess/canAccessDarkWorldPortal",
-              "m3tournament,@z3portalAccess/canAccessMaridiaPortal",
-              "m3tournament,@m3portalAccess/canAccessDarkWorldPortal"
+              ",@z3portalAccess/canAccessMaridiaPortal",
+              ",@m3portalAccess/canAccessDarkWorldPortal"
             ],
             "sections": [
               {
@@ -7441,10 +7200,8 @@
           {
             "name": "Hyrule Portal: Misery Mire East 'Entrance'",
             "access_rules": [
-              "m3casual,@z3portalAccess/canAccessLowerNorfairPortal",
-              "m3casual,@m3portalAccess/canAccessMiseryMirePortal",
-              "m3tournament,@z3portalAccess/canAccessLowerNorfairPortal",
-              "m3tournament,@m3portalAccess/canAccessMiseryMirePortal"
+              "@z3portalAccess/canAccessLowerNorfairPortal",
+              "@m3portalAccess/canAccessMiseryMirePortal"
             ],
             "sections": [
               {
