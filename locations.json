@@ -941,13 +941,11 @@
       {// Norfair West
         "name": "NorfairWest",
         "access_rules": [
-          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors",
-          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canMorph",
+          "m3casual,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
           "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors",
           "m3casual,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph",
           "m3casual,@z3portalAccess/canAccessNorfairPortal",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors",
-          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canMorph",
+          "m3tournament,@m3regionAccess/BrinstarPinkHelper1,@m3logicRules/canOpenGreenDoors,@m3logicRules/canMorph",
           "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canOpenGreenDoors",
           "m3tournament,@z3portalAccess/canAccessNorfairPortal,@m3logicRules/canMorph",
           "m3tournament,@z3portalAccess/canAccessNorfairPortal"
