@@ -4833,8 +4833,7 @@
               {
                 "name": "Missile (Crateria gauntlet left)",
                 "access_rules": [
-                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:1,@m3logicRules/canFly",
-                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:1,@m3logicRules/canDash",
+                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:2",
                   "m3tournament,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
@@ -5449,7 +5448,9 @@
                 "name": "Energy Tank, Waterway",
                 "access_rules": [
                   "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:1",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:2"
+                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,@m3logicRules/canSwim",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:1",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,@m3logicRules/canSwim"
                 ],
                 "sections": [
                   {
