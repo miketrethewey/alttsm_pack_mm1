@@ -10,7 +10,11 @@ end
 -- canDash : boots; speed
 function canDash(game)
   local ret = 0
-  game = game:lower() or "z3"
+  if(game) then
+    game = game:lower()
+  else
+    game = "z3"
+  end
 
   if(game == "sm") then
     if(has("speed") == 1) then
@@ -37,7 +41,11 @@ end
 -- canFly : flute; space
 function canFly(game)
   local ret = 0
-  game = game:lower() or "z3"
+  if(game) then
+    game = game:lower()
+  else
+    game = "z3"
+  end
 
   if(game == "sm") then
     if((has("morph") == 1) and (has("bomb") == 1)) or (has("space") == 1) then
@@ -64,7 +72,11 @@ end
 -- canGrapple : hookshot; grappling
 function canGrapple(game)
   local ret = 0
-  game = game:lower() or "z3"
+  if(game) then
+    game = game:lower()
+  else
+    game = "z3"
+  end
 
   if(game == "sm") then
     if(has("grappling") == 1) then
@@ -154,7 +166,11 @@ end
 -- canSwim : flippers; gravity
 function canSwim(game)
   local ret = 0
-  game = game:lower() or "z3"
+  if(game) then
+    game = game:lower()
+  else
+    game = "z3"
+  end
 
   if(game == "sm") then
     if(has("gravity") == 1) then
