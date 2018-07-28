@@ -8,11 +8,11 @@ end
 function canAccessDarkWorldPortal()
   local ret = 0
 
-  if(canOpenYellowDoors()
-    and canOpenGreenDoors()
-    and (canSwim("sm")
-      or (canHiJump() and has("ice") and canGrapple("sm")))
-    and (has("ice") or (canDash("sm")))) then
+  if((canOpenYellowDoors() == 1)
+    and (canOpenGreenDoors() == 1)
+    and ((canSwim("sm") == 1)
+      or ((canHiJump() == 1) and (has("ice") == 1) and (canGrapple("sm") == 1)))
+    and ((has("ice") == 1) or ((canDash("sm") == 1)))) then
 
     ret = 1
 
@@ -25,8 +25,8 @@ end
 function canAccessDeathMountainPortal()
   local ret = 0
 
-  if((canDestroyBombWalls() or canDash("sm"))
-    and (canOpenGreenDoors() and canMorph())) then
+  if(((canDestroyBombWalls() == 1) or (canDash("sm") == 1))
+    and ((canOpenGreenDoors() == 1) and (canMorph() == 1))) then
 
     ret = 1
 
@@ -39,10 +39,10 @@ end
 function canAccessMiseryMirePortal()
   local ret = 0
 
-  if(heatProof()
-    and canOpenGreenDoors()
-    and (canHiJump() or canSwim("sm"))
-    and canOpenYellowDoors()) then
+  if((heatProof() == 1)
+    and (canOpenGreenDoors() == 1)
+    and ((canHiJump() == 1) or (canSwim("sm") == 1))
+    and (canOpenYellowDoors() == 1)) then
 
     ret = 1
 

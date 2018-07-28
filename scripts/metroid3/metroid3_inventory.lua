@@ -177,11 +177,11 @@ end
 function canEnterAndLeaveGauntlet()
   local ret = 0
 
-  if((canFly("sm") or canHiJump() or canDash("sm"))
-    and canIbj()
-      or (canOpenYellowDoors() and has("powerbomb",2))
-      or has("screw")
-      or (canDash("sm") and canOpenYellowDoors() and hasEnergyReserves(2))) then
+  if(((canFly("sm") == 1) or (canHiJump() == 1) or (canDash("sm") == 1))
+    and (canIbj() == 1)
+      or ((canOpenYellowDoors() == 1) and (has("powerbomb",2) == 1))
+      or (has("screw") == 1)
+      or ((canDash("sm") == 1) and (canOpenYellowDoors() == 1) and (hasEnergyReserves(2) == 1))) then
     ret = 1
   end
 
