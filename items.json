@@ -1073,22 +1073,26 @@
     "allow_disabled": false,
     "loop": true,
     "stages": [
-      {
-        "name": "Tournament",
-        "img": "images/metroid3/logics/tournament.png",
-        "codes": "m3logic,m3tournament,m3notopen",
-        "inherit_codes": "false"
-      }, //      {
-//        "name": "Normal",
-//        "img": "images/metroid3/logics/normal.png",
-//        "codes": "m3normal,notopen",
-//        "inherit_codes": false
-//      },
 //      {
-//        "name": "Hard",
-//        "img": "images/metroid3/logics/hard.png",
+//        "name": "Tournament",
+//        "img": "images/metroid3/logics/tournament.png",
+//        "codes": "m3logic,m3tournament,m3notopen",
+//        "inherit_codes": "false"
+//      },
+      {
+        "name": "Normal",
+        "img": "images/metroid3/logics/normal.png",
+//        "codes": "m3normal,notopen",
+        "codes": "m3casual,notopen",
+        "inherit_codes": false
+      },
+      {
+        "name": "Hard",
+        "img": "images/metroid3/logics/hard.png",
 //        "codes": "m3hard,m3notopen",
-//        "inherit_codes": false
+        "codes": "m3tournament,m3notopen",
+        "inherit_codes": false
+      }
 //      },
 //      {
 //        "name": "Open",
@@ -1102,12 +1106,12 @@
 //        "codes": "m3full,m3notopen",
 //        "inherit_codes": false
 //      },
-      {
-        "name": "Casual",
-        "img": "images/metroid3/logics/casual.png",
-        "codes": "m3casual,m3notopen",
-        "inherit_codes": "false"
-      }
+//      {
+//        "name": "Casual",
+//        "img": "images/metroid3/logics/casual.png",
+//        "codes": "m3casual,m3notopen",
+//        "inherit_codes": "false"
+//      }
     ]
   },
   
