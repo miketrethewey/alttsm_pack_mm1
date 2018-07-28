@@ -739,7 +739,7 @@
         ],
         "item_count": 1
       },
-      {// canDestroyBomWalls || canDash
+      {// canDestroyBombWalls || canDash
         "name": "BrinstarPinkHelper1",
         "access_rules": [ "@m3logicRules/canDestroyBombWalls", "@m3logicRules/canDash" ],
         "item_count": 1
@@ -851,16 +851,24 @@
         ],
         "item_count": 1
       },
-      {// (canUsePowerBombs && canDash) || wave
+      {// (canUsePowerBombs && canDash) || (canDash && wave)
         "name": "CrocomireHelper2",
         "access_rules": [ "@m3logicRules/canUsePowerBombs,@m3logicRules/canDash", "@m3logicRules/canDash,wave" ],
         "item_count": 1
       },
-      {// (canFly && canMorph) || (canHiJump && canMorph) || canDash
+      {// (canMorph && (canFly || canHiJump) && wave)
         "name": "CrocomireHelper3",
         "access_rules": [
           "@m3logicRules/canMorph,@m3logicRules/canFly,wave",
           "@m3logicRules/canMorph,@m3logicRules/canHiJump,wave"
+        ],
+        "item_count": 1
+      },
+      {// (CrocomireHelper2 || CrocomireHelper3)
+        "name": "CrocomireHelper4",
+        "access_rules": [
+          "@m3regionAccess/CrocomireHelper2",
+          "@m3regionAccess/CrocomireHelper3"
         ],
         "item_count": 1
       },
@@ -892,7 +900,7 @@
       {// Norfair Crocomire
         "name": "NorfairCrocomire",
         "access_rules": [
-          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper2,@m3regionAccess/CrocomireHelper3",
+          "m3casual,@m3regionAccess/CrocomireHelper1,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireHelper4",
           "m3tournament,@m3regionAccess/CrocomireHelper1,@m3logicRules/canOpenGreenDoors,@m3regionAccess/CrocomireTourneyHelper1,@m3regionAccess/CrocomireTourneyHelper2,@m3regionAccess/CrocomireTourneyHelper3",
           "m3tournament,@z3portalAccess/canAccessNorfairPortal,screw,space,@m3logicRules/heatProof,@m3logicRules/canOpenGreenDoors,alltanks:2"
         ],
@@ -5756,7 +5764,8 @@
                 "access_rules": [
                   "m3casual,alltanks:1",
                   "m3casual,space",
-                  "m3casual,@m3logicRules/canGrapple"
+                  "m3casual,@m3logicRules/canGrapple",
+                  "m3tournament"
                 ],
                 "sections": [
                   {
@@ -6161,7 +6170,12 @@
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canDash",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
                   "m3casual,@m3logicRules/canHiJump",
-                  "m3casual,ice"
+                  "m3casual,ice",
+                  "m3tournament,@m3logicRules/canFly",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDash",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
+                  "m3tournament,@m3logicRules/canHiJump",
+                  "m3tournament,ice"
                 ],
                 "sections": [
                   {
@@ -7248,6 +7262,7 @@
               {
                 "name": "Missile (Mickey Mouse room)",
                 "access_rules": [
+                  "m3casual,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls",
                   "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
                 ],
                 "sections": [
@@ -7294,6 +7309,7 @@
               {
                 "name": "Power Bomb (lower Norfair above fire flea room)",
                 "access_rules": [
+                  "m3casual,@m3logicRules/canPassBombPassages",
                   "m3tournament,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
@@ -7343,6 +7359,7 @@
               {
                 "name": "Missile (lower Norfair near Wave Beam)",
                 "access_rules": [
+                  "m3casual,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls",
                   "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
                 ],
                 "sections": [
