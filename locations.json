@@ -638,6 +638,7 @@
       {// Brinstar Kraid
         "name": "BrinstarKraid",
         "access_rules": [
+
           "$canAccessBrinstarKraid"
         ],
         "item_count": 1
@@ -4461,8 +4462,7 @@
               {
                 "name": "Missile (Crateria gauntlet left)",
                 "access_rules": [
-                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:1,@m3logicRules/canFly",
-                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:1,@m3logicRules/canDash",
+                  "m3casual,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages,alltanks:2",
                   "m3tournament,@m3logicRules/canEnterAndLeaveGauntlet,@m3logicRules/canPassBombPassages"
                 ],
                 "sections": [
@@ -5077,7 +5077,9 @@
                 "name": "Energy Tank, Waterway",
                 "access_rules": [
                   "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:1",
-                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:2"
+                  "m3casual,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,@m3logicRules/canSwim",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,alltanks:1",
+                  "m3tournament,@m3logicRules/canUsePowerBombs,@m3logicRules/canOpenRedDoors,@m3logicRules/canDash,@m3logicRules/canSwim"
                 ],
                 "sections": [
                   {
@@ -5383,7 +5385,8 @@
                 "access_rules": [
                   "m3casual,alltanks:1",
                   "m3casual,space",
-                  "m3casual,@m3logicRules/canGrapple"
+                  "m3casual,@m3logicRules/canGrapple",
+                  "m3tournament"
                 ],
                 "sections": [
                   {
@@ -5413,7 +5416,8 @@
                   "m3tournament,@m3logicRules/canFly,@m3logicRules/canHellRun",
                   "m3tournament,@m3logicRules/canGrapple,@m3logicRules/canHellRun",
                   "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canDash,@m3logicRules/canHellRun",
-                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,@m3logicRules/canHellRun"
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/canSpringBallJump,@m3logicRules/canHellRun",
+                  "m3tournament,@m3logicRules/canHiJump,@m3logicRules/heatProof,ice,@m3logicRules/canHellRun"
                 ],
                 "sections": [
                   {
@@ -5787,7 +5791,12 @@
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canDash",
                   "m3casual,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
                   "m3casual,@m3logicRules/canHiJump",
-                  "m3casual,ice"
+                  "m3casual,ice",
+                  "m3tournament,@m3logicRules/canFly",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDash",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canPassBombPassages",
+                  "m3tournament,@m3logicRules/canHiJump",
+                  "m3tournament,ice"
                 ],
                 "sections": [
                   {
@@ -6873,7 +6882,10 @@
             "children": [
               {
                 "name": "Missile (Mickey Mouse room)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3casual,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6917,7 +6929,10 @@
               },
               {
                 "name": "Power Bomb (lower Norfair above fire flea room)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3casual,@m3logicRules/canPassBombPassages",
+                  "m3tournament,@m3logicRules/canPassBombPassages"
+                ],
                 "sections": [
                   {
                     "name": "Visible",
@@ -6964,7 +6979,10 @@
               },
               {
                 "name": "Missile (lower Norfair near Wave Beam)",
-                "access_rules": [],
+                "access_rules": [
+                  "m3casual,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls",
+                  "m3tournament,@m3logicRules/canMorph,@m3logicRules/canDestroyBombWalls"
+                ],
                 "sections": [
                   {
                     "name": "Visible",

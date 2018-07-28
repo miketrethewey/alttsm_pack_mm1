@@ -118,7 +118,7 @@
     "img": "images/zelda3/inventory/hookshot.png",
     "codes": "hookshot,hs,boing"
   },
-  
+
    // Mushroom/Powder
   {// Mushroom
     "type": "toggle",
@@ -161,7 +161,7 @@
       }
     ]
   },
-  
+
    // Rods
   {// Fire Rod
     "name": "Fire Rod",
@@ -208,7 +208,7 @@
       }
     ]
   },
-  
+
    // Medallions
   {// Bombos: Medallion, MM/TR Indicator
     "name": "Bombos Medallion",
@@ -288,7 +288,7 @@
       }
     ]
   },
-  
+
    // Shovel/Flute
   {// Shovel
     "type": "toggle",
@@ -553,7 +553,7 @@
     "img": "images/zelda3/inventory/somaria.png",
     "codes": "somaria,redcane,kane"
   },
-   
+
    // Byrna/Cape
   {// Byrna
     "type": "toggle",
@@ -785,7 +785,7 @@
     "max_quantity": 24,
     "codes": "heartpiece,heartpieces,hp,piece,pieces"
   },
-  
+
    // Dungeons
   {// Eastern Palace
     "name": "Eastern Palace",
@@ -794,11 +794,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/ep1.png",
-        "codes": "ep,easternpalace,crystal"
+        "codes": "ep,easternpalace,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/ep2.png",
-        "codes": "ep,easternpalace,crystal56,redcrystal"
+        "codes": "ep,easternpalace,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/ep3.png",
@@ -817,11 +817,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/dp1.png",
-        "codes": "dp,desertpalace,crystal"
+        "codes": "dp,desertpalace,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/dp2.png",
-        "codes": "dp,desertpalace,crystal56,redcrystal"
+        "codes": "dp,desertpalace,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/dp3.png",
@@ -840,11 +840,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/hera1.png",
-        "codes": "toh,towerofhera,crystal"
+        "codes": "toh,towerofhera,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/hera2.png",
-        "codes": "toh,towerofhera,crystal56,redcrystal"
+        "codes": "toh,towerofhera,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/hera3.png",
@@ -863,11 +863,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/pod1.png",
-        "codes": "pod,palaceofdarkness,crystal"
+        "codes": "pod,palaceofdarkness,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/pod2.png",
-        "codes": "pod,palaceofdarkness,crystal56,redcrystal"
+        "codes": "pod,palaceofdarkness,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/pod3.png",
@@ -886,11 +886,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/sp1.png",
-        "codes": "sp,swamppalace,crystal"
+        "codes": "sp,swamppalace,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/sp2.png",
-        "codes": "sp,swamppalace,crystal56,redcrystal"
+        "codes": "sp,swamppalace,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/sp3.png",
@@ -909,11 +909,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/sw1.png",
-        "codes": "sw,skullwoods,crystal"
+        "codes": "sw,skullwoods,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/sw2.png",
-        "codes": "sw,skullwoods,crystal56,redcrystal"
+        "codes": "sw,skullwoods,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/sw3.png",
@@ -932,11 +932,11 @@
     "stages": [
       {
         "img": "images/zelda3/dungeons/tt1.png",
-        "codes": "tt,thievestown,crystal"
+        "codes": "tt,thievestown,crystal,bluecrystal"
       },
       {
         "img": "images/zelda3/dungeons/tt2.png",
-        "codes": "tt,thievestown,crystal56,redcrystal"
+        "codes": "tt,thievestown,crystal,crystal56,redcrystal"
       },
       {
         "img": "images/zelda3/dungeons/tt3.png",
@@ -1072,23 +1072,26 @@
     "allow_disabled": false,
     "loop": true,
     "stages": [
-      {
-        "name": "Tournament",
-        "img": "images/metroid3/logics/tournament.png",
-        "codes": "m3logic,m3tournament,m3notopen",
-        "inherit_codes": "false"
-      }, //      {
-//        "name": "Normal",
-//        "img": "images/metroid3/logics/normal.png",
-//        "codes": "m3normal,notopen",
-//        "inherit_codes": false
-//      },
 //      {
-//        "name": "Hard",
-//        "img": "images/metroid3/logics/hard.png",
-//        "codes": "m3hard,m3notopen",
-//        "inherit_codes": false
+//        "name": "Tournament",
+//        "img": "images/metroid3/logics/tournament.png",
+//        "codes": "m3logic,m3tournament,m3notopen",
+//        "inherit_codes": "false"
 //      },
+      {
+        "name": "Hard",
+        "img": "images/metroid3/logics/hard.png",
+//        "codes": "m3hard,m3notopen",
+        "codes": "m3logic,m3tournament,m3notopen",
+        "inherit_codes": false
+      },
+      {
+        "name": "Normal",
+        "img": "images/metroid3/logics/normal.png",
+//        "codes": "m3normal,notopen",
+        "codes": "m3casual,notopen",
+        "inherit_codes": false
+      },
 //      {
 //        "name": "Open",
 //        "img": "images/metroid3/logics/open.png",
@@ -1101,15 +1104,15 @@
 //        "codes": "m3full,m3notopen",
 //        "inherit_codes": false
 //      },
-      {
-        "name": "Casual",
-        "img": "images/metroid3/logics/casual.png",
-        "codes": "m3casual,m3notopen",
-        "inherit_codes": "false"
-      }
+//      {
+//        "name": "Casual",
+//        "img": "images/metroid3/logics/casual.png",
+//        "codes": "m3casual,m3notopen",
+//        "inherit_codes": "false"
+//      }
     ]
   },
-  
+
   // Inventory
   //  Beams
   {// Charge Beam
@@ -1147,7 +1150,7 @@
     "img": "images/metroid3/inventory/plasma.png",
     "codes": "plasma,beam,plasmabeam"
   },
-  
+
    // Suits
   {// Varia Suit
     "name": "Varia Suit",
@@ -1163,7 +1166,7 @@
     "img": "images/metroid3/inventory/gravity.png",
     "codes": "gravity,suit"
   },
-  
+
    // Morph
   {// Morph Ball
     "name": "Morph Ball",
@@ -1186,7 +1189,7 @@
     "img": "images/metroid3/inventory/springball.png",
     "codes": "spring,springball"
   },
-  
+
    // Jump/Shoes
   {// Screw Attack
     "name": "Screw Attack",
@@ -1216,7 +1219,7 @@
     "img": "images/metroid3/inventory/speed.png",
     "codes": "speed,speedboost,speedbooster"
   },
-  
+
    // Utility
   {// Grappling Beam
     "name": "Grappling Beam",
@@ -1232,7 +1235,7 @@
     "img": "images/metroid3/inventory/xray.png",
     "codes": "xray,scope,xrayscope"
   },
-  
+
    // Bosses
   {// Kraid
     "name": "Kraid",
@@ -1302,7 +1305,7 @@
       }
     ]
   },
-  
+
    //  Health
   {// Base Energy Tanks
     "name": "Etanks",
@@ -1318,7 +1321,7 @@
     "max_quantity": 4,
     "codes": "reservetank,alltanks"
   },
-  
+
    // Ammo
   {// Missile
     "name": "Missile",
