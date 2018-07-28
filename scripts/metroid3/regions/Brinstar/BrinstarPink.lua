@@ -10,7 +10,7 @@ function canAccessBrinstarPink()
       ) then
       ret = 1
     end
-  else if(getSMLogic() == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         ((canOpenRedDoors() == 1) and ((canDestroyBombWalls() == 1) or (canDash("sm") == 1)))
         or (canUsePowerBombs() == 1)

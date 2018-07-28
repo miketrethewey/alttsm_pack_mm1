@@ -12,7 +12,7 @@ function canAccessLowerNorfairWest()
       ) then
       ret = 1
     end
-  else if(getSMLogic() == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         (canAccessNorfairEast() == 1)
         and (canUsePowerBombs() == 1)

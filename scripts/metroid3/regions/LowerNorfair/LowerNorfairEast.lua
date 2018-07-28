@@ -17,7 +17,7 @@ function canAccessLowerNorfairEast()
       ) then
       ret = 1
     end
-  else if(getSMLogic == "tournament") then
+  elseif(getSMLogic == "tournament") then
     if(
         (heatProof() == 1)
           and (((canAccessNorfairEast() == 1)

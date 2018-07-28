@@ -12,7 +12,7 @@ function canAccessCrateriaEast()
       ret = 1
 
     end
-  else if(getSMLogic() == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         ((canUsePowerBombs() == 1) and (canOpenGreenDoors() == 1))
         or ((canAccessNorfairPortal() == 1) and (canUsePowerBombs() == 1) and ((has("ice") == 1) or (canSpringBallJump() == 1) or (canHiJump() == 1) or (canFly("sm") == 1)))

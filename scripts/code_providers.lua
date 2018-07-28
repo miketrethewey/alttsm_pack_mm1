@@ -10,7 +10,7 @@ function has(item,amount)
       ret = Tracker:ProviderCountForCode(item)
     end
   else
-    if(Tracker:ProviderCountForCode(item) == 1) then
+    if(Tracker:ProviderCountForCode(item) >= 1) then
       ret = 1
     end
   end

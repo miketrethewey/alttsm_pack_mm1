@@ -11,7 +11,7 @@ function canAccessMaridiaOuter()
       ) then
       ret = 1
     end
-  else if(getSMLogic == "tournament") then
+  elseif(getSMLogic == "tournament") then
     if(
         ((canAccessNorfairWest() == 1)
           and (canUsePowerBombs() == 1)

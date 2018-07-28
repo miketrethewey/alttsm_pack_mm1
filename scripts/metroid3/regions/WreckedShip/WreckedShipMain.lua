@@ -10,7 +10,7 @@ function canAccessWreckedShipMain()
       ) then
       ret = 1
     end
-  else if(getSMLogic == "tournament") then
+  elseif(getSMLogic == "tournament") then
     if(
         (canOpenGreenDoors() == 1) and ((canUsePowerBombs() == 1) or ((canAccessMaridiaPortal() == 1) and ((canHiJump() == 1) or (canSwim("sm") == 1)) and (canPassBombPassages() == 1)))
       ) then
