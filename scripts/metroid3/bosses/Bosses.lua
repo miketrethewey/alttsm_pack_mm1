@@ -11,35 +11,51 @@ end
 
 -- SporeSpawn
 function canBeatSporeSpawn
-  return canBeatBombTorizo() == 1
+  if(canBeatBombTorizo() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Kraid
 function canBeatKraid()
-  return canBeatBombTorizo() == 1
+  if(canBeatBombTorizo() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Crocomire
 function canBeatCrocomire()
-  return canBeatBombTorizo() == 1
+  if(canBeatBombTorizo() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Phantoon
 function canBeatPhantoon()
-  return canBeatBombTorizo() == 1
+  if(canBeatBombTorizo() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Botwoon
 function canBeatBotwoon()
   local ret = 0
 
-  if(getSMLogic == "casual") then
+  if(getSMLogic() == "casual") then
     if(
         (canDash("sm") == 1) or (canAccessMaridiaPortal() == 1)
       ) then
       ret = 1
     end
-  else if(getSMLogic == "tournament") then
+  else if(getSMLogic() == "tournament") then
     if(
         (has("ice") == 1) or (canDash("sm") == 1) or (canAccessMaridiaPortal() == 1)
       ) then
@@ -73,17 +89,29 @@ end
 
 -- GoldTorizo
 function canBeatGoldTorizo()
-  return canBeatBombTorizo() == 1
+  if(canBeatBombTorizo() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Ridley
 function canBeatRidley()
-  return canBeatBombTorizo() == 1 or canUsePowerBombs() == 1
+  if(canBeatBombTorizo() == 1 and canUsePowerBombs() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- MotherBrain
 function canBeatMotherBrain()
-  return (canOpenRedDoors() == 1) and (
-    (hasEnergyReserves(6) == 1) or ((heatProof() == 1) and (hasEnergyReserves(3) == 1))
-  )
+  if((canOpenRedDoors() == 1) and (
+      (hasEnergyReserves(6) == 1) or ((heatProof() == 1) and (hasEnergyReserves(3) == 1))
+    )) then
+    return 1
+  else
+    return 0
+  end
 end

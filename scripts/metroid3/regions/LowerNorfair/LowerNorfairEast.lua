@@ -2,7 +2,7 @@
 function canAccessLowerNorfairEast()
   local ret = 0
 
-  if(getSMLogic == "casual") then
+  if(getSMLogic() == "casual") then
     if(
         (heatProof() == 1)
           and (((canAccessNorfairEast() == 1)
@@ -17,7 +17,7 @@ function canAccessLowerNorfairEast()
       ) then
       ret = 1
     end
-  elseif(getSMLogic == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         (heatProof() == 1)
           and (((canAccessNorfairEast() == 1)

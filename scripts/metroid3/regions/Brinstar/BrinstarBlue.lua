@@ -1,4 +1,4 @@
 -- canAccessBrinstarBlue
 function canAccessBrinstarBlue()
-  return canAccessCrateriaPortal() == 1
+  return 1
 end

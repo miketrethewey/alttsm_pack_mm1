@@ -6412,11 +6412,11 @@
               {
                 "name": "Plasma Beam",
                 "access_rules": [
-                  "m3casual,@m3bossBeat/Draygon,screw,@m3logicRules/canHiJump",
-                  "m3casual,@m3bossBeat/Draygon,screw,@m3logicRules/canFly",
-                  "m3casual,@m3bossBeat/Draygon,plasma,@m3logicRules/canHiJump",
-                  "m3casual,@m3bossBeat/Draygon,plasma,@m3logicRules/canFly",
-                  "m3tournament,@m3bossBeat/Draygon,@m3regionAccess/PlasmaRoomHelper1,@m3regionAccess/PlasmaRoomHelper2"
+                  "m3casual,draygon,screw,@m3logicRules/canHiJump",
+                  "m3casual,draygon,screw,@m3logicRules/canFly",
+                  "m3casual,draygon,plasma,@m3logicRules/canHiJump",
+                  "m3casual,draygon,plasma,@m3logicRules/canFly",
+                  "m3tournament,draygon,@m3regionAccess/PlasmaRoomHelper1,@m3regionAccess/PlasmaRoomHelper2"
                 ],
                 "sections": [
                   {

@@ -6,12 +6,20 @@ end
 
 -- Light World Death Mountain Cave -> Norfair: Map Room
 function canAccessNorfairPortal()
-  return (canAccessDeathMountainWest() == 1)
+  if(canAccessDeathMountainWest() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Dark World Mire East 'Entrance' -> Lower Norfair Gold Torizo Missile Refill
 function canAccessLowerNorfairPortal()
-  return (canFly() == 1) and (canLiftDarkRocks() == 1)
+  if(canFly() == 1) and (canLiftDarkRocks() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Dark World Ice Cave -> Maridia Missile Refill

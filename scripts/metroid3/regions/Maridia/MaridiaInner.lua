@@ -2,7 +2,7 @@
 function canAccessMaridiaInner()
   local ret = 0
 
-  if(getSMLogic == "casual") then
+  if(getSMLogic() == "casual") then
     if(
         (((canAccessNorfairWest() == 1)
           and (canUsePowerBombs() == 1)
@@ -12,7 +12,7 @@ function canAccessMaridiaInner()
       ) then
       ret = 1
     end
-  elseif(getSMLogic == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         (canAccessNorfairWest() == 1)
           and (canUsePowerBombs() == 1)

@@ -2,7 +2,7 @@
 function canAccessMaridiaOuter()
   local ret = 0
 
-  if(getSMLogic == "casual") then
+  if(getSMLogic() == "casual") then
     if(
         (((canAccessNorfairWest() == 1)
             and (canUsePowerBombs() == 1))
@@ -11,7 +11,7 @@ function canAccessMaridiaOuter()
       ) then
       ret = 1
     end
-  elseif(getSMLogic == "tournament") then
+  elseif(getSMLogic() == "tournament") then
     if(
         ((canAccessNorfairWest() == 1)
           and (canUsePowerBombs() == 1)
