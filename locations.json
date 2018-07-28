@@ -4,57 +4,57 @@
     "sections": [
       {// canBlockLasers : shield3
         "name": "canBlockLasers",
-        "access_rules": [ "shield3" ],
+        "access_rules": [ "$canBlockLasers" ],
         "item_count": 1
       },
       {// canDash : boots
         "name": "canDash",
-        "access_rules": [ "boots" ],
+        "access_rules": [ "$canDash" ],
         "item_count": 1
       },
       {// canFakePowder : somaria && mushroom
         "name": "canFakePowder",
-        "access_rules": [ "somaria,mushroom" ],
+        "access_rules": [ "$canFakePowder" ],
         "item_count": 1
       },
       {// canFly : flute
         "name": "canFly",
-        "access_rules": [ "flute" ],
+        "access_rules": [ "$canFly" ],
         "item_count": 1
       },
       {// canGetGoodBee : (net && bottle && canDash) || (net && bottle && sword && quake)
         "name": "canGetGoodBee",
-        "access_rules": [ "net,bottle,@z3logicRules/canDash", "net,bottle,sword,quake" ],
+        "access_rules": [ "$canGetGoodBee" ],
         "item_count": 1
       },
       {// canGrapple : hookshot
         "name": "canGrapple",
-        "access_rules": [ "hookshot" ],
+        "access_rules": [ "$canGrapple" ],
         "item_count": 1
       },
       {// canHover : canDash
         "name": "canHover",
-        "access_rules": [ "@z3logicRules/canDash" ],
+        "access_rules": [ "$canDash" ],
         "item_count": 1
       },
       {// canLiftRocks : glove1 || glove2
         "name": "canLiftRocks",
-        "access_rules": [ "glove" ],
+        "access_rules": [ "$canLiftRocks" ],
         "item_count": 1
       },
       {// canLiftDarkRocks : glove2
         "name": "canLiftDarkRocks",
-        "access_rules": [ "glove2" ],
+        "access_rules": [ "$canLiftDarkRocks" ],
         "item_count": 1
       },
       {// canLightTorches : lamp || firerod
         "name": "canLightTorches",
-        "access_rules": [ "firesource" ],
+        "access_rules": [ "$canLightTorches" ],
         "item_count": 1
       },
       {// canMeltThings : firerod || bombos
         "name": "canMeltThings",
-        "access_rules": [ "melt" ],
+        "access_rules": [ "$canMeltThings" ],
         "item_count": 1
       },
       {// canNightVision : [lamp]
@@ -64,47 +64,47 @@
       },
       {// canRead : book
         "name": "canRead",
-        "access_rules": [ "book" ],
+        "access_rules": [ "$canRead" ],
         "item_count": 1
       },
       {// canShootArrows : bow || (retro && bow && wooden) || (retro && bow && silvers)
         "name": "canShootArrows",
-        "access_rules": [ "bow", "z3retro,bow,wooden", "z3retro,bow,silvers" ],
+        "access_rules": [ "$canShootArrows" ],
         "item_count": 1
       },
       {// canSwim : flippers
         "name": "canSwim",
-        "access_rules": [ "flippers" ],
+        "access_rules": [ "$canSwim" ],
         "item_count": 1
       },
       {// hasSword : sword || (swordless && hammer)
         "name": "hasSword",
-        "access_rules": [ "sword", "swordless,hammer" ],
+        "access_rules": [ "$hasSword" ],
         "item_count": 1
       },
       {// hasMS : sword2 || sword3 || sword4 || (swordless && hammer)
         "name": "hasMS",
-        "access_rules": [ "sword2", "sword3", "sword4", "swordless,hammer" ],
+        "access_rules": [ "$hasMS" ],
         "item_count": 1
       },
       {// hasTempered : sword3 || sword4
         "name": "hasTempered",
-        "access_rules": [ "sword3", "sword4" ],
+        "access_rules": [ "$hasTempered" ],
         "item_count": 1
       },
       {// hasGolden : sword4
         "name": "hasGolden",
-        "access_rules": [ "sword4" ],
+        "access_rules": [ "$hasGolden" ],
         "item_count": 1
       },
       {// canActivateMedallions : hasSword
         "name": "canActivateMedallions",
-        "access_rules": [ "@z3logicRules/hasSword" ],
+        "access_rules": [ "$canActivateMedallions" ],
         "item_count": 1
       },
       {// canActivateTablets : canRead && hasMS
         "name": "canActivateTablets",
-        "access_rules": [ "@z3logicRules/canRead,@z3logicRules/hasMS" ],
+        "access_rules": [ "$canActivateTablets" ],
         "item_count": 1
       },
       {// canBeatAga1 : (cape && hasSword && lamp) || (hasMS && lamp)
@@ -138,8 +138,7 @@
       {// Dark World Mire
         "name": "DarkWorldMire",
         "access_rules": [
-          "z3noglitches,$canAccessDarkWorldMire",
-          "z3minorglitches,$canAccessDarkWorldMire"
+          "$canAccessDarkWorldMire"
         ],
         "item_count": 1
       },
@@ -295,17 +294,17 @@
       },
       {// canHiJump : hijump || space
         "name": "canHiJump",
-        "access_rules": [ "hijump", "space" ],
+        "access_rules": [ "$canHiJump" ],
         "item_count": 1
       },
       {// canMorph: morph
         "name": "canMorph",
-        "access_rules": [ "morph" ],
+        "access_rules": [ "$canMorph" ],
         "item_count": 1
       },
       {// canSpringBallJump : morph && springball
         "name": "canSpringBallJump",
-        "access_rules": [ "@m3logicRules/canMorph,springball" ],
+        "access_rules": [ "$canSpringBallJump" ],
         "item_count": 1
       },
       {// canSwim : gravity
@@ -315,78 +314,78 @@
       },
       {// canUseMorphBombs : canMorph && bomb
         "name": "canUseMorphBombs",
-        "access_rules": [ "@m3logicRules/canMorph,bomb" ],
+        "access_rules": [ "$canUseMorphBombs" ],
         "item_count": 1
       },
       {// canUsePowerBombs : canMorph && powerbomb
         "name": "canUsePowerBombs",
-        "access_rules": [ "@m3logicRules/canMorph,powerbomb" ],
+        "access_rules": [ "$canUsePowerBombs" ],
         "item_count": 1
       },
       {// canOpenGreenDoors : supermissile
         "name": "canOpenGreenDoors",
-        "access_rules": [ "supermissile" ],
+        "access_rules": [ "$canOpenGreenDoors" ],
         "item_count": 1
       },
       {// canOpenRedDoors : missile
         "name": "canOpenRedDoors",
-        "access_rules": [ "missile", "@m3logicRules/canOpenGreenDoors" ],
+        "access_rules": [ "$canOpenRedDoors" ],
         "item_count": 1
       },
       {// canOpenYellowDoors : canUsePowerBombs
         "name": "canOpenYellowDoors",
-        "access_rules": [ "@m3logicRules/canUsePowerBombs" ],
+        "access_rules": [ "$canOpenYellowDoors" ],
         "item_count": 1
       },
       {// canIbj : canUseMorphBombs :: Tech
         "name": "canIbj",
-        "access_rules": [ "@m3logicRules/canUseMorphBombs" ],
+        "access_rules": [ "$canIbj" ],
         "item_count": 1
       },
       {// canPassBombPassages : canIbj || canUsePowerBombs
         "name": "canPassBombPassages",
-        "access_rules": [ "@m3logicRules/canIbj", "@m3logicRules/canUsePowerBombs" ],
+        "access_rules": [ "$canPassBombPassages" ],
         "item_count": 1
       },
       {// canBomb : canUseMorphBombs || canUsePowerBombs
         "name": "canBomb",
-        "access_rules": [ "@m3logicRules/canUseMorphBombs", "@m3logicRules/canUsePowerBombs" ],
+        "access_rules": [ "$canBomb" ],
         "item_count": 1
       },
       {// canDestroyBombWalls : canBomb || screw
         "name": "canDestroyBombWalls",
-        "access_rules": [ "@m3logicRules/canBomb", "screw" ],
+        "access_rules": [ "$canDestroyBombWalls" ],
         "item_count": 1
       },
       {// heatProof : varia
         "name": "heatProof",
-        "access_rules": [ "varia " ],
+        "access_rules": [ "$heatProof" ],
         "item_count": 1
       },
        // Tech
       {// canAlcatraz : tourney && canMorph
         "name": "canAlcatraz",
-        "access_rules": [ "m3tournament,@m3logicRules/canMorph" ],
+        "access_rules": [ "$canAlcatraz" ],
         "item_count": 1
       },
       {// canCrystalFlash : missile:10 && supermissile:10 && powerbombs:11 && canMorph
         "name": "canCrystalFlash",
-        "access_rules": [ "missile:10,supermissile:10,powerbombs:11,@m3logicRules/canMorph" ],
+        "access_rules": [ "$canCrystalFlash" ],
         "item_count": 1
       },
       {// canDBoostBrinstarBlueCeiling : tourney
         "name": "canDBoostBrinstarBlueCeiling",
-        "access_rules": [ "m3tournament" ],
+        "access_rules": [ "$canDBoostBrinstarBlueCeiling" ],
         "item_count": 1
       },
       {// canHellRun : varia || alltanks:5
         "name": "canHellRun",
-        "access_rules": [ "varia", "alltanks:5" ],
+        "access_rules": [ "$canHellRun" ],
         "item_count": 1
       },
       {// canMidAirPBomb : canUsePowerBombs
         "name": "canMidAirPBomb",
-        "access_rules": [ "@m3logicRules/canUsePowerBombs" ],
+        "access_rules": [ "$canMidAirPBomb" ],
         "item_count": 1
       },
        // Derived from Tech
@@ -395,29 +394,10 @@
         "access_rules": [ "@m3logicRules/canIbj", "space" ],
         "item_count": 1
       },
-      {// canFly || canHiJump || canDash
-        "name": "GauntletHelper1",
-        "access_rules": [
-          "@m3logicRules/canIbj",
-          "@m3logicRules/canUsePowerBombs,powerbombs:10",
-          "screw"
-        ],
-        "item_count": 1
-      },
-      {// canIbj || (canUsePowerBombs && powerbombs:10) || screw || (canDash && canUsePowerBombs && alltanks:2)
-        "name": "GauntletTourneyHelper1",
-        "access_rules": [
-          "@m3regionAccess/GauntletHelper1",
-          "@m3logicRules/canDash,@m3logicRules/canUsePowerBombs,alltanks:2"
-        ],
-        "item_count": 1
-      },
       {// canEnterAndLeaveGauntlet :
         "name": "canEnterAndLeaveGauntlet",
         "access_rules": [
-          "m3casual,@m3logicRules/canMorph,@m3logicRules/canFly,@m3logicRules/GauntletHelper1",
-          "m3casual,@m3logicRules/canMorph,@m3logicRules/canDash,@m3logicRules/GauntletHelper1",
-          "m3tournament,@m3logicRules/GauntletTourneyHelper1"
+          "$canEnterAndLeaveGauntlet"
         ],
         "item_count": 1
       }

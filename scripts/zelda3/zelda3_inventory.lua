@@ -78,6 +78,19 @@ end
 
 -- canShootArrows : bow || z3retro,bow,wooden || z3retro,bow,silvers
 function canShootArrows()
+  local ret = 0
+
+  if(has("bow")) then
+    if(has("z3retro")) then
+      if(has("bow") and (has("wooden") or has("silvers"))) then
+        ret = 1
+      end
+    else
+      ret = 1
+    end
+  end
+
+  return ret
   return has("bow")
 end
 
