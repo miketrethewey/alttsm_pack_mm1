@@ -1,61 +1,109 @@
 -- canHiJump : hijump
 function canHiJump()
-  return has("hijump")
+  if(has("hijump") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canMorph : morph
 function canMorph()
-  return has("morph")
+  if(has("morph") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canSpringBallJump : canMorph && springball
 function canSpringBallJump()
-  return (canMorph() == 1) and (has("springball") == 1)
+  if((canMorph() == 1) and (has("springball") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canUseMorphBombs : canMorph && bomb
 function canUseMorphBombs()
-  return canMorph() and has("bomb")
+  if((canMorph() == 1) and (has("bomb") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canUsePowerBombs : canMorph && powerbomb
 function canUsePowerBombs()
-  return canMorph() and has("powerbomb")
+  if((canMorph() == 1) and (has("powerbomb") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canOpenGreenDoors : supermissile
 function canOpenGreenDoors()
-  return has("supermissile")
+  if((has("supermissile") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canOpenRedDoors : missile
 function canOpenRedDoors()
-  return has("missile")
+  if((has("missile") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canOpenYellowDoors : canUsePowerBombs
 function canOpenYellowDoors()
-  return canUsePowerBombs()
+  if((canUsePowerBombs() == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canIbj : canUseMorphBombs -- Tech
 function canIbj()
-  return canUseMorphBombs()
+  if((canUseMorphBombs() == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canPassBombPassages : canIbj || canUsePowerBombs
 function canPassBombPassages()
-  return canIbj() or canUsePowerBombs()
+  if((canIbj() == 1) or (canUsePowerBombs() == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canBomb : canUseMorphBombs || canUsePowerBombs
 function canBomb()
-  return canUseMorphBombs() or canUsePowerBombs()
+  if((canUseMorphBombs() == 1) or (canUsePowerBombs() == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canDestroyBombWalls : canBomb || screw
 function canDestroyBombWalls()
-  return canBomb() or has("screw")
+  if((canBomb() == 1) or (has("screw") == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- hasEnergyReserves : etanks + rtanks
@@ -72,33 +120,57 @@ end
 
 -- heatProof : varia
 function heatProof()
-  return has("varia")
+  if(has("varia") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- Tech
 -- canAlcatraz : tourney && canMorph
 function canAlcatraz()
-  return has("m3tournament") and canMorph()
+  if((has("m3tournament") == 1) and (canMorph() == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canCrystalFlash : missile:10 && supermissile:10 && powerbombs:11
 function canCrystalFlash()
-  return has("missile",10) and has("supermissile",10) and has("powerbombs",11)
+  if((has("missile",10) == 1) and (has("supermissile",10) == 1) and (has("powerbombs",11) == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canDBoostBrinstarBlueCeiling : tourney
 function canDBoostBrinstarBlueCeiling()
-  return has("m3tournament")
+  if(has("m3tournament") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canHellRun : varia || alltanks:5
 function canHellRun()
-  return heatProof() or hasEnergyReserves(5)
+  if((heatProof() == 1) or (hasEnergyReserves(5) == 1)) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canMidAirPBomb : canUsePowerBombs
 function canMidAirPBomb()
-  return canUsePowerBombs()
+  if(canUsePowerBombs() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canEnterAndLeaveGauntlet

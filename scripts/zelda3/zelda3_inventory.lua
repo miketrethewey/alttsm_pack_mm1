@@ -1,79 +1,137 @@
 -- canBlockLasers : shield3
 function canBlockLasers()
-  return has("shield",3)
+  if(has("shield",3) == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canDash : boots; speed
 function canDash(game)
+  local ret = 0
   game = game:lower() or "z3"
 
   if(game == "sm") then
-    return has("speed")
+    if(has("speed") == 1) then
+      ret = 1
+    end
   else
-    return has("boots")
+    if(has("boots") == 1) then
+      ret = 1
+    end
   end
+
+  return ret
 end
 
 -- canFakePowder : somaria && mushroom
 function canFakePowder()
-  return has("somaria") and has("mushroom")
+  if(has("somaria") == 1) and (has("mushroom") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canFly : flute; space
 function canFly(game)
+  local ret = 0
   game = game:lower() or "z3"
 
   if(game == "sm") then
-    return (has("morph") and has("bomb")) or has("space")
+    if((has("morph") == 1) and (has("bomb") == 1)) or (has("space") == 1) then
+      ret = 1
+    end
   else
-    return has("flute")
+    if(has("flute") == 1) then
+      ret = 1
+    end
   end
+
+  return ret
 end
 
 -- canGetGoodBee : net && bottle && (canDash || (sword && quake))
 function canGetGoodBee()
-  return has("net") and has("bottle") and (canDash() or (has("sword") and has("quake")))
+  if(has("net") == 1) and (has("bottle") == 1) and ((canDash() == 1) or ((has("sword") == 1) and (has("quake") == 1))) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canGrapple : hookshot; grappling
 function canGrapple(game)
+  local ret = 0
   game = game:lower() or "z3"
 
   if(game == "sm") then
-    return has("grappling")
+    if(has("grappling") == 1) then
+      ret = 1
+    end
   else
-    return has("hookshot")
+    if(has("hookshot") == 1) then
+      ret = 1
+    end
+
   end
+
+  return ret
 end
 
 -- canHover : canDash
 function canHover()
-  return canDash()
+  if(canDash() == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canLiftRocks : glove
 function canLiftRocks()
-  return has("glove")
+  if(has("glove") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canLiftDarkRocks : glove2
 function canLiftDarkRocks()
-  return has("glove2")
+  if(has("glove2") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canLightTorches : firesource
 function canLightTorches()
-  return has("firesource")
+  if(has("firesource") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canMeltThings : melt
 function canMeltThings()
-  return has("melt")
+  if(has("melt") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canRead : book
 function canRead()
-  return has("book")
+  if(has("book") == 1) then
+    return 1
+  else
+    return 0
+  end
 end
 
 -- canShootArrows : bow || z3retro,bow,wooden || z3retro,bow,silvers
@@ -81,8 +139,8 @@ function canShootArrows()
   local ret = 0
 
   if(has("bow")) then
-    if(has("z3retro")) then
-      if(has("bow") and (has("wooden") or has("silvers"))) then
+    if((has("z3retro") == 1)) then
+      if((has("bow") == 1) and ((has("wooden") == 1) or (has("silvers") == 1))) then
         ret = 1
       end
     else
@@ -91,68 +149,86 @@ function canShootArrows()
   end
 
   return ret
-  return has("bow")
 end
 
 -- canSwim : flippers; gravity
 function canSwim(game)
+  local ret = 0
   game = game:lower() or "z3"
 
   if(game == "sm") then
-    return has("gravity")
+    if(has("gravity") == 1) then
+      ret = 1
+    end
   else
-    return has("flippers")
+    if(has("flippers") == 1) then
+      ret = 1
+    end
   end
+
+  return ret
 end
 
 -- hasSword : sword || (swordless && hammer)
 function hasSword()
+  local ret = 0
+
   if(has("swordless") == 1) then
-    return has("hammer")
+    if(has("hammer") == 1) then
+      ret = 1
+    end
   else
-    return has("sword")
+    if(has("sword") == 1) then
+      ret = 1
+    end
   end
+
+  return ret
 end
 
 -- hasMS : sword2 || sword3 || sword4 || (swordless && hammer)
 function hasMS()
   if(has("swordless") == 1) then
-    return has("hammer")
+    if(has("hammer") == 1) then
+      ret = 1
+    end
   else
-    return has("sword2") or has("sword3") or has("sword4")
+    if(has("sword2") == 1) or (has("sword3") == 1) or (has("sword4") == 1) then
+      ret = 1
+    end
   end
 end
 
 -- hasTempered : sword3 || sword4
 function hasTempered()
-  return has("sword3") or has("sword4")
+  return (has("sword3") == 1) or (has("sword4") == 1)
 end
 
 -- hasGolden : sword4
 function hasGolden()
-  return has("sword4")
+  return (has("sword4") == 1)
 end
 
 -- canActivateMedallions : hasSword
 function canActivateMedallions()
-  return hasSword()
+  return (hasSword() == 1)
 end
 
 -- canActivateTablets : canRead && hasMS
 function canActivateTablets()
-  return canRead() and hasMS()
+  return (canRead() == 1) and (hasMS() == 1)
 end
 
 -- canKillMostThings
 function canKillMostThings()
   -- FIXME: Bring in actual logic
   return hasSword()
-    or has("somaria")
-    or canShootArrows()
-    or has("hammer")
-    or has("firerod")
-    or has("z3noglitches")
-    or has("z3minorglitches")
+    or (has("somaria") == 1)
+    or (canShootArrows() == 1)
+    or (has("hammer") == 1)
+    or (has("firerod") == 1)
+    or (has("z3noglitches") == 1)
+    or (has("z3minorglitches") == 1)
 end
 
 -- canExtendMagic
