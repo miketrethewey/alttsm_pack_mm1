@@ -1,23 +1,50 @@
--- canExtendMagic
--- Half Magic    = Double Capacity
--- Quarter Magic = Quadruple Capacity
--- Each Bottle   = Refill 1 bar
--- Start with 1 bar
-function canExtendMagic()
-  local half = Tracker:ProviderCountForCode("halfmagic")
-  local quarter = Tracker:ProviderCountForCode("quartermagic")
-  local bottles = Tracker:ProviderCountForCode("bottle")
+-- Dummy Tracker class
+Tracker = {}
+function Tracker:ProviderCountForCode()
+  return 0
+end
 
-  if(half >= 1) then
-    half = 2 -- Double
-  else
-    half = 1
+-- Return a table of keys set to true
+function Set(list)
+  local set = {}
+  for _, l in ipairs(list) do
+    set[l] = true
   end
-  if(quarter >= 1) then
-    quarter = 4 -- Quadruple
-  else
-    quarter = 1
+  return set
+end
+
+-- Get sorted array of keys of a table
+function array_keys(arr)
+  local ordered_keys = {}
+
+  for k in pairs(arr) do
+    table.insert(ordered_keys, k)
   end
 
-  return half * quarter * (bottles + 1)
+  table.sort(ordered_keys)
+
+  return ordered_keys
+end
+
+-- Get amount of an item in inventory
+function getHas(item)
+  return Tracker:ProviderCountForCode(item)
+end
+
+-- Return Quantity if item is present in inventory (optional required minimum amount)
+function has(item, amount)
+  amount = amount or -1
+  local ret = 0
+
+  if (amount > -1) then
+    if (getHas(item) >= amount) then
+      ret = amount
+    end
+  end
+
+  if (getHas(item) >= 1) then
+    ret = 1
+  end
+
+  return ret
 end
